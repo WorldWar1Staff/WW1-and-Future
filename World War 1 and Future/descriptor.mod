@@ -1,5 +1,5 @@
 name="Test1"
-path="mod/test1"
+path="mod/WW1-and-Future.rar"
 tags={
 	"Alternative History"
 }
