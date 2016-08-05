@@ -281,7 +281,7 @@ music = {
 }
 
 music = {
-	song = "Allahu Snackbar"
+	song = "Allahu_Snackbar"
 
 	chance = {
 		modifier = {
@@ -293,7 +293,7 @@ music = {
 }
 
 music = {
-	song = "My Ummstah"
+	song = "My_Ummstah"
 
 	chance = {
 		modifier = {

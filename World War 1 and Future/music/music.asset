@@ -141,13 +141,13 @@ music = {
 # Salafist Main:
 
 music = {
-	name = "Allahu Snackbar"
+	name = "Allahu_Snackbar"
 	file = "Dj_Daesh_Allahu_Snackbar.ogg"
 	volume = 0.40
 }
 
 music = {
-	name = "My Ummstah"
+	name = "My_Ummstah"
 	file = "Dj_Daesh_My_Ummstah.ogg"
 	volume = 0.40
 }
