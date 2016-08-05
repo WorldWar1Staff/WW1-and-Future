@@ -279,3 +279,27 @@ music = {
 		}		
 	}	
 }
+
+music = {
+	song = "Allahu Snackbar"
+
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_government = salafist
+		}
+	}
+}
+
+music = {
+	song = "My Ummstah"
+
+	chance = {
+		modifier = {
+			factor = 2
+
+			has_government = salafist
+		}
+	}
+}
