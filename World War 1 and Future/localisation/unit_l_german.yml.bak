@@ -304,5 +304,5 @@
  PLAN_EXECUTE_BALANCED_DESC:0 "Es gelten die Standardregeln für die Ausführung von Angriffsplänen. Die Einheiten versuchen, so vorzurücken, dass die Frontlinie möglichst kurz bleibt. Außerdem können sie befestigte Orte angreifen."
  PLAN_EXECUTE_RUSH_DESC:0 "Die Einheiten greifen Provinzen an, wenn diese Teil des Plans sind – auch dann, wenn die Frontlinie dadurch verlängert wird oder Einheiten in ungedeckte Positionen geraten."
  PLAN_EXECUTE_BLITZ_DESC:0 "§YBlitz§!-Angriffspläne"
- NAVY_MERGE_CHILD_STATUS:0 "Sie bewegen sich auf uns zu um zu fusionieren"
- NAVY_MERGE_PARENT_STATUS:0 "Wir bewegen uns auf diese Flotte zu um zu fusionieren"
+ NAVY_MERGE_CHILD_STATUS:0 "Sie bewegen sich auf uns zu fusionieren"
+ NAVY_MERGE_PARENT_STATUS:0 "Wir bewegen uns auf diese Flotte zu fusionieren"
