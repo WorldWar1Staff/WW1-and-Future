@@ -1,6 +1,6 @@
-name="Test1"
+name="World War 1 and Future"
 path="mod/WW1-and-Future.rar"
 tags={
-	"Alternative History"
+	"Alternative History",
 }
-supported_version="1.0.0.19987"
+supported_version="1.1.*"
