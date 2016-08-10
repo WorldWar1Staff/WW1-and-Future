@@ -12,7 +12,7 @@ state={
 	}
 
 	history={
-		owner = HUN
+		owner = AUS
 		buildings = {
 			infrastructure = 6
 			industrial_complex = 3
@@ -20,7 +20,7 @@ state={
 		victory_points = {
 			688 10 
 		}
-		add_core_of = HUN
+		add_core_of = AUS
 
 		1938.3.12 = {
 			owner = GER

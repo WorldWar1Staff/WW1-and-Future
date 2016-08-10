@@ -1,0 +1,65 @@
+bookmarks = {
+	bookmark = {
+		name = "GATHERING_STORM_NAME"
+		desc = "GATHERING_STORM_DESC"
+		date = 2000.1.1.12
+		picture = "GFX_select_date_2000"
+		default_country = "GER"
+		default = yes
+		
+		"FRA"={
+			history = ""
+			ideology = democratic
+			ideas = {
+				
+			}
+		}
+		"USA"={
+			history = ""
+			ideology = democratic
+			ideas = {
+				
+			}
+		}
+		"ENG"={
+			history = ""
+			ideology = democratic
+			ideas = {
+				
+			}
+		}
+		"GER"={
+			history = ""
+			ideology = fascism
+			ideas = {
+			
+			}
+		}
+		"ITA"={
+			history = ""
+			ideology = fascism
+			ideas={
+				
+			}			
+		}
+		"JAP"={
+			history = ""
+			ideology = fascism
+			ideas={
+				
+			}			
+		}
+		"SOV"={
+			history = ""
+			ideology = communism
+			ideas = {
+				
+			}
+		}
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+
+		effect = {
+			randomize_weather = 22345 # <- Oblig
