@@ -27,12 +27,12 @@ set_politics = {
 
 		communism = {
 			popularity = 15
-			banned = yes #default is no
+			banned = no #default is no
 		}
 	}
 
 	ruling_party = monarchy
-	last_election = "1988.3.5"
+	last_election = "1913.1.1"
 	election_frequency = 48
 	elections_allowed = no
 
