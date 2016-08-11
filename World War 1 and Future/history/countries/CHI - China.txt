@@ -216,6 +216,17 @@ create_country_leader = {
 }
 
 create_country_leader = {
+	name = "Xu Shichang"
+	desc = "POLITICS_XU_SHICHANG_DESC"
+	picture = "gfx/leaders/Asia/Portrait_China_Xu_Shichang"
+	expire = "1918.1.1"
+	ideology = democratic
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
 	name = "Wang Jingwei"
 	desc = "POLITICS_WANG_JINGWEI_DESC"
 	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_fascism.dds"
