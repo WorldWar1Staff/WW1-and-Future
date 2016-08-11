@@ -1,8 +1,8 @@
-﻿capital = 9843 # Peking
+﻿capital = 9843 # Peking/Beijing
 
 
 
-oob = "GER_1913"
+oob = "CHI_1913"
 
 set_research_slots = 0
 #Starting tech
@@ -12,11 +12,11 @@ set_technology = {
 set_politics = {
 
 	parties = {
-		
-		neutrality = { 
+
+		neutrality = {
 			popularity = 15
 		}
-		democratic = { 
+		democratic = {
 			popularity = 55
 		}
 
@@ -26,15 +26,15 @@ set_politics = {
 		fascism = {
 			popularity = 0
 		}
-		
+
 		socialdemocrat = {
 			popularity = 0
 			banned = yes #default is no
 		}
 	}
-	
+
 	ruling_party = democratic
-	last_election = "1913.1.1"
+	last_election = "1912.1.1"
 	election_frequency = 60
 	elections_allowed = no
 
@@ -81,7 +81,7 @@ set_convoys = 40
 oob = "CHI_1936"
 
 	add_political_power = 1198
-	
+
 	#generic focuses
 	complete_national_focus = army_effort
 	complete_national_focus = equipment_effort
@@ -107,7 +107,7 @@ oob = "CHI_1936"
 		CHI_chen_shaokuan
 		jiangnan_shipyard_group
 	}
-	
+
 	set_global_flag = fall_of_nanjing
 	create_faction = chinese_united_front
 	add_to_faction = PRC
@@ -119,7 +119,7 @@ oob = "CHI_1936"
 
 		#PLACEHOLDER techs for vehicles
 		motorised_infantry = 1
-		tech_support = 1		
+		tech_support = 1
 		tech_recon = 1
 		tech_engineers = 1
 
@@ -158,24 +158,24 @@ oob = "CHI_1936"
 set_politics = {
 
 	parties = {
-		democratic = { 
+		democratic = {
 			popularity = 0
 		}
 
 		fascism = {
 			popularity = 0
 		}
-		
+
 		communism = {
 			popularity = 0
 			#banned = no #default is no
 		}
-		
-		neutrality = { 
+
+		neutrality = {
 			popularity = 100
 		}
 	}
-	
+
 	ruling_party = neutrality
 	last_election = "1936.1.1"
 	election_frequency = 48
@@ -243,24 +243,24 @@ add_opinion_modifier = { target = PRC modifier = hostile_status }
 	set_politics = {
 
 		parties = {
-		democratic = { 
+		democratic = {
 			popularity = 0
 		}
 
 		fascism = {
 			popularity = 0
 		}
-		
+
 		communism = {
 			popularity = 0
 			#banned = no #default is no
 		}
-		
-		neutrality = { 
+
+		neutrality = {
 			popularity = 100
 		}
 	}
-		
+
 		ruling_party = neutrality
 		last_election = "1936.1.1"
 		election_frequency = 48
