@@ -56,10 +56,15 @@ bookmarks = {
 				
 			}
 		}
-
-		"---"={
-			history = "OTHER_GATHERING_STORM_DESC"
+		"CHI"={
+			history = ""
+			ideology = communism
+			ideas = {
+				
+			}
 		}
+
+		
 
 		effect = {
 			randomize_weather = 22345 # <- Oblig

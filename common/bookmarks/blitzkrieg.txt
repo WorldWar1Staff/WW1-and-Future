@@ -76,10 +76,15 @@ bookmarks = {
 				nkvd_2
 			}
 		}
-
-		"---"={
-			history = "OTHER_BLITZKRIEG_DESC"
+		"CHI"={
+			history = ""
+			ideology = nationalism
+			ideas = {
+				
+			}
 		}
+
+		
 
 		effect = {
 			randomize_weather = 12345 # <- Obligatory in every bookmark !

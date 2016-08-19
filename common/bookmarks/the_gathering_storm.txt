@@ -65,10 +65,15 @@ bookmarks = {
 				home_of_revolution
 			}
 		}
-
-		"---"={
-			history = "OTHER_GATHERING_STORM_DESC"
+		"CHI"={
+			history = "CHI_GATHERING_STORM_DESC"
+			ideology = nationalism
+			ideas = {
+				
+			}
 		}
+
+		
 
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
