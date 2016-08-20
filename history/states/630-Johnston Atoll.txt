@@ -7,6 +7,7 @@ state=
 
 	history={
 		owner = GER
+		controller = GER
 		buildings = {
 			infrastructure = 1
 			13051 = {

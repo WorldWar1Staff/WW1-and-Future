@@ -245,3 +245,186 @@ units = {
 	}
 
 
+
+
+division= {
+		name = "Ostasien-Infanterie-Division"
+		location = 892
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+
+
+	##### NAVAL UNITS #####
+	navy = {
+		name = "I. Geschwader"
+		base = 241
+		location = 241  # Wilhemshaven
+		ship = { name = "SMS Ostfriesland" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Helgoland" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Thüringen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Oldenburg" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Nassau" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Westfalen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Rheinland" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Posen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }		
+		
+	}
+	navy = {
+		name = "II. Geschwader"
+		base = 241
+		location = 241  # Wilhemshaven
+		ship = { name = "SMS Preußen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Deutschland" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Hannover" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Pommern" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Schleswig-Hohlstein" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Schlesien" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Hessen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+	}
+	navy = {
+		name = "III. Geschwader"
+		base = 241
+		location = 241  # Wilhemshaven
+		ship = { name = "SMS Prinzregent Luitpold" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiser" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiserrin" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS König Albert" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS König" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Großer Kurfürst" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Markgraf" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+	}
+	navy = {
+		name = "I. Aufklärungsgruppe"
+		base = 241
+		location = 241  # Wilhemshaven
+		ship = { name = "SMS Seydlitz" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Moltke" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Von der Tann" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Blücher" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Derffinger" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		
+		
+	}
+	navy = {
+		name = "III. Aufklärungsgruppe"
+		base = 241
+		location = 241  # Wilhemshaven
+		ship = { name = "SMS München" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Danzig" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Stuttgart" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Hela" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Frauenlob" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		
+	}
+	
+	navy = {
+		name = "IV. Geschwader"
+		base = 6389
+		location = 6389  # Kiel
+		ship = { name = "SMS Wittelsbach" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Wettin" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Zähringen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Schwaben" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Mecklenburg" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Braunschweig" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Elsass" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+	}
+
+	navy = {
+		name = "V. Geschwader"
+		base = 6389
+		location = 6389  # Kiel
+		ship = { name = "SMS Kaiser Wilhelm II." definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiser Wilhelm der Große" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiser Babarossa" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiser Friedrich III." definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiser Karl der Große" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Wörth" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Brandenburg" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+	}
+	
+	navy = {
+		name = "II. Aufklärungsgruppe"
+		base = 6389
+		location = 6389  # Kiel
+		ship = { name = "SMS Cöln" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Mainz" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Starlsund" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kolberg" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Rostock" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Straßburg" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Graudenz" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+	}
+	
+	navy = {
+		name = "IV. Aufklärungsgruppe"
+		base = 6389
+		location = 6389  # Kiel
+		ship = { name = "SMS Roon" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Yorck" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Prinz Adalbert" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Prinz Heinrich" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		
+	}
+	navy = {
+		name = "U-Boot Geschwader"
+		base = 6389
+		location = 6389  # Kiel
+		ship = { name = "U 1" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 2" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 3" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 4" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 5" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 6" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 7" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 8" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 8" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 10" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 11" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 12" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 13" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 14" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 15" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 16" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 17" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 18" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+
+		
+	}
+	
+	navy = {
+		name = "VI. Geschwader"
+		base = 6332
+		location = 6332 # Königsberg
+		ship = { name = "SMS Hildebrand" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Heimdall" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Hagen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Frithjof" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Odin" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Beowulf" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Siegfried" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+	}
+	
+	navy = {
+		name = "V. Aufklärungsgruppe"
+		base = 6332
+		location = 6332 # Königsberg
+		ship = { name = "SMS Hansa" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Vineta" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Victoria Louise" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Hertha" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		
+	}
+	navy = {
+		name = "Ostasiengeschwader"
+		base = 1150
+		location = 1150 # China
+		ship = { name = "SMS X" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS XX" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS XXX" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS XXXX" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		
+	}
+	
+
