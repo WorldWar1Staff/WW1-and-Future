@@ -11,6 +11,8 @@
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
+		cavalry = { x = 3 y = 0 }
+		cavalry = { x = 3 y = 1 }
 	}
 
 	support = {
@@ -19,12 +21,15 @@
 	}
 }
 
+
+
+
 division_template = {
 	name = "Gebirgsjäger-Brigade"		# Gebirgsbrigade
 	#Note: precursor to Gebirgs-Divisions
 	regiments = {
 		mountaineers = { x = 0 y = 0 }
-	    mountaineers = { x = 0 y = 1 }
+	    	mountaineers = { x = 0 y = 1 }
 		mountaineers = { x = 0 y = 2 }
 		mountaineers = { x = 1 y = 0 }
 		mountaineers = { x = 1 y = 1 }
@@ -36,8 +41,8 @@ division_template = {
 
 	regiments = {
 		cavalry = { x = 0 y = 0 }
-        cavalry = { x = 0 y = 1 }
-        cavalry = { x = 1 y = 0 }
+        	cavalry = { x = 0 y = 1 }
+       		cavalry = { x = 1 y = 0 }
 		cavalry = { x = 1 y = 1 }
 	}
 	support = {
@@ -136,6 +141,12 @@ units = {
 		division_template = "Kavallerie-Division"
 		start_experience_factor = 0.3
 	}
+	division= {
+		name = "Kavallerie-Kommando Insterburg"
+		location = 281
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
 
 
 	### 2. Armee (Wehrmacht-Gruppenkommando) ###
@@ -202,6 +213,108 @@ units = {
 		division_template = "Infanterie-Division"
 		start_experience_factor = 0.3
 	}
+	
+
+# Bonus
+	division= {
+		name = "25. Infanterie-Division" #Straßburg
+		location = 9503
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "4. Kavallerie Division"
+		location = 9503
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "5. Kavallerie Division"
+		location = 9503
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "26. Infanterie-Division" # Metz
+		location = 9559
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "27. Infanterie-Division" # Köln
+		location = 6469
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "28. Infanterie-Division" # Essen
+		location = 587
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "29. Infanterie-Division" # Dortmund
+		location = 495
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "30. Infanterie-Division" # Magdeburg
+		location = 3522
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "31. Infanterie-Division" # Magdeburg
+		location = 3522
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "31. Infanterie-Division"
+		location = 3522
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "32. Infanterie-Division" #Ponzan
+		location = 6558
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "33. Infanterie-Division"
+		location = 3295
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "34. Infanterie-Division"
+		location = 243
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "35. Infanterie-Division"
+		location = 3351
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "36. Infanterie-Division"
+		location = 321
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "37. Infanterie-Division"
+		location = 11372
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+
+
+	
 
 
 	# V. Armeekorps
@@ -243,6 +356,25 @@ units = {
 		division_template = "Gebirgsjäger-Brigade"
 		start_experience_factor = 0.3
 	}
+	division= {
+		name = "1. Kavallerie Division"         # Berlin
+		location = 6521
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "2. Kavallerie Division"
+		location = 6521
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "3. Kavallerie Division"
+		location = 6521
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+
 
 
 
@@ -420,11 +552,58 @@ division= {
 		name = "Ostasiengeschwader"
 		base = 1150
 		location = 1150 # China
-		ship = { name = "SMS X" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
-		ship = { name = "SMS XX" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
-		ship = { name = "SMS XXX" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
-		ship = { name = "SMS XXXX" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Scharnhorst" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Gneisenau" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Nürnberg" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Leipzig" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Dresden" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
 		
 	}
+}
+air_wings = {
+}
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "GER"
+		}
+		requested_factories = 15
+		progress = 0.1
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "GER" 
+		}
+		requested_factories = 15
+		progress = 0.1
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "GER" 
+		}
+		requested_factories = 15
+		progress = 0.1
+		efficiency = 100
+	}
+
 	
 
+add_equipment_production = {
+		equipment = {
+			type = submarine_1
+			creator = "GER" 
+		}
+		requested_factories = 15
+		progress = 0.1
+		amount = 11
+		}
+}
