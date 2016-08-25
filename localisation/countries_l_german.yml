@@ -1,6 +1,7 @@
 ﻿l_german:
  GER_monarchy:0 "Deutsches Reich"
  GER_fascism:0 "Drittes Reich"
+ GER_socialdemocrat:0"Deutschland"
  GER_democratic:0 "Weimarer Republik"
  GER_neutrality:0 "Deutschland"
  GER_communism:0 "Sozialistische Republik Deutschland"

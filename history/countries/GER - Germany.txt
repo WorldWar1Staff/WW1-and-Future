@@ -374,7 +374,8 @@ ruling_party = socialdemocrat
 	election_frequency = 48
 	elections_allowed = yes
 }
-
+add_ideas = {
+}
 create_country_leader = {
 	name = "Edmund Stoiber"
 	desc = "POLITICS_KONRAD_ADENAUER_DESC"
@@ -387,7 +388,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Gerhard Schröder"
 	desc = "POLITICS_KONRAD_ADENAUER_DESC"
-	picture = "Portrait_Germany_Gerhard_Schröder_Gabriel.dds"
+	picture = "Portrait_Germany_Gerhard_Schröder.dds"
 	expire = "1965.1.1"
 	ideology = socialdemocrat
 	traits = {
