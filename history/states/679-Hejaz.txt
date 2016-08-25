@@ -19,7 +19,11 @@ state={
 				naval_base = 5
 			}
 		}
+		add_core_of = TUR
 		add_core_of = SAU
+		1920.1.10 = {
+			owner = SAU
+		}
 	}
 
 	provinces={

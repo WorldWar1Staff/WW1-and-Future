@@ -15,7 +15,9 @@ state={
 				naval_base = 2
 
 			}
-
+		}
+		1920.1.10 = {
+			owner = ENG
 		}
 
 	}

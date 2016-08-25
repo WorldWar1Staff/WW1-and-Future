@@ -10,7 +10,7 @@ state= {
 
 	history=
 	{
-		owner = TUR
+		owner = ENG
 		buildings = {
 			infrastructure = 4
 			air_base = 1

@@ -1,0 +1,20 @@
+state={
+	id=755
+	name="STATE_755"
+	history={
+		owner = ENG
+		buildings = {
+			infrastructure = 4
+			7123 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = ENG
+	}
+	manpower=13000
+	buildings_max_level_factor=1.000
+	state_category=tiny_island
+	provinces={
+		7123 
+	}
+}

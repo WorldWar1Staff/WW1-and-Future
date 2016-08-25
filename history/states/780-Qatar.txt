@@ -1,0 +1,19 @@
+state={
+	id=780
+	name="STATE_780"
+	provinces={
+		8051 
+	}
+	history={
+		owner = ENG
+		buildings = {
+			infrastructure = 2
+			8051 = {
+				naval_base = 2
+			}
+		}
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

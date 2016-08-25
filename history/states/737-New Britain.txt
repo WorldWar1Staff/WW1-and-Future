@@ -25,6 +25,9 @@ state={
 		victory_points = {
 			7251 5 
 		}
+		1920.1.10 = {
+			owner = AST
+		}
 		
 	}
 

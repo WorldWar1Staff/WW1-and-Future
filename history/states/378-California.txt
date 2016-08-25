@@ -1,0 +1,43 @@
+# Southern California
+state={
+	id=378
+	name="STATE_378"
+	resources={
+		oil=200.000
+		aluminium=7.000
+	}
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 6
+			arms_factory = 1
+			industrial_complex = 3
+			dockyard = 1
+			air_base = 10
+			1562 = {
+				naval_base = 10
+			}
+			9814 = {
+				naval_base = 5
+			}
+		}
+		add_core_of = USA
+		victory_points = {
+			9814 30 
+		}
+		victory_points = {
+			1562 15 
+		}
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 4
+			}
+		}
+	}
+	provinces={
+		823 941 986 1562 1651 3784 4518 4657 4727 6881 7517 7667 7986 9814 9855 9911 10387 10483 11757 11763 11795 11859 11876 12303 12374 
+	}
+	manpower=3000000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+}

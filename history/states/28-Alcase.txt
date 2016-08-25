@@ -21,13 +21,18 @@ state={
 
 		}
 		add_core_of = GER
-                add_claim_by = GER
+		add_core_of = FRA
                 add_claim_by = FRA
+		1920.1.10 = {
+			owner = FRA
+			add_core_of = FRA
+		}
 		1939.1.1 = {
 			buildings = {
 				industrial_complex = 4
 			}
 		}
+
 	}
 
 	provinces={

@@ -1,0 +1,41 @@
+state={
+	id=791
+	name="STATE_791"
+	resources={
+		oil=150.000
+		aluminium=7.000
+	}
+	provinces={
+		610 677 710 766 768 781 1432 1601 3588 3644 3677 3678 3840 4331 6482 6665 6681 6694 6699 6745 6757 6772 6861 6876 9637 9671 9697 9713 9730 10159 11658 11698 
+	}
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 6
+			arms_factory = 1
+			industrial_complex = 3
+			dockyard = 1
+			9671 = {
+				naval_base = 4
+			}
+			610 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = USA
+		victory_points = {
+			9671 25 
+		}
+		victory_points = {
+			9713 1 
+		}
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 7
+			}
+		}
+	}
+	manpower=2677248
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

@@ -18,6 +18,10 @@ state=
 		}
 		add_core_of = LIT
 		add_core_of = GER
+		1920.1.10 = {
+			owner = LIT
+			add_core_of = LIT
+		}
 		1939.3.22 = {
 			owner = GER
 			controller = GER

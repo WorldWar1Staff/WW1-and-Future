@@ -59,6 +59,16 @@ add_ideas = {
 
 set_convoys = 150
 set_national_unity = 0.8
+create_import = {
+			resource = oil
+			factories = 2
+			exporter = USA
+	}
+create_import = {
+			resource = chrom
+			factories = 2
+			exporter = SOV
+	}
 
 
 1936.1.1 = {
@@ -105,7 +115,7 @@ set_technology = {
 set_politics = {
 
 	parties = {
-		democratic = { 
+		conservativ = { 
 			popularity = 20
 		}
 
@@ -293,7 +303,7 @@ create_import = {
 set_politics = {
 
 	parties = {
-		democratic = { 
+		conservativ = { 
 			popularity = 20
 		}
 
@@ -327,6 +337,79 @@ add_ideas = {
 	}
 
 }
+2003.1.1 = {
+set_politics = {
+
+	parties = {
+		conservativ = { 
+			popularity = 38.5
+		}
+		socialdemocrat = { 
+			popularity = 38.5
+		}
+
+		progressive = {
+			popularity = 9
+		}
+		
+		liberal = {
+			popularity = 7
+		}
+		communism = {
+			popularity = 4
+		}
+		nationalism ={
+			popularity = 1.5
+		}
+		fascism ={
+			popularity = 1.5
+		}
+		monarchy ={
+			popularity = 0
+		}
+	}
+
+ruling_party = socialdemocrat
+	last_election = "2002.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+create_country_leader = {
+	name = "Edmund Stoiber"
+	desc = "POLITICS_KONRAD_ADENAUER_DESC"
+	picture = "Portrait_Germany_Edmund_Steuber.dds"
+	expire = "2016.1.1"
+	ideology = conservativ
+	traits = {
+	}
+}
+create_country_leader = {
+	name = "Gerhard Schröder"
+	desc = "POLITICS_KONRAD_ADENAUER_DESC"
+	picture = "Portrait_Germany_Gerhard_Schröder_Gabriel.dds"
+	expire = "1965.1.1"
+	ideology = socialdemocrat
+	traits = {
+	}
+}
+create_country_leader = {
+	name = "Guido Westerwelle"
+	desc = "POLITICS_KONRAD_ADENAUER_DESC"
+	picture = "Portrait_Germany_Guido_Westerwelle.dds"
+	expire = "1965.1.1"
+	ideology = liberal
+	traits = {
+	}
+}
+create_corps_commander = {
+	name = "Werner Frees"
+	picture = "Portrait_Germany_Werner_Frees.dds"
+	traits = { panzer_leader }
+	skill = 4
+
+}
+}
 
 
 
@@ -358,7 +441,7 @@ create_country_leader = {
 	desc = "POLITICS_KONRAD_ADENAUER_DESC"
 	picture = "Portrait_Germany_Konrad_Adenauer.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = conservativ
 	traits = {
 	}
 }

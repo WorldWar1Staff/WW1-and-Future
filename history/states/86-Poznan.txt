@@ -28,6 +28,12 @@ state={
 			air_base = 3
 		}
 		add_core_of = GER
+		add_core_of = POL
+
+		1920.1.10 = {
+			owner = POL
+			add_core_of = POL
+		}
 	}
 
 	provinces={

@@ -17,6 +17,9 @@ state={
 		}
 
 		add_core_of = EGY
+		1920.1.10 = {
+			owner = EGY
+		}
 
 	}
 

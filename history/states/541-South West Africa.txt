@@ -13,6 +13,9 @@ state={
 		}
 		add_core_of = SAF
 		add_claim_by = SAF
+		1920.1.10 = {
+			owner = SAF
+		}
 	}
 
 	provinces={

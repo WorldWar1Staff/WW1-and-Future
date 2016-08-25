@@ -1,0 +1,23 @@
+state={
+	id=792
+	name="STATE_792"
+	resources={
+		tungsten=16.000
+	}
+	provinces={
+		1736 1854 1857 4741 4838 4860 6742 7779 10593 11712 12676 
+	}
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 4
+		}
+		add_core_of = USA
+		victory_points = {
+			4860 1 
+		}
+	}
+	manpower=287605
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

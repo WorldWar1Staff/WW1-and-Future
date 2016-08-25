@@ -1,8 +1,63 @@
 ideas = {
 
 	country = {
-		
-               
+		ludendorf2 = {
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				
+				army_org_Factor = 0.05
+				planning_speed = 0.05
+				unity_factor = +0.05
+			}
+		}
+		ludendorf = {
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				
+				army_org_Factor = 0.15
+				planning_speed = 0.15
+				unity_factor = -0.10
+			}
+		}
+               hindenburg = {
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				
+				army_org_Factor = 0.05
+				planning_speed = 0.05
+				unity_factor = +0.10
+			}
+		}
                sour_loser = {
 			
 			allowed = {
@@ -757,6 +812,38 @@ ideas = {
 			}
 		}
 
+		ludendorf_stab  = {
+
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+					has_completed_focus = GER_ludendorf
+				}
+						
+			traits = { army_chief_drill_2 army_logistics_2 army_chief_offensive_2 army_infantry_2}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		hindenburg_stab  = {
+
+			
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+					has_completed_focus = GER_hindenburg
+				}
+						
+			traits = { army_chief_drill_2 army_chief_offensive_2 army_regrouping_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
 		wilhelm_keitel  = {
 
 			
@@ -916,6 +1003,7 @@ ideas = {
 			}
 		}
 		
+		
 		gerd_von_rundstedt = {
 
 			
@@ -1025,6 +1113,23 @@ ideas = {
 			}
 			
 			traits = { navy_anti_submarine_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+ludendorf_stab2 = {
+
+			
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+					has_completed_focus = GER_ludendorf2
+				}
+			
+			
+			traits = { army_chief_drill_1 army_logistics_1 army_chief_offensive_1 army_infantry_1 }
 			
 			ai_will_do = {
 				factor = 1

@@ -21,7 +21,10 @@ state=
 		}	
 		victory_points = {
 			3995 1
-		 }
+		}
+		1920.1.10 = {
+			owner = JAP
+		}
 
 	}
 	provinces={

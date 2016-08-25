@@ -27,6 +27,10 @@ state={
 		#add_claim_by = ITA #added by focus
 		add_core_of = CRO
 		add_core_of = AUS
+		add_core_of = YUG
+		1920.1.10 = {
+			owner = YUG
+		}
 	}
 
 	provinces={

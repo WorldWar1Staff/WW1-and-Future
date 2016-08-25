@@ -1,0 +1,37 @@
+# (excluding maine)
+state={
+	id=357
+	name="STATE_357"
+	resources={
+		steel=20.000
+	}
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 7
+			arms_factory = 1
+			industrial_complex = 4
+			dockyard = 4
+			air_base = 10
+			6732 = {
+				naval_base = 8
+			}
+			9832 = {
+				naval_base = 3
+			}
+		}
+		add_core_of = USA
+		victory_points = {
+			6732 20 
+		}
+		victory_points = {
+			9832 1 
+		}
+	}
+	provinces={
+		715 718 733 905 908 3710 3712 3715 3906 4445 6732 6909 7629 9675 9832 9847 9850 10481 11830 13158 
+	}
+	manpower=7000000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+}

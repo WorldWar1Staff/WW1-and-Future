@@ -9,7 +9,12 @@
 # trade = yes/no
 
 opinion_modifiers = {
-
+	ger_tur_alliance_focus = {
+		value = 50
+	}
+	ger_ita_diplomacy_focus = {
+		value = 20
+	}
 	ger_aus_diplomacy_focus = {
 		value = 50
 	}
