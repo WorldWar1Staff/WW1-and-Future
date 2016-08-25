@@ -256,7 +256,7 @@ set_politics = {
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
-}
+      }
 }
 
 
@@ -279,7 +279,7 @@ create_country_leader = {
 	desc = "POLITICS_Hirohito_DESC"
 	picture = "Portrait_Japan_Hirohito.dds"
 	expire = "1989.1.1"
-	ideology = fascism
+	ideology = fascism_ideology
 	traits = {
 		warrior_code
 	}
