@@ -205,7 +205,7 @@ set_politics = {
 	elections_allowed = no
  }
 }
-2000.1.1 = {
+2003.1.1 = {
 set_politics = {
 
 	parties = {
@@ -239,7 +239,7 @@ create_country_leader = {
 	desc = "POLITICS_Yuan_Shikai_DESC"
 	picture = "Portrait_China_Jiang_Zemin.dds"
 	expire = "1965.1.1"
-	ideology = communism
+	ideology = leninism
 	traits = {
 		#
 	}

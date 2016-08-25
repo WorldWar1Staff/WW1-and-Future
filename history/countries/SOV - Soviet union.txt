@@ -308,7 +308,67 @@ add_ideas = {
 			set_convoys = 50
 			set_national_unity = 0.55
 	}
+2003.1.1 = {
+set_politics = {
 
+		parties = {
+			conservativ = {
+				popularity = 7 
+					}
+			
+			reactionary = {
+				popularity = 46 
+					}
+			fascism = {
+				popularity = 3
+					}
+			social_democrat = {
+
+				popularity = 2
+		
+					}
+
+			communism = {
+				popularity = 30
+					}
+			progressive = {
+				popularity = 2
+					}
+			liberal = {
+	
+				popularity = 3
+		
+					}
+			nationalism = {
+			
+				popularity = 7
+					}
+		}
+ruling_party = reactionary
+	
+last_election = "1999.12.19"
+	
+election_frequency = 48
+	
+elections_allowed = yes
+
+}
+create_country_leader = {
+	name = "Wladimir Putin"
+	desc = "POLITICS_NIKOLAUS_II_DESC"
+	picture = "Portrait_Soviet_Wladimir_Putin.dds"
+	expire = "20018.3.1"
+	ideology = reactionary
+	traits = { 
+			}
+
+}
+
+
+
+
+
+}
 create_country_leader = {
 	name = "Nikolaus II"
 	desc = "POLITICS_NIKOLAUS_II_DESC"
