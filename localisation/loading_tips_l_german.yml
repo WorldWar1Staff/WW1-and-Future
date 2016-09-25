@@ -79,6 +79,7 @@
  LOADING_TIP_77:0 "Befestigungen, Artillerie, Auslandshilfe ... sie alle sind wertlos, wenn der einfache Soldat nicht weiß, dass ER es ist, der sein Land bewacht. \n- Carl Gustaf Emil Mannerheim"
  LOADING_TIP_78:0 "Weist du was mich WIRKLICH aufregt? Zitate in diesem Spiel!\n- TheMPP"
  LOADING_TIP_79:0 "Kamikaze ist nicht die beste Taktik, vor allem nicht wenn man verfehlt.\n- jackik1410"
+<<<<<<< HEAD
  LOADING_TIP_80:0 "Die Luftfahrt is der Zweig der Technologie, der am wenigsten Fehler verzeiht.\n- Freeman Dyson"
  LOADING_TIP_81:0 "Jetzt verlöschen die Lichter in ganz Europa. Wir werden sie nie wieder in unserem Leben brennen sehen.\n- Außenminister GB Edward Grey"
  LOADING_TIP_82:0 "Uns treibt nicht Eroberungslust.\n- Kaiser Wilhelm II"
@@ -123,3 +124,6 @@
  LOADING_TIP_121:0 "never nuke a coutry twice. NEVER!– Pelops"
  LOADING_TIP_122:0 "Gott strafe England– Gewöhnlicher Gruß in Deutschland während der Kaiserzeit"
  LOADING_TIP_123:0 "Wenn du im winter in Russland einmarschierst, iss keinen gelben Schnee. \n – Pelops"
+=======
+ LOADING_TIP_80:0 "Die Luftfahrt is der Zweig der Ingenieurskunst, der am wenigsten Fehler verzeiht.\n- Freeman Dyson"
+>>>>>>> origin/master
