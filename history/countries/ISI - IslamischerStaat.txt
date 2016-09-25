@@ -1,0 +1,73 @@
+﻿capital = 10106
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	gw_artillery = 1
+	
+}
+2000.1.1 = {
+oob = "ISI_2000"
+set_research_slots = 0
+#Starting tech
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	gw_artillery = 1
+	
+}
+set_politics = {
+
+	parties = {
+		
+		monarchy = { 
+			popularity = 0
+		}
+		conservativ = { 
+			popularity = 0
+		}
+
+		nationalism = {
+			popularity = 0
+		}
+		islamist = {
+			popularity = 100
+		}
+		
+		socialdemocrat = {
+			popularity = 0
+			
+		}
+	}
+	
+	ruling_party = islamist
+	last_election = "2003.3.5"
+	election_frequency = 48
+	elections_allowed = no
+
+}
+
+
+add_ideas = {
+	}
+
+
+
+
+
+
+
+set_convoys = 0
+set_national_unity = 0.9
+}
+
+create_country_leader = {
+	name = "Abu Bakr al-Baghdadi"
+	desc = "POLITICS_ADOLF_HITLER_DESC"
+	picture = "Portrait_ISI_Abu_Bakr_al_Baghdadi.dds"
+	expire = "1965.1.1"
+	ideology = islamist
+	traits = {
+		dictator
+	}
+}

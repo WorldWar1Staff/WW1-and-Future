@@ -1,0 +1,609 @@
+﻿division_template = {
+	name = "Infanterie-Division"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        	infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		cavalry = { x = 3 y = 0 }
+		cavalry = { x = 3 y = 1 }
+	}
+
+	support = {
+        engineer = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
+	}
+}
+
+
+
+
+division_template = {
+	name = "Gebirgsjäger-Brigade"		# Gebirgsbrigade
+	#Note: precursor to Gebirgs-Divisions
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+	    	mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "Kavallerie-Division"
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+        	cavalry = { x = 0 y = 1 }
+       		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    recon = { x = 0 y = 0 }
+	    artillery = { x = 0 y = 1 }
+	}
+}
+
+units = {
+
+	##### Oberkommando des Heeres #####
+	### 1. Armee (Wehrmacht-Gruppenkommando) ###
+	# II. Armeekorps
+	division= {
+		name = "2. Infanterie-Division"
+		location = 6334
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "12. Infanterie-Division"
+		location = 537
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	# III. Armeekorps
+	division= {
+		name = "3. Infanterie-Division"
+		location = 478
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "23. Infanterie-Division"
+		location = 478
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+
+	### 3. Armee (Wehrmacht-Gruppenkommando) ###
+	# IV. Armeekorps
+	division= {
+		name = "4. Infanterie-Division"
+		location = 6462
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "14. Infanterie-Division"
+		location = 6462
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "24. Infanterie-Division"
+		location = 6462
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	# VIII. Armeekorps
+	division= {
+		name = "8. Infanterie-Division"
+		location = 11467
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "18. Infanterie-Division"
+		location = 11467
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+
+	# I. Armeekorps
+	division= {
+		name = "1. Infanterie-Division"
+		location = 6402
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "11. Infanterie-Division"
+		location = 266
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "21. Infanterie-Division"
+		location = 3384
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "Kavallerie-Kommando Insterburg"
+		location = 281
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "Kavallerie-Kommando Insterburg"
+		location = 281
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+
+
+	### 2. Armee (Wehrmacht-Gruppenkommando) ###
+	division= {
+		name = "13. Infanterie-Division"
+		location = 6257
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	# VI. Armeekorps
+	division= {
+		name = "6. Infanterie-Division"
+		location = 11264
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "16. Infanterie-Division"
+		location = 11264
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	# IX. Armeekorps
+	division= {
+		name = "9. Infanterie-Division"
+		location = 11388
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "15. Infanterie-Division"
+		location = 241
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	# X. Armeekorps
+	division= {
+		name = "19. Infanterie-Division"
+		location = 6488
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "20. Infanterie-Division"
+		location = 9572
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "22. Infanterie-Division"
+		location = 9572
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "23. Infanterie-Division"
+		location = 9572
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "24. Infanterie-Division"
+		location = 9572
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	
+
+# Bonus
+	division= {
+		name = "25. Infanterie-Division" #Straßburg
+		location = 9503
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "4. Kavallerie Division"
+		location = 9503
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "5. Kavallerie Division"
+		location = 9503
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "26. Infanterie-Division" # Metz
+		location = 9559
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "27. Infanterie-Division" # Köln
+		location = 6469
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "28. Infanterie-Division" # Essen
+		location = 587
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "29. Infanterie-Division" # Dortmund
+		location = 495
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "30. Infanterie-Division" # Magdeburg
+		location = 3522
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "31. Infanterie-Division" # Magdeburg
+		location = 3522
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "31. Infanterie-Division"
+		location = 3522
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "32. Infanterie-Division" #Ponzan
+		location = 6558
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "33. Infanterie-Division"
+		location = 3295
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "34. Infanterie-Division"
+		location = 243
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "35. Infanterie-Division"
+		location = 3351
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "36. Infanterie-Division"
+		location = 321
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "37. Infanterie-Division"
+		location = 11372
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+
+
+	
+
+
+	# V. Armeekorps
+	division= {
+		name = "5. Infanterie-Division"
+		location = 9517
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+
+	# VII. Armeekorps
+	division= {
+		name = "7. Infanterie-Division"
+		location = 11544
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "10. Infanterie-Division"
+		location = 11497
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "17. Infanterie-Division"
+		location = 586
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "Gebirgsjäger-Brigade"
+		location = 692
+		division_template = "Gebirgsjäger-Brigade"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "Gebirgsjäger-Brigade"
+		location = 692
+		division_template = "Gebirgsjäger-Brigade"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "1. Kavallerie Division"         # Berlin
+		location = 6521
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "2. Kavallerie Division"
+		location = 6521
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+	division= {
+		name = "3. Kavallerie Division"
+		location = 6521
+		division_template = "Kavallerie-Division"
+		start_experience_factor = 0.3
+	}
+
+
+
+
+
+division= {
+		name = "Ostasien-Infanterie-Division"
+		location = 892
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+	}
+
+
+	##### NAVAL UNITS #####
+	navy = {
+		name = "I. Geschwader"
+		base = 241
+		location = 241  # Wilhemshaven
+		ship = { name = "SMS Ostfriesland" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Helgoland" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Thüringen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Oldenburg" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Nassau" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Westfalen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Rheinland" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Posen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }		
+		
+	}
+	navy = {
+		name = "II. Geschwader"
+		base = 241
+		location = 241  # Wilhemshaven
+		ship = { name = "SMS Preußen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Deutschland" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Hannover" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Pommern" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Schleswig-Hohlstein" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Schlesien" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Hessen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+	}
+	navy = {
+		name = "III. Geschwader"
+		base = 241
+		location = 241  # Wilhemshaven
+		ship = { name = "SMS Prinzregent Luitpold" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiser" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiserrin" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS König Albert" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS König" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Großer Kurfürst" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Markgraf" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+	}
+	navy = {
+		name = "I. Aufklärungsgruppe"
+		base = 241
+		location = 241  # Wilhemshaven
+		ship = { name = "SMS Seydlitz" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Moltke" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Von der Tann" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Blücher" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Derffinger" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		
+		
+	}
+	navy = {
+		name = "III. Aufklärungsgruppe"
+		base = 241
+		location = 241  # Wilhemshaven
+		ship = { name = "SMS München" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Danzig" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Stuttgart" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Hela" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Frauenlob" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		
+	}
+	
+	navy = {
+		name = "IV. Geschwader"
+		base = 6389
+		location = 6389  # Kiel
+		ship = { name = "SMS Wittelsbach" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Wettin" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Zähringen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Schwaben" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Mecklenburg" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Braunschweig" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Elsass" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+	}
+
+	navy = {
+		name = "V. Geschwader"
+		base = 6389
+		location = 6389  # Kiel
+		ship = { name = "SMS Kaiser Wilhelm II." definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiser Wilhelm der Große" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiser Babarossa" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiser Friedrich III." definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kaiser Karl der Große" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Wörth" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Brandenburg" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+	}
+	
+	navy = {
+		name = "II. Aufklärungsgruppe"
+		base = 6389
+		location = 6389  # Kiel
+		ship = { name = "SMS Cöln" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Mainz" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Starlsund" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Kolberg" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Rostock" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Straßburg" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Graudenz" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+	}
+	
+	navy = {
+		name = "IV. Aufklärungsgruppe"
+		base = 6389
+		location = 6389  # Kiel
+		ship = { name = "SMS Roon" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Yorck" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Prinz Adalbert" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Prinz Heinrich" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		
+	}
+	navy = {
+		name = "U-Boot Geschwader"
+		base = 6389
+		location = 6389  # Kiel
+		ship = { name = "U 1" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 2" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 3" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 4" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 5" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 6" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 7" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 8" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 8" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 10" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 11" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 12" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 13" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 14" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 15" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 16" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 17" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+		ship = { name = "U 18" definition = submarine equipment = { submarine_1 = { amount = 1 owner = GER } } }
+
+		
+	}
+	
+	navy = {
+		name = "VI. Geschwader"
+		base = 6332
+		location = 6332 # Königsberg
+		ship = { name = "SMS Hildebrand" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Heimdall" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Hagen" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Frithjof" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Odin" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Beowulf" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Siegfried" definition = battleship equipment = { battleship_1 = { amount = 1 owner = GER } } }
+	}
+	
+	navy = {
+		name = "V. Aufklärungsgruppe"
+		base = 6332
+		location = 6332 # Königsberg
+		ship = { name = "SMS Hansa" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Vineta" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Victoria Louise" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Hertha" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		
+	}
+	navy = {
+		name = "Ostasiengeschwader"
+		base = 1150
+		location = 1150 # China
+		ship = { name = "SMS Scharnhorst" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Gneisenau" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Nürnberg" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Leipzig" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "SMS Dresden" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GER } } }
+		
+	}
+}
+air_wings = {
+}
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "GER"
+		}
+		requested_factories = 15
+		progress = 0.1
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "GER" 
+		}
+		requested_factories = 15
+		progress = 0.1
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "GER" 
+		}
+		requested_factories = 15
+		progress = 0.1
+		efficiency = 100
+	}
+
+	
+
+add_equipment_production = {
+		equipment = {
+			type = submarine_1
+			creator = "GER" 
+		}
+		requested_factories = 15
+		progress = 0.1
+		amount = 11
+		}
+}
