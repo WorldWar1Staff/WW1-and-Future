@@ -19,10 +19,10 @@ state={
 			10106 1 
 		}
 		add_core_of = IRQ
-	2000.1.10 = {
+	2000.3.14 = {
 			owner = ISI
+			controller = ISI
 			add_core_of = ISI
-			add_core_of = SYR
 		}
 }
 

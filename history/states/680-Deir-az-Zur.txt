@@ -3,7 +3,9 @@ state={
 	name="STATE_680"
 	manpower = 324110
 	
-	state_category = city
+	state_category = wasteland
+
+	
 
 	history={
 		owner = TUR
@@ -11,10 +13,12 @@ state={
 			infrastructure = 2
 		}
 		add_core_of = SYR
-2000.1.10 = {
+
+2000.3.14 = {
 			owner = ISI
+			controller = ISI
 			add_core_of = ISI
-			add_core_of = SYR
+			
 		}
 	}
 

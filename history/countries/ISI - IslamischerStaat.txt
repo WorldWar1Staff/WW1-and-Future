@@ -1,21 +1,23 @@
 ﻿capital = 10106
 
-set_technology = {
-	infantry_weapons = 1
-	tech_support = 1
-	gw_artillery = 1
-	
-}
-2000.1.1 = {
 oob = "ISI_2000"
-set_research_slots = 0
-#Starting tech
+
 set_technology = {
 	infantry_weapons = 1
 	tech_support = 1
 	gw_artillery = 1
-	
-}
+	basic_machine_tools = 1
+	radio = 1
+	electronic_mechanical_engineering = 1
+}	
+
+
+2000.1.1 = {
+
+add_political_power = 200
+
+
+
 set_politics = {
 
 	parties = {
