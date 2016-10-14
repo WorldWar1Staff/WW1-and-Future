@@ -1,0 +1,20 @@
+state={
+	id=793
+	name="STATE_793"
+	provinces={
+		1253 1357 1488 1990 4496 4566 7312 7353 7492 7531 7544 7559 7572 7675 8045 10371 10398 10411 12345 
+	}
+	history={
+		owner = SIA
+		buildings = {
+			infrastructure = 3
+		}
+		victory_points = {
+			1488 1 
+		}
+		add_core_of = SIA
+	}
+	manpower=2000000
+	buildings_max_level_factor=1.000
+	state_category=town
+}

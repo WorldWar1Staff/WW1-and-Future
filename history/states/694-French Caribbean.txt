@@ -1,0 +1,21 @@
+
+state={#St Martin
+	id=694
+	name="STATE_694"
+	history={
+		owner = FRA
+		buildings = {
+			infrastructure = 4
+			13084 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = FRA
+	}
+	provinces={
+		13084 
+	}
+	manpower=111000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

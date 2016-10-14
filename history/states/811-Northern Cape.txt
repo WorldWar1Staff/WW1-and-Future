@@ -1,0 +1,17 @@
+state={
+	id=811
+	name="STATE_811"
+	provinces={
+		1509 4528 5203 10442 10697 12419 
+	}
+	history={
+		owner = SAF
+		buildings = {
+			infrastructure = 5
+		}
+		add_core_of = SAF
+	}
+	manpower=800000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

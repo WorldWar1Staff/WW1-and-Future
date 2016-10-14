@@ -1,0 +1,29 @@
+
+state={
+	id=691
+	name="STATE_691"
+	resources={
+		oil=16.000
+	}
+
+	history={
+		owner = ENG
+		buildings = {
+			infrastructure = 3
+			3284 = {
+				naval_base = 1
+
+			}
+
+		}
+		add_core_of = ENG
+
+	}
+
+	provinces={
+		3284 
+	}
+	manpower=213119
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

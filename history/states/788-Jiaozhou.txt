@@ -1,0 +1,33 @@
+# (includes qingdao; a southern area on the shandong peninsula)
+state={
+	id=788
+	name="STATE_788"
+	provinces={
+		10000 
+	}
+	history={
+		owner = GER
+		add_core_of = CHI
+		add_core_of = PRC
+		victory_points = {
+			10000 5 
+		}
+		buildings = {
+			infrastructure = 3
+			10000 = {
+				naval_base = 5
+				coastal_bunker = 1
+				bunker = 1
+			}
+		}
+		1920.1.10 = {
+			owner = CHI
+		}
+		1938.10.25 = {
+			controller = JAP
+		}
+	}
+	manpower=1000000
+	buildings_max_level_factor=1.000
+	state_category=town
+}

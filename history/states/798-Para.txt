@@ -1,0 +1,24 @@
+# (northern brazil; east of amazonas)
+state={
+	id=798
+	name="STATE_798"
+	resources={
+		aluminium=4.000
+	}
+	history={
+		owner = BRA
+		buildings = {
+			infrastructure = 0
+			12853 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = BRA
+	}
+	provinces={
+		2035 2214 4980 5008 8172 10874 10956 12853 12999 
+	}
+	manpower=579900
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

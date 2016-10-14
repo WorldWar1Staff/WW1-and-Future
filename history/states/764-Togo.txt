@@ -1,0 +1,19 @@
+state={
+	id=764
+	name="STATE_764"
+	history={
+		owner = GER
+		buildings = {
+			infrastructure = 3
+		}
+		1920.1.10 = {
+			owner = FRA
+		}
+	}
+	provinces={
+		1951 12843 
+	}
+	manpower=3000000
+	buildings_max_level_factor=1.000
+	state_category = rural
+}

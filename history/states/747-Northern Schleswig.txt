@@ -1,0 +1,22 @@
+state={
+	id=747
+	name="STATE_747"
+	provinces={
+		332 11251 
+	}
+	manpower=832235
+	buildings_max_level_factor=1
+	state_category="town"
+	history={
+		owner = GER
+		buildings = {
+			infrastructure = 8
+		}
+		add_core_of = DEN
+		add_core_of = GER
+		1920.1.10 = {
+			owner = DEN
+			add_core_of = DEN
+		}
+	}
+}

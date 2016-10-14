@@ -1,0 +1,25 @@
+# vorpommern
+state={
+	id=62
+	name="STATE_62"
+	history={
+		owner = GER
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+			air_base = 3
+		}
+		add_core_of = GER
+		1939.1.1 = {
+			buildings = {
+				air_base = 8
+			}
+		}
+	}
+	provinces={
+		349 3207 3312 3340 9388 
+	}
+	manpower=1006221
+	buildings_max_level_factor=1.000
+	state_category=town
+}

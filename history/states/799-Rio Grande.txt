@@ -1,0 +1,18 @@
+# (eastern half of island off patagonia; part of argentina)
+state={
+	id=799
+	name="STATE_799"
+	provinces={
+		11009 
+	}
+	history={
+		owner = ARG
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = ARG
+	}
+	manpower=26638
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

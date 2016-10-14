@@ -1,0 +1,23 @@
+state={
+	id=781
+	name="STATE_781"
+	provinces={
+		6282 6309 6334 6390 9334 
+	}
+	history={
+		owner = GER
+		victory_points = {
+			6282 1 
+		}
+		buildings = {
+			infrastructure = 6
+			6282 = {
+				naval_base = 4
+			}
+		}
+		add_core_of = GER
+	}
+	manpower=400000
+	buildings_max_level_factor=1.000
+	state_category=town
+}

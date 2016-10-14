@@ -1,0 +1,21 @@
+state={
+	id=743
+	name="STATE_743"
+	provinces={
+		6196 
+	}
+	manpower = 50000
+	state_category = rural
+	history=
+	{
+		owner = ENG
+		victory_points = { 11064 1 }
+		buildings = {
+			infrastructure = 2
+			6196 = {
+				naval_base = 1	
+			}
+		}
+		add_core_of = ENG
+	}
+}

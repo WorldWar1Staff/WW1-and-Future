@@ -1,0 +1,36 @@
+# Southern Texas
+state={
+	id=375
+	name="STATE_375"
+	resources={
+		oil=290.000
+		aluminium=48.000
+	}
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 5
+			air_base = 3
+			10337 = {
+				naval_base = 3
+			}
+			6785 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = USA
+		victory_points = {
+			10337 10 
+		}
+		victory_points = {
+			12782 1 
+		}
+	}
+	provinces={
+		805 1500 1927 2019 2042 4577 4884 5022 5061 6785 6987 7628 10337 10504 10861 12341 12369 12410 12486 12782 
+	}
+	manpower=2900000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+}

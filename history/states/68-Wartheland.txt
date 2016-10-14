@@ -1,0 +1,26 @@
+# ostmark
+state={
+	id=68
+	name="STATE_68"
+	resources={
+		aluminium=24.000
+	}
+
+	history={
+		owner = GER
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+
+		}
+		add_core_of = GER
+
+	}
+
+	provinces={
+		478 9496 11415 
+	}
+	manpower=650840
+	buildings_max_level_factor=1.000
+	state_category=city
+}
