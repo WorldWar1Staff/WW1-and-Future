@@ -6,33 +6,33 @@
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
-		
+
 	 }
 
-	
+
 }
 division_template = {
-	name = "IS-Motorisiert" 		
-	
+	name = "IS-Motorisiert"
+
 	regiments = {
 		motorized = { x = 0 y = 0 }
-	    	motorized = { x = 1 y = 0 }
-		
-		
-		
+	  motorized = { x = 1 y = 0 }
+
+
+
 	}
-	
-	
+
+
 }
 division_template = {
 	name = "IS-Kavallerie"
 
 	regiments = {
 		cavalry = { x = 0 y = 0 }
-        	cavalry = { x = 1 y = 0 }
-		
+  	cavalry = { x = 1 y = 0 }
+
 	}
-	
+
 }
 division_template = {
 	name = "IS-Panzer"
@@ -40,12 +40,12 @@ division_template = {
 	regiments = {
 		light_armor = { x = 0 y = 0 }
 		}
-	
+
 }
 
 units {
 
-division= {	
+division= {
 		name = "1. Trupp IS"
 		location = 10160
 		division_template = "IS Infanterie"
