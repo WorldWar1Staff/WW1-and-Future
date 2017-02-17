@@ -19,11 +19,11 @@ set_technology = {
 set_politics = {
 
 	parties = {
-		
-		monarchy = { 
+
+		monarchy = {
 			popularity = 70
 		}
-		conservativ = { 
+		conservativ = {
 			popularity = 10
 		}
 
@@ -33,15 +33,15 @@ set_politics = {
 		fascism = {
 			popularity = 0
 		}
-		
+
 		socialdemocrat = {
 			popularity = 15
-			banned = yes #default is no
+			banned = yes #default is no  -jackik: can this be banned if it already has an value? do the popularity values have to add up to 100?
 		}
 	}
-	
+
 	ruling_party = monarchy
-	last_election = "1988.3.5"
+	last_election = "1888.3.5"
 	election_frequency = 48
 	elections_allowed = no
 
@@ -75,12 +75,12 @@ create_import = {
 oob = "GER_1936"
 
 set_research_slots = 4
-# Starting tech 1936
+# Starting tech 1936 this should be vanilla stuff
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	tech_recon = 1
-	tech_support = 1		
+	tech_support = 1
 	tech_engineers = 1
 	tech_mountaineers = 1
 	motorised_infantry = 1
@@ -115,20 +115,20 @@ set_technology = {
 set_politics = {
 
 	parties = {
-		conservativ = { 
+		conservativ = {
 			popularity = 20
 		}
 
 		fascism = {
 			popularity = 60
 		}
-		
+
 		communism = {
 			popularity = 20
 			banned = yes #default is no
 		}
 	}
-	
+
 	ruling_party = fascism
 	last_election = "1933.3.5"
 	election_frequency = 48
@@ -168,7 +168,7 @@ create_import = {
 	add_named_threat = { threat = 40 name = 1939_bookmark_threat }
 
 	add_political_power = 1197
-	
+
 	#adding ministers
 	add_ideas = {
 		henschel
@@ -182,7 +182,7 @@ create_import = {
 		war_economy
 		extensive_conscription
 	}
-	
+
 	oob = "GER_1939"
 	puppet = SLO
 	give_military_access = SLO
@@ -204,7 +204,7 @@ create_import = {
 	every_country = {
 		limit = {
 			NOT = { tag = GER }
-			has_government = fascism 
+			has_government = fascism
 		}
 		add_opinion_modifier = { target = GER modifier = MR_pact_fascists }
 	}
@@ -224,7 +224,7 @@ create_import = {
 		add_opinion_modifier = { target = GER modifier = sov_ger_treaty_trade }
 	}
 	#Soviet treaty end
-	
+
 	unlock_national_focus = GER_rhineland
 	unlock_national_focus = GER_anschluss
 	unlock_national_focus = GER_demand_sudetenland
@@ -240,11 +240,11 @@ create_import = {
 	complete_national_focus = GER_industrial_effort
 
 	#BUILDINGS
-	
+
 
 	set_technology = {
-		improved_light_tank = 1 
-		basic_medium_tank = 1 
+		improved_light_tank = 1
+		basic_medium_tank = 1
 		CAS2 = 1
 		heavy_fighter1 = 1
 		interwar_artillery = 1
@@ -269,7 +269,7 @@ create_import = {
 		unrestricted_submarine_warfare = 1
 		raider_patrols = 1
 		#air
-		formation_flying = 1		
+		formation_flying = 1
 		dive_bombing = 1
 		direct_ground_support = 1
 
@@ -303,20 +303,20 @@ create_import = {
 set_politics = {
 
 	parties = {
-		conservativ = { 
+		conservativ = {
 			popularity = 20
 		}
 
 		fascism = {
 			popularity = 60
 		}
-		
+
 		communism = {
 			popularity = 20
 			banned = yes #default is no
 		}
 	}
-	
+
 	ruling_party = fascism
 	last_election = "1933.3.5"
 	election_frequency = 48
@@ -341,17 +341,17 @@ add_ideas = {
 set_politics = {
 
 	parties = {
-		conservativ = { 
+		conservativ = {
 			popularity = 38.5
 		}
-		socialdemocrat = { 
+		socialdemocrat = {
 			popularity = 38.5
 		}
 
 		progressive = {
 			popularity = 9
 		}
-		
+
 		liberal = {
 			popularity = 7
 		}
@@ -376,6 +376,24 @@ ruling_party = socialdemocrat
 }
 add_ideas = {
 }
+	create_country_leader = {
+		name = "Gerhard Schröder"
+		desc = "POLITICS_KONRAD_ADENAUER_DESC"
+		picture = "Portrait_Germany_Gerhard_Schröder.dds"
+		expire = "1965.1.1"
+		ideology = socialdemocrat
+		traits = {
+		}
+	}
+	create_country_leader = {
+		name = "Guido Westerwelle"
+		desc = "POLITICS_KONRAD_ADENAUER_DESC"
+		picture = "Portrait_Germany_Guido_Westerwelle.dds"
+		expire = "1965.1.1"
+		ideology = liberal
+		traits = {
+		}
+}
 create_country_leader = {
 	name = "Edmund Stoiber"
 	desc = "POLITICS_KONRAD_ADENAUER_DESC"
@@ -384,35 +402,10 @@ create_country_leader = {
 	ideology = conservativ
 	traits = {
 	}
-}
-create_country_leader = {
-	name = "Gerhard Schröder"
-	desc = "POLITICS_KONRAD_ADENAUER_DESC"
-	picture = "Portrait_Germany_Gerhard_Schröder.dds"
-	expire = "1965.1.1"
-	ideology = socialdemocrat
-	traits = {
-	}
-}
-create_country_leader = {
-	name = "Guido Westerwelle"
-	desc = "POLITICS_KONRAD_ADENAUER_DESC"
-	picture = "Portrait_Germany_Guido_Westerwelle.dds"
-	expire = "1965.1.1"
-	ideology = liberal
-	traits = {
-	}
-}
-create_corps_commander = {
-	name = "Werner Frees"
-	picture = "Portrait_Germany_Werner_Frees.dds"
-	traits = { panzer_leader }
-	skill = 4
 
 }
+
 }
-
-
 
 
 create_country_leader = {
@@ -705,6 +698,13 @@ create_corps_commander = {
 	traits = { winter_specialist fortress_buster }
 	skill = 3
 	id = 34
+}
+create_corps_commander = {
+	name = "Werner Frees"
+	picture = "Portrait_Germany_Werner_Frees.dds"
+	traits = { panzer_leader }
+	skill = 4
+	id = 35
 }
 
 create_navy_leader = {

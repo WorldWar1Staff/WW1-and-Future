@@ -1,4 +1,4 @@
-﻿capital = 126 #asd
+﻿capital = 126
 oob = "ENG_1913"
 
 set_research_slots = 0
