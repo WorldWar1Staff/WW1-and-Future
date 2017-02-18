@@ -1,6 +1,6 @@
 ﻿capital = 6
 
-oob = "GER_1913"
+oob = "BEL_1913"
 
 set_research_slots = 1
 #Starting tech
@@ -11,19 +11,19 @@ set_technology = {
 	early_destroyer = 1
 	early_light_cruiser = 1
 	early_heavy_cruiser = 1
-	
-	
-	
+	early_battlecruiser = 1
+	early_battleship = 1
+	early_submarine = 1
 }
 set_politics = {
 
 	parties = {
 		
 		monarchy = { 
-			popularity = 75
+			popularity = 65
 		}
 		conservativ = { 
-			popularity = 15
+			popularity = 25
 		}
 
 		nationalism = {
@@ -35,12 +35,12 @@ set_politics = {
 		
 		socialdemocrat = {
 			popularity = 5
-			
+			banned = yes #default is no
 		}
 	}
 	
 	ruling_party = monarchy
-	last_election = "1909.3.5"
+	last_election = "1989.3.5"
 	election_frequency = 48
 	elections_allowed = no
 
@@ -48,6 +48,8 @@ set_politics = {
 
 
 add_ideas = {
+belgium_emmanuel
+extensive_conscription
 	}
 
 
@@ -56,9 +58,8 @@ add_ideas = {
 
 
 
-set_convoys = 40
+set_convoys = 45
 set_national_unity = 0.6
-
 
 
 
@@ -76,8 +77,29 @@ set_technology = {
 	tech_engineers = 1
 	motorised_infantry = 1
 	early_fighter = 1
-	trench_warfare = 1
+			trench_warfare = 1
 
+}
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 83
+		}
+
+		fascism = {
+			popularity = 11
+		}
+		
+		communism = {
+			popularity = 6
+		}
+	}
+	
+	ruling_party = democratic
+	last_election = "1932.11.27"
+	election_frequency = 48
+	elections_allowed = yes
 }
 }
 
@@ -139,27 +161,7 @@ set_technology = {
 }
 
 
-set_politics = {
 
-	parties = {
-		democratic = { 
-			popularity = 83
-		}
-
-		fascism = {
-			popularity = 11
-		}
-		
-		communism = {
-			popularity = 6
-		}
-	}
-	
-	ruling_party = democratic
-	last_election = "1932.11.27"
-	election_frequency = 48
-	elections_allowed = yes
-}
 
 1939.1.1 = {
 	set_politics = {
@@ -221,15 +223,16 @@ create_country_leader = {
 	}
 }
 create_country_leader = {
-	name = "Albert I."
+	name = "Albert I"
 	desc = "POLITICS_ALBERT_I_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
+	picture = "gfx/leaders/BEL/Albert_I_Koning_der_Belgen.dds"
 	expire = "1934.1.1"
-	ideology = monarchy
+	ideology = kaiserreich
 	traits = {
-		#
+		kaiser
 	}
 }
+
 
 create_corps_commander = {
 	name = "M.C.L. Keyaerts"

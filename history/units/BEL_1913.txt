@@ -5,12 +5,15 @@
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }  
@@ -22,13 +25,19 @@ division_template = {
 	regiments = {
 		cavalry = { x = 0 y = 0 }
 		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
 		cavalry = { x = 1 y = 0 }
 		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+		cavalry = { x = 1 y = 3 }
 		cavalry = { x = 2 y = 0 }
 		cavalry = { x = 2 y = 1 }
+		cavalry = { x = 2 y = 2 }
+		cavalry = { x = 2 y = 3 }
 	}
 	support = {
-		recon = { x = 0 y = 0 }      	# Actually, 2x bicycle cav bns
+		      	
 		engineer = { x = 0 y = 1 }   
 	}
 }
@@ -37,9 +46,8 @@ division_template = {
 										# Note: motorized cavalry. Most sources have them truck-equipped.
 	regiments = {
 		motorized = { x = 0 y = 0 }
-		motorized = { x = 0 y = 1 }
 		motorized = { x = 1 y = 0 }
-		motorized = { x = 1 y = 1 }
+		
 	}
 }
 division_template = {
@@ -78,6 +86,39 @@ units = {
 		start_equipment_factor = 0.5
 
 	}
+	division= {	
+		name = "7ème Division d'Infanterie"
+		location = 13068  # Leuven
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "8ème Division d'Infanterie"
+		location = 13068  # Leuven
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "16ème Division d'Infanterie"
+		location = 13068  # Leuven
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
+division= {	
+		name = "17ème Division d'Infanterie"
+		location = 13068  # Leuven
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
+
 
 	# III Corps d'Armée
 	division= {	
@@ -96,10 +137,66 @@ units = {
 		start_equipment_factor = 0.5
 
 	}
+	division= {	
+		name = "14ème Division d'Infanterie"
+		location = 11519  # Liege
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "15ème Division d'Infanterie"
+		location = 11519  # Liege
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
 
 	# IV Corps d'Armée
 	division= {	
 		name = "5ème Division d'Infanterie"
+		location = 516  #Brussels
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "9ème Division d'Infanterie"
+		location = 516  #Brussels
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
+division= {	
+		name = "10ème Division d'Infanterie"
+		location = 516  #Brussels
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
+division= {	
+		name = "11ème Division d'Infanterie"
+		location = 516  #Brussels
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
+division= {	
+		name = "12ème Division d'Infanterie"
+		location = 516  #Brussels
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
+division= {	
+		name = "13ème Division d'Infanterie"
 		location = 516  #Brussels
 		division_template = "Division d'Infanterie"
 		start_experience_factor = 0.3
@@ -125,13 +222,38 @@ units = {
 
 	}
 	division= {	
-		name = "Brigade de Cavalerie Motorisée"
+		name = "3ème Division de Cavalerie"
 		location = 13068  # Leuven
-		division_template = "Cavalerie Motorisée"
-		start_experience_factor = 0.3
+		division_template = "Division de Cavalerie"
+		start_experience_factor = 0.2
 		start_equipment_factor = 0.5
 
 	}
+	division= {	
+		name = "4ème Division de Cavalerie"
+		location = 13068  # Leuven
+		division_template = "Division de Cavalerie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "5ème Division de Cavalerie"
+		location = 13068  # Leuven
+		division_template = "Division de Cavalerie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "6ème Division de Cavalerie"
+		location = 13068  # Leuven
+		division_template = "Division de Cavalerie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+
 
 	# Groupement K
 	division= {	
@@ -152,7 +274,34 @@ units = {
 
 	### Belgian Congo ###
 	division= {	
-		name = "Force Publique du Congo Belge"
+		name = "1 Force Publique du Congo Belge"
+		location = 10968  # Leopoldville
+		division_template = "Division Coloniale"
+		force_equipment_variants = { infantry_equipment_0 = { owner = "BEL" } }
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+division= {	
+		name = "2 Force Publique du Congo Belge"
+		location = 10968  # Leopoldville
+		division_template = "Division Coloniale"
+		force_equipment_variants = { infantry_equipment_0 = { owner = "BEL" } }
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+division= {	
+		name = "3 Force Publique du Congo Belge"
+		location = 10968  # Leopoldville
+		division_template = "Division Coloniale"
+		force_equipment_variants = { infantry_equipment_0 = { owner = "BEL" } }
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+division= {	
+		name = "4 Force Publique du Congo Belge"
 		location = 10968  # Leopoldville
 		division_template = "Division Coloniale"
 		force_equipment_variants = { infantry_equipment_0 = { owner = "BEL" } }
@@ -162,18 +311,7 @@ units = {
 	}
 }
 
-air_wings = {
-	### Aéronautique Militaire Belge -- Brussels (Nivelle)
-	6 = {
-		# 2e Régiment d'Aéronautique 
-		# Consisted of 50 operational Gladiator Is, Hurricanes, CR.42s in 1940
-		# Only had Fairey Fox recon/l bombers that were also used as fighters in 1936, along with trainers
-		fighter_equipment_0 =  {
-			owner = "BEL" 
-			amount = 20
-		}
-	}
-}
+
 
 ### Starting Production ###
 instant_effect = {
