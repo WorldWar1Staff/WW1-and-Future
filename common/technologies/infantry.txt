@@ -31,6 +31,7 @@ technologies = {
 
 		enable_equipments = {
 			infantry_equipment_0
+			support_weapons_tech
 		}
 
 		enable_subunits = {
@@ -104,12 +105,50 @@ technologies = {
 		}
 
 		path = {
+			leads_to_tech = infantry_weapons3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 1913
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @1938 }
+		}
+
+		categories = {
+			infantry_weapons
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	infantry_weapons3 = {
+
+		category_light_infantry = {
+			soft_attack = 0.05
+		}
+
+		cavalry = {
+			soft_attack = 0.05
+		}
+
+		motorized = {
+			soft_attack = 0.05
+		}
+
+		mechanized = {
+			soft_attack = 0.05
+		}
+
+		path = {
 			leads_to_tech = improved_infantry_weapons
 			research_cost_coeff = 1
 		}
 
 		research_cost = 1.5
-		start_year = 1938
+		start_year = 19312
 		folder = {
 			name = infantry_folder
 			position = { x = 0 y = @1938 }
@@ -124,18 +163,19 @@ technologies = {
 		}
 	}
 
+
 	improved_infantry_weapons = {
 
 		enable_equipments = {
-			infantry_equipment_2
+			infantry_equipment_3
 		}
 
 		path = {
-			leads_to_tech = improved_infantry_weapons_2
+			leads_to_tech = improved_infantry_weapons2
 			research_cost_coeff = 1
 		}
 		path = {
-			leads_to_tech = infantry_at
+			leads_to_tech = infantry_weapons_
 			research_cost_coeff = 1
 		}
 
@@ -154,7 +194,7 @@ technologies = {
 			factor = 1
 		}
 	}
-	improved_infantry_weapons_2 = {
+	improved_infantry_weapons2 = {
 
 		category_light_infantry = {
 			soft_attack = 0.05
@@ -182,6 +222,36 @@ technologies = {
 		folder = {
 			name = infantry_folder
 			position = { x = 0 y = @1940 }
+		}
+
+		categories = {
+			infantry_weapons
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	improved_infantry_weapons = {
+
+		enable_equipments = {
+			infantry_equipment_2
+		}
+
+		path = {
+			leads_to_tech = advanced_infantry_weapons
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = infantry_at
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1939
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @1939 }
 		}
 
 		categories = {
@@ -602,6 +672,34 @@ technologies = {
 
 		categories = {
 			night_vision
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	support_weapons_tech = {
+
+		infantry = {
+			defense = 0.01
+			breakthrough = 0.01
+		}
+		
+
+		path = {
+			leads_to_tech = support_weapons
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 1900
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @1800s }
+		}
+
+		categories = {
+			infantry_weapons
 		}
 
 		ai_will_do = {
