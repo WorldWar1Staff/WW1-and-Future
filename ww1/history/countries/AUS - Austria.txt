@@ -1,0 +1,165 @@
+﻿capital = 4
+oob = "AUS_1913"
+
+set_research_slots = 0
+#Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+set_politics = {
+
+	parties = {
+		
+		monarchy = { 
+			popularity = 65
+		}
+		democratic = { 
+			popularity = 15
+		}
+
+		nationalism = {
+			popularity = 5
+		}
+		fascism = {
+			popularity = 5
+		}
+		
+		communism = {
+			popularity = 10
+			banned = yes #default is no
+		}
+	}
+	
+	ruling_party = monarchy
+	last_election = "1967.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = HUN
+		autonomous_state = autonomy_integrated_puppet
+	}
+	
+	else = {
+		set_autonomy = {
+			target = HUN
+			autonomous_state = autonomy_puppet
+		}
+		
+	}
+}
+add_ideas = {
+	}
+
+set_national_unity = 0.50
+set_convoys = 50
+
+
+
+1936.1.1 = {
+oob = "AUS_1936"
+
+set_research_slots = 3
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_engineers = 1
+	tech_support = 1		
+	tech_mountaineers = 1
+	early_fighter = 1
+}
+
+set_politics = {
+
+	parties = {
+		neutrality = { 
+			popularity = 48
+		}
+
+		fascism = {
+			popularity = 50
+		}
+
+		democratic = {
+			popularity = 1
+		}
+		
+		communism = {
+			popularity = 1
+		}
+	}
+	
+	ruling_party = neutrality
+	last_election = "1930.11.9"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_national_unity = 0.7
+}
+create_country_leader = {
+	name = "Franz Joseph I"
+	desc = "POLITICS_FRANZ_JOSEPH_I_DESC"
+	picture = "Portrait_Austria_Franz_Joseph_I.dds"
+	expire = "1965.1.1"
+	ideology = kaiserreich
+	traits = { kaiser
+		
+	}
+}
+create_country_leader = {
+	name = "Kurt Schuschnigg"
+	desc = "POLITICS_KURT_SCHUSCHNIGG_DESC"
+	picture = "Portrait_Austria_Kurt_Schuschnigg.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Karl Renner"
+	desc = "POLITICS_KARL_RENNER_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+	expire = "1965.1.1"
+	ideology = socialism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Arthur Seyss-Inquart"
+	desc = "POLITICS_ARTHUR_SEYSS_INQUART_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
+	expire = "1965.1.1"
+	ideology = nazism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Alfred Klahr"
+	desc = "POLITICS_ALFRED_KLAHR_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_corps_commander = {
+	name = "Karl Eglseer"
+	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+	traits = { trait_mountaineer trickster }
+	skill = 3
+}

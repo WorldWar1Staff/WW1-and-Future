@@ -1,0 +1,17 @@
+# Touggourt (central-east Algeria)
+state={
+	id=846
+	name="STATE_846"
+	provinces={
+		4970 5053 7149 8061 8077 9943 10059 12888 
+	}
+	history={
+		owner = FRA
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	manpower=411486
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}

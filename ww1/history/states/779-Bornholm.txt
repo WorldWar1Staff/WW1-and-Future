@@ -1,0 +1,21 @@
+state={
+	id=779
+	name="STATE_779"
+	state_category = town
+	provinces={
+		6361 
+	}
+	manpower=10000
+	buildings_max_level_factor=1
+	history=
+	{
+		owner = DEN
+		buildings = {
+			infrastructure = 3
+			6361 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = DEN
+	}
+}

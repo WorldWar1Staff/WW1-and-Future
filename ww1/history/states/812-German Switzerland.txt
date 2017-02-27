@@ -1,0 +1,30 @@
+# German Switzerland
+state={
+	id=812
+	name="STATE_812"
+	provinces={
+		636 661 663 9587 9618 9620 9638 11601 11604 11623 
+	}
+	resources={
+		aluminium=26.000
+	}
+	history={
+		owner = SWI
+		victory_points = {
+			9620 15 
+		}
+		victory_points = {
+			663 10 
+		}
+		buildings = {
+			infrastructure = 6
+			arms_factory = 2
+			industrial_complex = 5
+			air_base = 4
+		}
+		add_core_of = SWI
+	}
+	manpower=2211689
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

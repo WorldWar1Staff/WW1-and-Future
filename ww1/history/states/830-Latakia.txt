@@ -1,0 +1,18 @@
+# Latakia (coastal part of former Aleppo)
+state={
+	id=830
+	name="STATE_830"
+	provinces={
+		1088 10087 12029 
+	}
+	history={
+		owner = TUR
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = SYR
+	}
+	manpower=325594
+	buildings_max_level_factor=1.000
+	state_category=town
+}

@@ -1,0 +1,35 @@
+# Ulaanbaatar
+state={
+	id=330
+	name="STATE_330"
+	resources={
+		steel=2.000
+		chromium=3.000
+	}
+
+	history={
+		owner = MON
+		victory_points = {
+			4801 5 
+		}
+		victory_points = {
+			7799 1 
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 3
+			air_base = 1
+
+		}
+		add_core_of = MON
+
+	}
+
+	provinces={
+		1725 1728 1791 1798 1834 1859 4697 4729 4732 4786 4801 4858 4862 4882 7676 7717 7752 7806 7864 7881 10554 10558 10623 10632 10689 10704 12539 12541 12579 12605 12614 12649 12669 12675 12686 
+	}
+	manpower=572000
+	buildings_max_level_factor=1.000
+	state_category=town
+}

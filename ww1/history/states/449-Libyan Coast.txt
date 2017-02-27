@@ -1,0 +1,18 @@
+# Al Khums (Libya)
+state={
+	id=449
+	name="STATE_449"
+	history={
+		owner = ITA
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = LBA
+	}
+	provinces={
+		4176 4194 7066 7209 12009 
+	}
+	manpower=20431
+	buildings_max_level_factor=1.000
+	state_category=enclave
+}

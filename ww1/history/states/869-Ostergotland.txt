@@ -1,0 +1,29 @@
+# Östergötland
+state={
+	id=869
+	name="STATE_869"
+	resources={
+		steel=10.000
+	}
+	provinces={
+		6311 6397 9308 9393 9406 11289 11380 11390 13095 
+	}
+	history={
+		owner = SWE
+		victory_points = {
+			11380 1 
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 2
+			air_base = 2
+			11380 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = SWE
+	}
+	manpower=518593
+	buildings_max_level_factor=1.000
+	state_category=town
+}

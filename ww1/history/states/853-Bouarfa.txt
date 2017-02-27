@@ -1,0 +1,17 @@
+# Bouarfa (Morocco)
+state={
+	id=853
+	name="STATE_853"
+	provinces={
+		1152 4154 4933 7958 
+	}
+	history={
+		owner = FRA
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}

@@ -1,0 +1,18 @@
+# Az Zawiyah (west of Tripoli, Libya)
+state={
+	id=837
+	name="STATE_837"
+	provinces={
+		1189 12039 
+	}
+	history={
+		owner = ITA
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = LBA
+	}
+	manpower=169136
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

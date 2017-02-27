@@ -1,0 +1,22 @@
+# West Misatra (Libya)
+state={
+	id=662
+	name="STATE_662"
+
+	history={
+		owner = ITA
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = LBA
+
+	}
+
+	provinces={
+		1041 1118 4047 7136 9980 
+	}
+	manpower=13213
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}

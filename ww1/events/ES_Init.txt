@@ -1,0 +1,250 @@
+﻿# Expanded States initialisation event
+add_namespace = es
+
+country_event = {
+	id = es.1
+	title = es.1.t
+	desc = es.1.d
+	fire_only_once = yes
+	hidden = yes
+	mean_time_to_happen = { days = 1 }
+#	is_triggered_only = yes
+	trigger = {
+	#	always = yes
+		tag = ENG
+	#	OR = {
+	#		is_ai = no
+	#		is_ai = yes
+	#	}
+	}
+	immediate = {
+		# German demilitarized zone
+		51  = { set_state_flag = es_ger_demil } # rhineland
+		42  = { set_state_flag = es_ger_demil } # moselland
+		800 = { set_state_flag = es_ger_demil } # saar
+		# Austrian-German area
+		4   = { set_state_flag = es_aus_german } # lower austria
+		152 = { set_state_flag = es_aus_german } # upper austria
+		153 = { set_state_flag = es_aus_german } # tyrol
+		39  = { set_state_flag = es_aus_german } # south tyrol
+		# German claims on Poland
+		85  = { set_state_flag = es_pol_gerclaim } # danzig
+		86  = { set_state_flag = es_pol_gerclaim } # poznan
+		785 = { set_state_flag = es_pol_gerclaim } # gdynia
+		# Sudetenland
+		69  = { set_state_flag = es_cze_german } # western sudetenland
+		74  = { set_state_flag = es_cze_german } # eastern sudetenland
+		801 = { set_state_flag = es_cze_german } # southern sudetenland
+		# Czech regions
+		9   = { set_state_flag = es_czech } # bohemia
+		75  = { set_state_flag = es_czech } # moravia
+		421 = { set_state_flag = es_czech } # 
+		424 = { set_state_flag = es_czech } # 
+		801 = { set_state_flag = es_czech } # 
+		72  = { set_state_flag = es_czech } # zaolzie
+		# Slovak regions
+		70  = { set_state_flag = es_slovak } # western slovakia
+		71  = { set_state_flag = es_slovak } # eastern slovakia
+		73  = { set_state_flag = es_slovak } # carpathian ruthenia
+		664 = { set_state_flag = es_slovak } # southern slovakia
+		# Hungarian regions
+		43  = { set_state_flag = es_hun_core } # northern hungary
+		154 = { set_state_flag = es_hun_core } # alfold
+		155 = { set_state_flag = es_hun_core } # transdanubia
+		664 = { set_state_flag = es_cze_hungarian } # southern slovakia (cze/slo)
+		73  = { set_state_flag = es_cze_hungarian } # carpathian ruthenia (cze/slo)
+		76  = { set_state_flag = es_rom_hungarian } # north transylvania (rom)
+		84  = { set_state_flag = es_rom_hungarian } # transylvania (rom)
+		83  = { set_state_flag = es_rom_hungarian } # crisana (rom)
+		45  = { set_state_flag = es_yug_hungarian } # backa (yug)
+		# Polish regions
+		72  = { set_state_flag = es_cze_polish } # zaolzie
+		# Slovene regions
+		102 = { set_state_flag = es_slovene } # slovenia
+		# Croatian regions
+		109 = { set_state_flag = es_croatian } # zagreb
+		820 = { set_state_flag = es_croatian } # rijeka
+		736 = { set_state_flag = es_croatian } # istria
+		103 = { set_state_flag = es_croatian } # dalmatia
+		163 = { set_state_flag = es_croatian } # zara
+		819 = { set_state_flag = es_croatian } # slavonia
+		821 = { set_state_flag = es_croatian } # syrmia
+		# Bosnian regions
+		104 = { set_state_flag = es_bosnian } # sarajevo
+		818 = { set_state_flag = es_bosnian } # mostar
+		816 = { set_state_flag = es_bos_serbian } # banja-luka
+		817 = { set_state_flag = es_bos_serbian } # bijeljina
+		# Serbian regions
+		825 = { set_state_flag = es_serbian } # belgrade
+		108 = { set_state_flag = es_serbian } # nisava
+		107 = { set_state_flag = es_serbian } # raska
+		822 = { set_state_flag = es_serbian } # banat
+		821 = { set_state_flag = es_serbian } # syrmia
+		45  = { set_state_flag = es_serbian } # backa
+		# Albanian regions
+		44  = { set_state_flag = es_albanian } # tirane
+		826 = { set_state_flag = es_albanian } # fier
+		750 = { set_state_flag = es_albanian } # kosovo
+		# Bulgarian regions
+		48  = { set_state_flag = es_bulgarian } # sofia
+		212 = { set_state_flag = es_bulgarian } # plovdiv
+		211 = { set_state_flag = es_bulgarian } # burgas
+		106 = { set_state_flag = es_bulgarian } # macedonia (yug/ser/mac)
+		184 = { set_state_flag = es_bulgarian } # thrace (gre)
+		77  = { set_state_flag = es_bulgarian } # dobrudja (rom)
+		106 = { set_state_flag = es_yug_bulgarian } # 
+		184 = { set_state_flag = es_gre_bulgarian } # 
+		77  = { set_state_flag = es_rom_bulgarian } # 
+		# Soviet regions
+		78  = { set_state_flag = es_moldovan } # bessarabia (rom/sov/mol)
+		80  = { set_state_flag = es_ukrainian } # bucovina (rom/sov)
+		73  = { set_state_flag = es_ukrainian } # carpathian ruthenia (cze/hun/sov/ukr)
+		89  = { set_state_flag = es_ukrainian } # stanislawow (pol)
+		91  = { set_state_flag = es_ukrainian } # lwow (pol)
+		93  = { set_state_flag = es_ukrainian } # wolyn (pol)
+		94  = { set_state_flag = es_belorussian } # polesie
+		95  = { set_state_flag = es_belorussian } # nowogrodek
+		96  = { set_state_flag = es_belorussian } # lesser-wilno
+		146 = { set_state_flag = es_fin_rusclaim } # karjala
+		147 = { set_state_flag = es_fin_rusclaim } # salla
+		722 = { set_state_flag = es_fin_rusclaim } # petsamo
+		537 = { set_state_flag = es_jap_rusclaim } # south sakhalin
+		555 = { set_state_flag = es_jap_rusclaim } # kuril islands
+		# UK countries
+		122 = { set_state_flag = es_wales } # southern wales
+		861 = { set_state_flag = es_wales } # northern wales
+		119 = { set_state_flag = es_ireland } # northern ireland
+		113 = { set_state_flag = es_ireland } # leinster
+		134 = { set_state_flag = es_ireland } # connaught
+		135 = { set_state_flag = es_ireland } # munster
+		126 = { set_state_flag = es_england } # greater london
+		123 = { set_state_flag = es_england } # 
+		860 = { set_state_flag = es_england } # 
+		127 = { set_state_flag = es_england } # 
+		859 = { set_state_flag = es_england } # 
+		338 = { set_state_flag = es_england } # 
+		125 = { set_state_flag = es_england } # 
+		129 = { set_state_flag = es_england } # 
+		128 = { set_state_flag = es_england } # 
+		130 = { set_state_flag = es_england } # 
+		132 = { set_state_flag = es_england } # 
+		131 = { set_state_flag = es_england } # 
+		858 = { set_state_flag = es_england } # 
+		121 = { set_state_flag = es_scotland } # 
+		133 = { set_state_flag = es_scotland } # 
+		862 = { set_state_flag = es_scotland } # 
+		136 = { set_state_flag = es_scotland } # 
+		863 = { set_state_flag = es_scotland } # 
+		120 = { set_state_flag = es_scotland } # 
+		743 = { set_state_flag = es_scotland } # 
+		# Syria
+		830 = { set_state_flag = es_syria } # 
+		677 = { set_state_flag = es_syria } # 
+		831 = { set_state_flag = es_syria } # 
+		829 = { set_state_flag = es_syria } # 
+		680 = { set_state_flag = es_syria } # 
+		832 = { set_state_flag = es_syria } # 
+		554 = { set_state_flag = es_syria } # 
+		833 = { set_state_flag = es_syria } # 
+		# Jordan
+		834 = { set_state_flag = es_jordan } # 
+		455 = { set_state_flag = es_jordan } # 
+		835 = { set_state_flag = es_jordan } # 
+		# Egypt
+		453 = { set_state_flag = es_egypt } # 
+		876 = { set_state_flag = es_egypt } # 
+		446 = { set_state_flag = es_egypt } # 
+		447 = { set_state_flag = es_egypt } # 
+		452 = { set_state_flag = es_egypt } # 
+		875 = { set_state_flag = es_egypt } # 
+		874 = { set_state_flag = es_egypt } # 
+		457 = { set_state_flag = es_egypt } # 
+		873 = { set_state_flag = es_egypt } # 
+		456 = { set_state_flag = es_egypt } # 
+		554 = { set_state_flag = es_egypt } # 
+		# Libya
+		451 = { set_state_flag = es_libya } # 
+		840 = { set_state_flag = es_libya } # 
+		273 = { set_state_flag = es_libya } # 
+		836 = { set_state_flag = es_libya } # 
+		663 = { set_state_flag = es_libya } # 
+		450 = { set_state_flag = es_libya } # 
+		841 = { set_state_flag = es_libya } # 
+		838 = { set_state_flag = es_libya } # 
+		839 = { set_state_flag = es_libya } # 
+		662 = { set_state_flag = es_libya } # 
+		449 = { set_state_flag = es_libya } # 
+		661 = { set_state_flag = es_libya } # 
+		448 = { set_state_flag = es_libya } # 
+		837 = { set_state_flag = es_libya } # 
+		# Tunisia
+		458 = { set_state_flag = es_tunisia } # 
+		843 = { set_state_flag = es_tunisia } # 
+		842 = { set_state_flag = es_tunisia } # 
+		665 = { set_state_flag = es_tunisia } # 
+		844 = { set_state_flag = es_tunisia } # 
+		# Algeria
+		459 = { set_state_flag = es_algeria } # 
+		460 = { set_state_flag = es_algeria } # 
+		845 = { set_state_flag = es_algeria } # 
+		846 = { set_state_flag = es_algeria } # 
+		513 = { set_state_flag = es_algeria } # 
+		514 = { set_state_flag = es_algeria } # 
+		847 = { set_state_flag = es_algeria } # 
+		# Morocco
+		461 = { set_state_flag = es_fra_morocco } # 
+		852 = { set_state_flag = es_fra_morocco } # 
+		848 = { set_state_flag = es_fra_morocco } # 
+		851 = { set_state_flag = es_fra_morocco } # 
+		853 = { set_state_flag = es_fra_morocco } # 
+		849 = { set_state_flag = es_fra_morocco } # 
+		462 = { set_state_flag = es_fra_morocco } # 
+		850 = { set_state_flag = es_fra_morocco } # 
+		290 = { set_state_flag = es_spa_morocco } # 
+		777 = { set_state_flag = es_spa_morocco } # 
+		699 = { set_state_flag = es_spa_morocco } # 
+		# South Africa (post namibian independence)
+		681 = { set_state_flag = es_saf } # 
+		811 = { set_state_flag = es_saf } # 
+		810 = { set_state_flag = es_saf } # 
+		719 = { set_state_flag = es_saf } # 
+		809 = { set_state_flag = es_saf } # 
+		275 = { set_state_flag = es_saf } # 
+		# Korea
+		525 = { set_state_flag = es_korean } # south korea
+		527 = { set_state_flag = es_korean } # north korea
+		786 = { set_state_flag = es_korean } # jeju
+		# Manchuria/Manchukuo (excluding Dalian)
+		328 = { set_state_flag = es_manchu } # 
+		717 = { set_state_flag = es_manchu } # 
+		714 = { set_state_flag = es_manchu } # 
+		715 = { set_state_flag = es_manchu } # 
+		716 = { set_state_flag = es_manchu } # 
+		610 = { set_state_flag = es_manchu } # 
+		# Papua New Guinea
+		523 = { set_state_flag = es_png } # 
+		753 = { set_state_flag = es_png } # 
+		737 = { set_state_flag = es_png } # 
+		# Indonesia
+		669 = { set_state_flag = es_indonesia } # 
+		738 = { set_state_flag = es_indonesia } # 
+		668 = { set_state_flag = es_indonesia } # 
+		667 = { set_state_flag = es_indonesia } # 
+		673 = { set_state_flag = es_indonesia } # 
+		335 = { set_state_flag = es_indonesia } # 
+		334 = { set_state_flag = es_indonesia } # 
+		672 = { set_state_flag = es_indonesia } # 
+		796 = { set_state_flag = es_indonesia } # 
+		# Malaysia
+		336 = { set_state_flag = es_malaysia } # 
+		333 = { set_state_flag = es_malaysia } # 
+		# Borneo
+		334 = { set_state_flag = es_borneo } # 
+		333 = { set_state_flag = es_borneo } # 
+		795 = { set_state_flag = es_borneo } # 
+		# = { set_state_flag = es_ } # 
+	}
+	option = {
+		name = es.1.a
+	}
+}

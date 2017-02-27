@@ -1,0 +1,18 @@
+# Choibalsan
+state={
+	id=761
+	name="STATE_761"
+	history={
+		owner = MON
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = MON
+	}
+	provinces={
+		1723 1743 1787 1853 1868 4792 4856 4873 7749 7823 7885 10575 10578 10647 10708 12533 12557 12612 12629 12665 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

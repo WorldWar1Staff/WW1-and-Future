@@ -1,0 +1,1045 @@
+﻿###########################
+# German Events (Expanded States)
+###########################
+
+add_namespace = germany_es
+
+# Anschluss success - Add cores to German-Austrian states unowned by Austria [FROM:?,ROOT:owner]
+country_event = {
+	id = germany_es.1
+	title = germany_es.1.t
+	desc = germany_es.1.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+#	mean_time_to_happen = { days = 0 }
+	hidden = yes
+	immediate = {
+		# this event is used to set the FROM to the owner
+		GER = { country_event = { id = germany_es.9 } }
+	}
+}
+
+# Germany Claims Memel [FROM:GER,ROOT:es_memel_owner]
+country_event = {
+	id = germany_es.2
+	title = germany_es.2.t
+	desc = germany_es.2.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = { # Accept demands
+		name = germany_es.2.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				AND = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+			}
+		}
+		GER = {
+			country_event = { days = 1 id = germany.22 }
+		}
+	}
+	option = { # Ask our faction leader
+		name = germany_es.2.b
+		trigger = {
+			AND = {
+				is_in_faction = yes
+				is_faction_leader = no
+			}
+		}
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				OR = {
+					is_in_faction = no
+					is_faction_leader = yes
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				is_in_faction_with = ROOT
+				is_faction_leader = yes
+			}
+			country_event = { days = 1 id = germany_es.3 }
+		}
+	}
+	option = { # Refuse
+		name = germany_es.2.c
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					is_in_faction_with = GER
+					AND = {
+						is_historical_focus_on = yes
+						ROOT = { tag = LIT }
+					}
+					AND = {
+						ROOT = { tag = SOV }
+						has_global_flag = sov_yes_pact
+					}
+				}
+			} 
+		}
+		effect_tooltip = {
+			GER = {
+				create_wargoal = {
+					type = take_state_focus
+					target = ROOT
+					generator = { 188 }
+				}
+				country_event = { days = 1 id = germany.23 }
+			}
+		}
+		hidden_effect = {
+			GER = {
+				country_event = { days = 1 id = germany.23 }
+			}
+		}
+	}
+}
+
+# Germany Claims Memel (Lithuania in faction, asking them) [FROM:es_memel_owner,ROOT:major_ally]
+country_event = {
+	id = germany_es.3
+	title = germany_es.3.t
+	desc = germany_es.3.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = { # Accept German demands
+		name = germany_es.3.a
+		ai_chance = {
+			factor = 90
+		}
+		GER = {
+			country_event = { days = 1 id = germany.22 }
+		}
+	}
+	option = { # Refuse
+		name = germany_es.3.b
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						is_historical_focus_on = yes
+						ROOT = { tag = LIT }
+					}
+					AND = {
+						ROOT = { tag = SOV }
+						has_global_flag = sov_yes_pact
+					}
+				}
+			} 
+		}
+		effect_tooltip = {
+			GER = {
+				create_wargoal = {
+					type = take_state_focus
+					target = FROM
+					generator = { 188 }
+				}
+				country_event = { days = 1 id = germany.23 }
+			}
+		}
+		hidden_effect = {
+			GER = {
+				country_event = { days = 1 id = germany.23 }
+			}
+		}		
+	}
+}
+
+# Sudetenland crisis - Add claims to Sudeten states unowned by Austria [FROM:?,ROOT:owner]
+country_event = {
+	id = germany_es.4
+	title = germany_es.4.t
+	desc = germany_es.4.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+#	mean_time_to_happen = { days = 0 }
+	hidden = yes
+	immediate = {
+		# this event sets FROM to the owner
+		GER = { country_event = { id = germany_es.5 } }
+	}
+}
+# Sudetenland crisis - Add claims to Sudeten states unowned by Austria [FROM:owner,ROOT:GER]
+country_event = {
+	id = germany_es.5
+	title = germany_es.5.t
+	desc = germany_es.5.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	# Claim the provinces
+	option = {
+		name = germany_es.5.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				NOT = { has_war_with = FROM }
+			}
+			modifier = {
+				factor = 2
+				has_war_with = FROM
+			}
+		}
+		FROM = { every_owned_state = {
+			limit = { has_state_flag = es_cze_german }
+			add_claim_by = GER
+		} }
+	}
+	# Dont claim the provinces
+	option = {
+		name = germany_es.5.b
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0.1
+				has_war_with = FROM
+			}
+		}
+	}
+}
+
+# Fate of Czechoslovakia - What to do with Carpathian Ruthenia [FROM:decider(GER/HUN),ROOT:decider(GER/HUN)]
+country_event = {
+	id = germany_es.6
+	title = germany_es.6.t
+	desc = germany_es.6.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {# To Germany
+		name = germany_es.6.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				GER = { NOT = { owns_state = 71 } } # Eastern slovakia, ie slovakia already exists. need to border it
+			}
+			modifier = {
+				factor = 3
+				GER = { owns_state = 154 } # Alfold, might have annexed hungary, so take it
+			}
+		}
+		GER = { transfer_state = 73 }
+	}
+	option = {# To Slovakia
+		name = germany_es.6.b
+		trigger = {
+			SLO = { exists = yes }
+		}
+		ai_chance = {
+			factor = 30
+		}
+		SLO = { transfer_state = 73 }
+	}
+	option = {# To Hungary
+		name = germany_es.6.c
+		trigger = {
+			HUN = { AND = {
+				exists = yes
+				owns_state = 154 # alfold
+			} }
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				ROM = { is_friend_or_potential_friend_of_GER = no } # not friendly
+			}
+			modifier = {
+				factor = 3
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 100
+				tag = HUN
+			}
+		}
+		HUN = { transfer_state = 73 }
+	}
+	option = {# To USSR
+		name = germany_es.6.e
+		trigger = {
+			SOV = { AND = {
+				exists = yes
+				owns_state = 89 # Stanislawow, ie taken east poland already
+			} }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					is_historical_focus_on = yes
+					SOV = { is_friend_or_potential_friend_of_GER = no } # not friendly
+					has_completed_focus = GER_ussr_war_goal # planning for war
+					has_completed_focus = GER_anti_soviet_pact # planning for war
+				}
+			}
+		}
+		SOV = { transfer_state = 73 }
+	}
+	option = {# To Ukraine
+		name = germany_es.6.e
+		trigger = {
+			UKR = { AND = {
+				exists = yes
+				owns_state = 89 # Stanislawow, ie taken east poland already
+			} }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					is_historical_focus_on = yes
+					UKR = { is_friend_or_potential_friend_of_GER = no } # not friendly
+					has_completed_focus = GER_ussr_war_goal # planning for war
+					has_completed_focus = GER_anti_soviet_pact # planning for war
+				}
+			}
+		}
+		UKR = { transfer_state = 73 }
+	}
+	option = {# To Poland
+		name = germany_es.6.f
+		trigger = {
+			POL = { AND = {
+				exists = yes
+				owns_state = 89 # Stanislawow, ie kept east poland still
+			} }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					is_historical_focus_on = yes
+					POL = { is_friend_or_potential_friend_of_GER = no } # not friendly
+					has_completed_focus = GER_mol_rib_pact # planning to take west poland anyway
+					has_completed_focus = GER_danzig_or_war # not friendly
+					POL = { has_completed_focus = POL_seek_accommodation_with_USSR } # they appeasing USSR
+				}
+			}
+		}
+		POL = { transfer_state = 73 }
+	}
+}
+
+# Fate of Czechoslovakia - What to do with Southern slovaka [FROM:decider(GER/HUN),ROOT:decider(GER/HUN)]
+country_event = {
+	id = germany_es.7
+	title = germany_es.7.t
+	desc = germany_es.7.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {# To Germany
+		name = germany_es.7.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				GER = { OR = {
+					NOT = { owns_state = 70 } # Western slovakia, ie annexed slovakia already. need to border it
+					NOT = { owns_state = 71 } # Eastern slovakia, ie annexed slovakia already. need to border it
+				} }
+			}
+			modifier = {
+				factor = 0
+				tag = HUN
+			}
+			modifier = {
+				factor = 3
+				GER = { OR = {
+					owns_state = 154 # Alfold, might have annexed hungary, so take it
+					owns_state = 155 # Transdanubia, might have annexed hungary, so take it
+				} }
+			}
+		}
+		GER = { transfer_state = 664 }
+	}
+	option = {# To Slovakia
+		name = germany_es.7.b
+		trigger = {
+			SLO = { exists = yes }
+		}
+		ai_chance = {
+			factor = 30
+		}
+		SLO = { transfer_state = 664 }
+	}
+	option = {# To Hungary
+		name = germany_es.7.c
+		trigger = {
+			HUN = { AND = {
+				exists = yes
+				OR = {
+					owns_state = 154 # alfold
+					owns_state = 155 # transdanubia
+				}
+			} }
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				HUN = { is_friend_or_potential_friend_of_GER = no } # not friendly
+			}
+			modifier = {
+				factor = 3
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 100
+				tag = HUN
+			}
+		}
+		HUN = { transfer_state = 664 }
+	}
+}
+
+# Fate of Czechoslovakia - What to do with Zaolzie [FROM:decider(GER/HUN),ROOT:decider(GER/HUN)]
+country_event = {
+	id = germany_es.8
+	title = germany_es.8.t
+	desc = germany_es.8.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {# To Germany
+		name = germany_es.8.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 3
+				GER = { owns_state = 88 } # Krakow, might have annexed west poland already, so take it
+			}
+		}
+		GER = { transfer_state = 72 }
+	}
+	option = {# To Slovakia
+		name = germany_es.8.b
+		trigger = {
+			SLO = { exists = yes }
+		}
+		ai_chance = {
+			factor = 30
+		}
+		SLO = { transfer_state = 72 }
+	}
+	option = {# To Poland
+		name = germany_es.8.c
+		trigger = {
+			POL = { AND = {
+				exists = yes
+				owns_state = 88 # krakow
+			} }
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				POL = { is_friend_or_potential_friend_of_GER = no } # not friendly
+			}
+			modifier = {
+				factor = 3
+				is_historical_focus_on = yes
+			}
+		}
+		POL = { transfer_state = 72 }
+	}
+}
+
+# Anschluss success - Add cores to German-Austrian states unowned by Austria [FROM:owner,ROOT:GER]
+country_event = {
+	id = germany_es.9
+	title = germany_es.9.t
+	desc = germany_es.9.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	# Core the provinces
+	option = {
+		name = germany_es.9.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		FROM = { every_owned_state = {
+			limit = { has_state_flag = es_aus_german }
+			add_core_of = GER
+		} }
+	}
+	# Dont core the provinces
+	option = {
+		ai_chance = {
+			factor = 10
+		}
+		name = germany_es.9.b
+	}
+}
+
+# Sudeten crisis - Who gets Zaolzie [FROM:GER,ROOT:ENG]
+country_event = {
+	id = germany_es.10
+	title = germany_es.10.t
+	desc = germany_es.10.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {# Czech keeps
+		name = germany_es.10.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				POL = { AND = {
+					exists = yes
+					owns_state = 88 # Krakow, bordering
+				} }
+				is_historical_focus_on = yes
+			}
+		}
+	}
+	option = {# Poland
+		name = germany_es.10.b
+		trigger = {
+			POL = { AND = {
+				exists = yes
+				owns_state = 88 # Krakow, bordering
+			} }
+		}
+		ai_chance = {
+			factor = 50
+		}
+		POL = { 
+			country_event = { hours = 6 id = germany.52 } # zaolzie
+		}
+	}
+	option = {# Germany
+		name = germany_es.10.c
+		ai_chance = {
+			factor = 0
+		}
+		GER = { 
+			country_event = { hours = 6 id = germany.52 } # zaolzie
+		}
+	}
+	option = {# Slovakia
+		name = germany_es.10.e
+		trigger = {
+			SLO = { AND = {
+				exists = yes
+				owns_state = 70 # West Slovakia, bordering
+			} }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				POL = { AND = {
+					exists = yes
+					owns_state = 88 # Krakow, bordering
+				} }
+				is_historical_focus_on = yes
+			}
+		}
+		SLO = {
+			country_event = { hours = 6 id = germany.52 } # zaolzie
+		}
+	}
+}
+
+# Danzig for Slovakia - German demands sending [FROM:GER.focus,ROOT:GER]
+country_event = {
+	id = germany_es.11
+	title = germany_es.11.t
+	desc = germany_es.11.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {# Just Danzig
+		name = germany_es.11.a
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		85 = { set_state_flag = es_dfs_gerdemands }
+		POL = { country_event = { id = germany_es.12 } }
+	}
+	option = {# Danzig and Gdynia
+		name = germany_es.11.b
+		trigger = {
+		#	POL = { owns_state = 85 }
+			POL = { owns_state = 785 }
+		}
+		ai_chance = {
+			factor = 30
+		}
+		85 = { set_state_flag = es_dfs_gerdemands }
+		785 = { set_state_flag = es_dfs_gerdemands }
+		POL = { country_event = { id = germany_es.13 } }
+	}
+	option = {# Danzig, Gdynia and Poznan
+		name = germany_es.11.c
+		trigger = {
+		#	POL = { owns_state = 85 }
+			POL = { owns_state = 785 }
+			POL = { owns_state = 86 }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		85 = { set_state_flag = es_dfs_gerdemands }
+		785 = { set_state_flag = es_dfs_gerdemands }
+		86 = { set_state_flag = es_dfs_gerdemands }
+		POL = { country_event = { id = germany_es.14 } }
+	}
+}
+
+# Danzig for Slovakia - German demands Danzig [FROM:GER,ROOT:POL]
+country_event = {
+	id = germany_es.12
+	title = germany_es.12.t
+	desc = germany_es.12.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {# We want Zaolzie too
+		name = germany_es.12.a
+		trigger = { OR = {
+			GER = { owns_state = 72 }# Zaolzie
+			SLO = { AND = {
+				exists = yes
+				is_puppet_of = GER
+				owns_state = 72
+			} }
+		} }
+		ai_chance = {
+			factor = 50
+		}
+	#	set_global_flag = es_dfs_zaolzie
+	#	72 = { set_state_flag = es_dfs_poldemands }
+		custom_effect_tooltip = germany_es.12.a.tt
+		POL = { country_event = { id = germany_es.15 } }
+	}
+	option = {# Agree
+		name = germany_es.12.b
+		ai_chance = {
+			factor = 80
+		}
+		custom_effect_tooltip = germany_es.12.b.tt
+		POL = { country_event = { id = germany_es.18 } }
+	}
+	option = {# Refuse
+		name = germany_es.12.c
+		ai_chance = {
+			factor = 10
+		}
+		custom_effect_tooltip = germany_es.12.c.tt
+		POL = { country_event = { id = germany_es.19 } }
+	}
+}
+
+# Danzig for Slovakia - German demands Danzig and Gdynia [FROM:GER,ROOT:POL]
+country_event = {
+	id = germany_es.13
+	title = germany_es.13.t
+	desc = germany_es.13.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {# We want Zaolzie too
+		name = germany_es.12.a
+		trigger = { OR = {
+			GER = { owns_state = 72 }# Zaolzie
+			SLO = { AND = {
+				exists = yes
+				is_puppet_of = GER
+				owns_state = 72
+			} }
+		} }
+		ai_chance = {
+			factor = 100
+		}
+	#	set_global_flag = es_dfs_zaolzie
+	#	72 = { set_state_flag = es_dfs_poldemands }
+		custom_effect_tooltip = germany_es.12.a.tt
+		POL = { country_event = { id = germany_es.15 } }
+	}
+	option = {# Agree
+		name = germany_es.12.b
+		ai_chance = {
+			factor = 50
+		}
+		custom_effect_tooltip = germany_es.12.b.tt
+		POL = { country_event = { id = germany_es.18 } }
+	}
+	option = {# Refuse
+		name = germany_es.12.c
+		ai_chance = {
+			factor = 10
+		}
+		custom_effect_tooltip = germany_es.12.c.tt
+		POL = { country_event = { id = germany_es.19 } }
+	}
+}
+
+# Danzig for Slovakia - German demands Danzig, Gdynia and Poznan [FROM:GER,ROOT:POL]
+country_event = {
+	id = germany_es.14
+	title = germany_es.14.t
+	desc = germany_es.14.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {# We want Zaolzie too
+		name = germany_es.12.a
+		trigger = { OR = {
+			GER = { owns_state = 72 }# Zaolzie
+			SLO = { AND = {
+				exists = yes
+				is_puppet_of = GER
+				owns_state = 72
+			} }
+		} }
+		ai_chance = {
+			factor = 100
+		}
+	#	set_global_flag = es_dfs_zaolzie
+	#	72 = { set_state_flag = es_dfs_poldemands }
+		custom_effect_tooltip = germany_es.12.a.tt
+		POL = { country_event = { id = germany_es.15 } }
+	}
+	option = {# Agree
+		name = germany_es.12.b
+		ai_chance = {
+			factor = 30
+		}
+		custom_effect_tooltip = germany_es.12.b.tt
+		POL = { country_event = { id = germany_es.18 } }
+	}
+	option = {# Refuse
+		name = germany_es.12.c
+		ai_chance = {
+			factor = 10
+		}
+		custom_effect_tooltip = germany_es.12.c.tt
+		POL = { country_event = { id = germany_es.19 } }
+	}
+}
+
+# Danzig for Slovakia - Poland wants Zaolzie too [FROM:POL,ROOT:GER]
+country_event = {
+	id = germany_es.15
+	title = germany_es.15.t
+	desc = germany_es.15.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {# Agree
+		name = germany_es.15.a
+		ai_chance = {
+			factor = 50
+		}
+		custom_effect_tooltip = germany_es.15.a.tt # Swapping these states
+		hidden_effect = {
+			POL = { country_event = { id = germany_es.16 } }
+		}
+	}
+	option = {# Refuse
+		name = germany_es.15.b
+		ai_chance = {
+			factor = 0
+		}
+	#	custom_effect_tooltip = germany_es.15.b.tt
+		effect_tooltip = {
+			if = {
+				limit = {
+					is_in_faction_with = POL
+					is_faction_leader = yes
+				}
+				remove_from_faction = POL
+			}
+			if = {
+				limit = {
+					is_in_faction_with = POL
+					is_faction_leader = no
+				}
+				random_country = {
+					limit = {
+						is_in_faction_with = GER
+						is_faction_leader = yes
+					}
+					remove_from_faction = GER
+				}
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = POL
+				generator = { 85 785 86 } # danzig, gdynia and poznan
+			}
+		}
+		hidden_effect = {
+			POL = { country_event = { id = germany_es.17 } }
+		}
+	}
+}
+
+# Danzig for Slovakia - Germany agrees to our request for Zaolzie too. Do it [FROM:GER,ROOT:POL]
+country_event = {
+	id = germany_es.16
+	title = germany_es.16.t
+	desc = germany_es.16.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {
+		name = germany_es.16.a
+		if = {
+			limit = { SLO = { AND = {
+				exists = yes
+				is_puppet_of = GER
+			} } }
+			GER = { annex_country = { target = SLO } }
+		}
+		if = {
+			limit = { GER = { owns_state = 70 } }# western slovakia
+			transfer_state = 70
+		}
+		if = {
+			limit = { GER = { owns_state = 71 } }# eastern slovakia
+			transfer_state = 71
+		}
+		if = {
+			limit = { GER = { owns_state = 73 } }# carpathian ruthenia
+			transfer_state = 73
+		}
+		if = {
+			limit = { GER = { owns_state = 664 } }# southern slovakia
+			transfer_state = 664
+		}
+		if = {
+			limit = { GER = { owns_state = 72 } }# Zaolzie
+			transfer_state = 72
+		}
+		if = {
+			limit = { AND = {
+				owns_state = 85 # danzig
+				85 = { has_state_flag = es_dfs_gerdemands }
+			} }
+			GER = { transfer_state = 85 }
+		}
+		if = {
+			limit = { AND = {
+				owns_state = 785 # gdynia
+				85 = { has_state_flag = es_dfs_gerdemands }
+			} }
+			GER = { transfer_state = 785 }
+		}
+		if = {
+			limit = { AND = {
+				owns_state = 86 # poznan
+				85 = { has_state_flag = es_dfs_gerdemands }
+			} }
+			GER = { transfer_state = 86 }
+		}
+		hidden_effect = {
+			news_event = { hours= 6 id = news_es.3 }
+		}
+	}
+}
+
+# Danzig for Slovakia - Germany refuses our request for Zaolzie too. Choose again [FROM:GER,ROOT:POL]
+country_event = {
+	id = germany_es.17
+	title = germany_es.17.t
+	desc = germany_es.17.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {# Agree to just slovakia
+		name = germany_es.17.a
+		ai_chance = {
+			factor = 50
+		}
+		set_global_flag = es_dfs_zaolzie
+	#	72 = { set_state_flag = es_dfs_poldemands }
+		custom_effect_tooltip = germany_es.17.a.tt
+		POL = { country_event = { id = germany_es.18 } }
+	}
+	option = {# Refuse
+		name = germany_es.17.b
+		ai_chance = {
+			factor = 10
+		}
+	#	custom_effect_tooltip = germany_es.17.b.tt
+		effect_tooltip = {
+			if = {
+				limit = {
+					is_in_faction_with = POL
+					is_faction_leader = yes
+				}
+				remove_from_faction = POL
+			}
+			if = {
+				limit = {
+					is_in_faction_with = POL
+					is_faction_leader = no
+				}
+				random_country = {
+					limit = {
+						is_in_faction_with = GER
+						is_faction_leader = yes
+					}
+					remove_from_faction = GER
+				}
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = POL
+				generator = { 85 785 86 } # danzig, gdynia and poznan
+			}
+		}
+		POL = { country_event = { id = germany_es.19 } }
+	}
+}
+
+# Danzig for Slovakia - Poland agrees to just Slovakia for our demands [FROM:POL,ROOT:GER]
+country_event = {
+	id = germany_es.18
+	title = germany_es.18.t
+	desc = germany_es.18.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {
+		name = germany_es.18.a
+		if = {
+			limit = { SLO = { AND = {
+				exists = yes
+				is_puppet_of = GER
+			} } }
+			GER = { annex_country = { target = SLO } }
+		}
+		if = {
+			limit = { GER = { owns_state = 70 } }# western slovakia
+			transfer_state = 70
+		}
+		if = {
+			limit = { GER = { owns_state = 71 } }# eastern slovakia
+			transfer_state = 71
+		}
+		if = {
+			limit = { GER = { owns_state = 73 } }# carpathian ruthenia
+			transfer_state = 73
+		}
+		if = {
+			limit = { GER = { owns_state = 664 } }# southern slovakia
+			transfer_state = 664
+		}
+		if = {
+			limit = { AND = {
+				owns_state = 85 # danzig
+				85 = { has_state_flag = es_dfs_gerdemands }
+			} }
+			GER = { transfer_state = 85 }
+		}
+		if = {
+			limit = { AND = {
+				owns_state = 785 # gdynia
+				785 = { has_state_flag = es_dfs_gerdemands }
+			} }
+			GER = { transfer_state = 785 }
+		}
+		if = {
+			limit = { AND = {
+				owns_state = 86 # poznan
+				86 = { has_state_flag = es_dfs_gerdemands }
+			} }
+			GER = { transfer_state = 86 }
+		}
+		hidden_effect = {
+			news_event = { hours= 6 id = news_es.4 }
+		}
+	}
+}
+
+# Danzig for Slovakia - Poland refuses our demands [FROM:POL,ROOT:GER]
+country_event = {
+	id = germany_es.19
+	title = germany_es.19.t
+	desc = germany_es.19.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {
+		name = germany_es.19.a
+		if = {
+			limit = {
+				is_in_faction_with = POL
+				is_faction_leader = yes
+			}
+			remove_from_faction = POL
+		}
+		if = {
+			limit = {
+				is_in_faction_with = POL
+				is_faction_leader = no
+			}
+			random_country = {
+				limit = {
+					is_in_faction_with = GER
+					is_faction_leader = yes
+				}
+				remove_from_faction = GER
+			}
+		}
+		create_wargoal = {
+			type = take_state_focus
+			target = POL
+			generator = { 85 785 86 } # danzig, gdynia and poznan
+		}
+		hidden_effect = {
+			news_event = { hours= 6 id = news_es.5 }
+		}
+	}
+}
+
+# First Vienna Award (southern slovakia to hungary) [FROM:focus.GER,ROOT:GER]
+country_event = {
+	id = germany_es.20
+	title = germany_es.20.t
+	desc = germany_es.20.d
+	picture = GFX_report_event_german_speech
+	is_triggered_only = yes
+	option = {# Give
+		name = germany_es.20.a
+		HUN = {
+			country_event = { id = germany.51 }
+			add_opinion_modifier = { target = GER modifier = GER_first_vienna_award_GER }
+		}
+		every_other_country = {
+			limit = { 
+				is_faction_leader = yes
+			}
+			reverse_add_opinion_modifier = { target = HUN modifier = GER_second_vienna_award_other }
+		}
+	}
+	option = {# Dont give
+		name = germany_es.20.b
+		HUN = {
+			add_opinion_modifier = { target = GER modifier = GER_first_vienna_award_GER_refused }
+		}
+	}
+}
+

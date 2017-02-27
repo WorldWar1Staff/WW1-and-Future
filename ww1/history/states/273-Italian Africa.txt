@@ -1,0 +1,18 @@
+# Cyrenaica (south-east Libya)
+state={
+	id=273
+	name="STATE_273"
+	history={
+		owner = ITA
+		buildings = {
+			infrastructure = 0
+		}
+		add_core_of = LBA
+	}
+	provinces={
+		1057 1140 1994 4191 10104 10754 10785 
+	}
+	manpower=20000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}

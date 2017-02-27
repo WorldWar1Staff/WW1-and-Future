@@ -1,0 +1,198 @@
+﻿add_namespace = news_es
+
+# German Claims Memel - [Generic] Folds
+news_event = {
+	id = news_es.1 # 19
+	title = news_es.1.t
+	desc = news_es.1.d
+	picture = GFX_news_event_romanian_soldiers
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news_es.1.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				has_country_flag = es_memel_owner
+				is_in_faction_with = GER
+			}
+		}
+	}
+	option = {
+		name = news_es.1.b
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = news_es.1.c
+	#	trigger = { TAG = LIT }
+		trigger = {
+			has_country_flag = es_memel_owner
+		}
+	}
+	option = {
+		name = news_es.1.e
+		trigger = {
+			NOT = {
+				TAG = GER
+				has_country_flag = es_memel_owner
+			}
+			is_in_faction_with = GER
+		}
+	}
+}
+
+# German Claims Memel - Lithuania Rejects Demands
+news_event = {
+	id = news_es.2 # 20
+	title = news_es.2.t
+	desc = news_es.2.d
+	picture = GFX_news_event_german_soldiers
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news_es.2.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				has_country_flag = es_memel_owner
+				is_in_faction_with = GER
+			}
+		}
+	}
+	option = {
+		name = news_es.2.b
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = news_es.2.c
+	#	trigger = { TAG = LIT }
+		trigger = {
+			has_country_flag = es_memel_owner
+		}
+	}
+	option = {
+		name = news_es.2.b
+		trigger = {
+			NOT = {
+				TAG = GER
+				has_country_flag = es_memel_owner
+			}
+			is_in_faction_with = GER
+		}
+	}
+}
+
+# Danzig for Slovakia - Poland accepts (including Zaolzie)
+news_event = {
+	id = news_es.3 # 202
+	title = news_es.3.t
+	desc = news_es.3.d
+	picture = GFX_news_event_german_soldiers
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news_es.3.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = POL
+				is_in_faction_with = GER
+			}
+		}
+	}
+	option = {
+		name = news_es.3.b
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = news_es.3.c
+		trigger = { TAG = POL }
+	}
+	option = {
+		name = news_es.3.b
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = POL
+			}
+			is_in_faction_with = GER
+		}
+	}
+}
+
+# Danzig for Slovakia - Poland accepts (excluding Zaolzie)
+news_event = {
+	id = news_es.4 # 202
+	title = news_es.4.t
+	desc = news_es.4.d
+	picture = GFX_news_event_german_soldiers
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news_es.4.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = POL
+				is_in_faction_with = GER
+			}
+		}
+	}
+	option = {
+		name = news_es.4.b
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = news_es.4.c
+		trigger = { TAG = POL }
+	}
+	option = {
+		name = news_es.4.b
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = POL
+			}
+			is_in_faction_with = GER
+		}
+	}
+}
+
+# Danzig for Slovakia - Poland refuses
+news_event = {
+	id = news_es.5 # 
+	title = news_es.5.t
+	desc = news_es.5.d
+	picture = GFX_news_event_german_soldiers
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news_es.5.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = POL
+				is_in_faction_with = GER
+			}
+		}
+	}
+	option = {
+		name = news_es.5.b
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = news_es.5.c
+		trigger = { TAG = POL }
+	}
+	option = {
+		name = news_es.5.b
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = POL
+			}
+			is_in_faction_with = GER
+		}
+	}
+}
+
