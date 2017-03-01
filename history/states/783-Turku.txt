@@ -24,9 +24,6 @@ state={
 			}
 		}
 		add_core_of = FIN
-		1920.1.10 = {
-			owner = FIN
-		}
 	}
 	manpower=600000
 	buildings_max_level_factor=1.000

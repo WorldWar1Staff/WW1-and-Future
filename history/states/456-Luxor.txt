@@ -1,21 +1,18 @@
-state=
-{
+# Aswan (southern Egypt nile)
+state={
 	id=456
-	name="STATE_456" # Aswan
-	manpower = 4224516
-	
-	state_category = rural
-	
-	history = {
-		owner = EGY
+	name="STATE_456"
+	history={
+		owner = ENG
 		buildings = {
 			infrastructure = 4
 		}
-
 		add_core_of = EGY
-
 	}
 	provinces={
-		1028 1064 1151 1206 7030 7073 7144 10028 10097 10844 11974 11999 12044 12071 12771 
+		1028 1064 1206 10844 11999 12771 
 	}
+	manpower=2124516
+	buildings_max_level_factor=1.000
+	state_category=rural
 }

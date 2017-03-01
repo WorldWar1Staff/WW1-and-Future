@@ -1,11 +1,7 @@
-
+# Rif Dimashq (inc Damascus)
 state={
 	id=554
 	name="STATE_554"
-	manpower = 547797
-	
-	state_category = rural
-
 	history={
 		owner = TUR
 		victory_points = {
@@ -15,12 +11,12 @@ state={
 			infrastructure = 3
 			air_base = 1
 		}
-		add_core_of = SYR	
-
+		add_core_of = SYR
 	}
-
-
 	provinces={
-		1074 4111 4486 4550 7184 
+		4111 7184 
 	}
+	manpower=400000
+	buildings_max_level_factor=1.000
+	state_category=rural
 }

@@ -7,13 +7,14 @@ state={
 	state_category = city
 	manpower = 1000000
 	history={
-		owner = CHI
+		owner = JAP
+		add_core_of = MAN
 		add_core_of = CHI
 		add_core_of = PRC
 		buildings = {
 			air_base = 5
 			1150 = {
-				naval_base = 3
+				naval_base = 6
 			}
 		}
 		victory_points = {

@@ -3,11 +3,11 @@ state={
 	name="STATE_764"
 	history={
 		owner = GER
+		victory_points = {
+			1951 1
+		}
 		buildings = {
 			infrastructure = 3
-		}
-		1920.1.10 = {
-			owner = FRA
 		}
 	}
 	provinces={

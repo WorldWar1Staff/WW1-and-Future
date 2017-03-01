@@ -1,21 +1,17 @@
-
+# North Sudan (north-west Sudan; formerly Western Sudan)
 state={
 	id=549
 	name="STATE_549"
-
 	history={
 		owner = ENG
 		buildings = {
 			infrastructure = 3
-
 		}
-
 	}
-
 	provinces={
-		1914 1960 2016 4138 4918 4961 5060 7987 8052 8084 8103 10739 10795 10827 10851 10900 12744 12836 12887 
+		4138 4961 7987 10900 12836 
 	}
-	manpower=1694293
+	manpower=700000
 	buildings_max_level_factor=1.000
 	state_category=rural
 }

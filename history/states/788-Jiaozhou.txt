@@ -20,9 +20,6 @@ state={
 				bunker = 1
 			}
 		}
-		1920.1.10 = {
-			owner = CHI
-		}
 		1938.10.25 = {
 			controller = JAP
 		}

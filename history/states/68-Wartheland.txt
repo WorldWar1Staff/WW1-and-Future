@@ -1,4 +1,4 @@
-# ostmark
+
 state={
 	id=68
 	name="STATE_68"
@@ -18,7 +18,7 @@ state={
 	}
 
 	provinces={
-		478 9496 11415 
+		478 9428 9496 11415 11505 
 	}
 	manpower=650840
 	buildings_max_level_factor=1.000

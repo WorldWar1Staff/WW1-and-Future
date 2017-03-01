@@ -11,1020 +11,12 @@ focus_tree = {
 	}
 	
 	default = no
- 	#1913
-################################################################INDUSRY#########################################        
-focus = {
-		id = GER_industrial_effort_1
-		icon = GFX_goal_generic_production
-		x = 9
-		y = 0
-		cost = 10
-		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
-		}
 
-		ai_will_do = {
-			factor = 3
-			
-		}
-	}
-
-	focus = {
-		id = GER_construction_effort
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = GER_industrial_effort_1 }
-		x = 8
-		y = 1
-		cost = 5
-
-		
-		ai_will_do = {
-			factor = 2
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}					
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-
-		completion_reward = {
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-focus = {
-		id = GER_construction_effort_1
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = GER_construction_effort }
-		x = 8
-		y = 2
-		cost = 5
-
-		
-		ai_will_do = {
-			factor = 2
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}					
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-
-		completion_reward = {
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-focus = {
-		id = GER_construction_effort_2
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = GER_construction_effort_1 }
-		x = 8
-		y = 3
-		cost = 5
-
-		
-		ai_will_do = {
-			factor = 2
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}					
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-
-		completion_reward = {
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-
-	}
-focus = {
-		id = GER_production_effort
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = GER_industrial_effort_1 }
-		x = 10
-		y = 1
-		cost = 5
-
-		ai_will_do = {
-			factor = 2			
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-focus = {
-		id = GER_production_effort_1
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = GER_production_effort }
-		x = 10
-		y = 2
-		cost = 5
-
-		ai_will_do = {
-			factor = 2			
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-focus = {
-		id = GER_production_effort_2
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = GER_production_effort_1 }
-		x = 10
-		y = 3
-		cost = 5
-
-		ai_will_do = {
-			factor = 2			
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-focus = {
-		id = GER_infrastructure_effort
-		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = GER_production_effort }
-		x = 12
-		y = 2
-		cost = 5
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = infrastructure_effort_tt
-				all_owned_state = {			
-					free_building_slots = {
-						building = infrastructure
-						size < 1
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-focus = {
-		id = GER_infrastructure_effort_2
-		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = GER_infrastructure_effort }
-		x = 12
-		y = 3
-		cost = 5
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = infrastructure_effort_tt
-				all_owned_state = {			
-					free_building_slots = {
-						building = infrastructure
-						size < 1
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-focus = {
-		id = GER_production_effort_3
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = GER_construction_effort_2}
-		prerequisite = { focus = GER_infrastructure_effort_2 }
-		prerequisite = { focus = GER_production_effort_2 }
-		
-		x = 10
-		y = 4
-		cost = 10
-
-		ai_will_do = {
-			factor = 2			
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 10
-			add_building_construction = {
-				type = arms_factory
-				level = 10
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 10
-				add_building_construction = {
-					type = arms_factory
-					level = 10
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-focus = {
-		id = GER_political_effort
-		icon = GFX_goal_generic_demand_territory
-		x = 2
-		y = 0
-		cost = 10
-		ai_will_do = {
-			factor = 0.25
-		}	
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = GER_friend_austria
-		icon = GFX_goal_generic_improve_relations
-		prerequisite = { focus = GER_political_effort }
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 0.25
-		}	
-		completion_reward = {
-		AUS = {
-			add_opinion_modifier = { target = GER modifier = ger_aus_diplomacy_focus }
-				if = {
-					limit = {
-						GER = {
-							has_government = fascism
-						}
-					}
-					add_ideas = fascist_influence
-				}
-				if = {
-					limit = {
-						GER = {
-							has_government = communism
-						}
-					}
-					add_ideas = communist_influence
-				}
-				if = {
-					limit = {
-						GER = {
-							has_government = democratic
-						}
-					}
-					add_ideas = democratic_influence
-				}	
-		}
-	}
-}
-focus = {
-		id = GER_conract_italia
-		icon = GFX_goal_generic_intelligence_exchange
-		prerequisite = { focus = GER_political_effort }
-		x = 2
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 0.25
-		}	
-		completion_reward = {
-		ITA = {
-			add_opinion_modifier = { target = GER modifier = ger_ita_diplomacy_focus }
-				
-				if = {
-					limit = {
-						GER = {
-							has_government = fascism
-						}
-					}
-					add_ideas = fascist_influence
-				}
-				if = {
-					limit = {
-						GER = {
-							has_government = communism
-						}
-					}
-					add_ideas = communist_influence
-				}
-				if = {
-					limit = {
-						GER = {
-							has_government = democratic
-						}
-					}
-					add_ideas = democratic_influence
-				}	
-		}
-	}
-} 
-   focus = {
-		id = GER_generalstab_effort
-		icon = GFX_goal_generic_allies_build_infantry
-		prerequisite = { focus = GER_political_effort }
-		x = 4
-		y = 1
-		cost = 5
-		ai_will_do = {
-			factor = 0.25
-		}	
-		completion_reward = {
-			add_ideas = general_staff
-		}
-	}
- focus = {
-		id = GER_ludendorf
-		icon = GFX_goal_erich_ludendorf
-		prerequisite = { focus = GER_generalstab_effort }
-		mutually_exclusive = { focus = GER_hindenburg}
-		x = 3.5
-		y = 2
-		cost = 10
-		ai_will_do = {
-			factor = 0.25
-		}	
-		completion_reward = {
-			add_ideas = ludendorf
-			add_ideas = ludendorf_stab
-
-		}
-	}
- focus = {
-		id = GER_hindenburg
-		icon = GFX_goal_hindenburg
-		prerequisite = { focus = GER_generalstab_effort }
-		mutually_exclusive = { focus = GER_ludendorf}
-		x = 5
-		y = 2
-		cost = 5
-		ai_will_do = {
-			factor = 0.25
-		}	
-		completion_reward = {
-			add_ideas = hindenburg
-			add_ideas = hindenburg_stab
-		}
-	}
-focus = {
-		id = GER_ludendorf2
-		icon = GFX_goal_erich_ludendorf2
-		prerequisite = {focus = GER_hindenburg}
-		x = 5
-		y = 3
-		cost = 5
-		ai_will_do = {
-			factor = 0.25
-		}	
-		completion_reward = {
-			add_ideas = ludendorf2
-			add_ideas = ludendorf_stab2
-		}
-	}
-focus = {
-		id = GER_work_schliefenplan
-		icon = GFX_goal_generic_position_armies
-		prerequisite = { focus = GER_hindenburg}
-		prerequisite = { focus = GER_ludendorf2}
-		x = 6.5
-		y = 4
-		cost = 10
-		ai_will_do = {
-			factor = 0.25
-		}	
-		completion_reward = {
-		}
-	}
-focus = {
-		id = GER_Lenin
-		icon = GFX_goal_generic_war_with_comintern
-		prerequisite = { focus = GER_hindenburg focus = GER_ludendorf}
-		
-		x = 4
-		y = 4
-		cost = 10
-		ai_will_do = {
-			factor = 0.25
-		}	
-		completion_reward = {
-		}
-	}
-focus = {
-		id = GER_red_peace3
-		icon = GFX_goal_generic_war_with_comintern
-		prerequisite = { focus = GER_Lenin}
-		
-		x = 4
-		y = 5
-		cost = 10
-		ai_will_do = {
-			factor = 0.25
-		}	
-		completion_reward = {
-		}
-	}
-			
-		
-
-
-
-
-
-
-
-
-
-
-
-
-focus = {
-		id = GER_found_own_faction_focus
-		available = {
-			is_in_faction = no
-			is_puppet = no
-		}
-		prerequisite = { focus = GER_conract_italia }
-		prerequisite = { focus = GER_friend_austria }
-		
-		x = 1.5
-		y = 2.5
-		cost = 10
-		icon = GFX_goal_generic_national_unity
-		ai_will_do = {
-			factor = 2.5
-			
-		}	
-		completion_reward = {
-			set_rule = { can_create_factions = yes }
-			create_faction = "Dreibund"
-			add_political_power = 15
-			add_national_unity = 0.05
-			hidden_effect = {
-				news_event = { hours = 6 id = news.211}
-			}
-		}
-	}
-	focus = {
-		id = GER_tur_ally
-		icon = GFX_goal_generic_major_alliance
-		prerequisite = { focus = GER_found_own_faction_focus }
-		available = {
-			NOT = { has_war_with = TUR }
-		}
-
-		bypass = {
-			
-			OR = {
-				is_in_faction_with = TUR
-				has_war_with = TUR
-				NOT = { country_exists = TUR }
-			}
-		}
-
-		x = 1.5
-		y = 3
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}	
-		completion_reward = {
-			TUR = {
-				add_opinion_modifier = { target = GER modifier = ger_tur_alliance_focus }
-			}
-		}
-	}
-focus = {
-		id = GER_schliefenplan
-		icon = GFX_goal_generic_attack_allies
-		prerequisite = { focus = GER_work_schliefenplan }
-		
-		bypass = {
-		}		
-		
-		available = {
-			has_war_with = FRA SOV
-			OR = {
-				
-				NOT = { BEL = { is_in_faction_with = GER } }
-				NOT = { LUX = { is_in_faction_with = GER } }
-			}
-		}
-		will_lead_to_war_with = BEL
-		will_lead_to_war_with = LUX
-		x = 6.5
-		y = 5
-		cost = 4
-		ai_will_do = {
-			factor = 10	
-			}	
-		completion_reward = {
-			if = { 
-				limit = { 
-					NOT = { BEL = { is_in_faction_with = GER } }
-				}
-				create_wargoal = {
-					type = take_state_focus
-					target = BEL
-					generator = { 6 }
-				}
-			}
-			if = {
-				limit = {
-					NOT = { LUX = { is_in_faction_with = GER } }
-				}
-				create_wargoal = {
-					type = take_state_focus
-					target = LUX
-					generator = { 8 }
-				}			
-			}
-			
-		}
-	}
-
-	
-	
-	#1936
 	focus = {
 		id = GER_autobahn
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 0
-		y = 10
+		y = 0
 		cost = 10
 		ai_will_do = {
 			factor = 12
@@ -1034,31 +26,43 @@ focus = {
 			custom_effect_tooltip = GER_autobahn_tt
 			hidden_effect = {
 				64 = {
-					add_building_construction = {
-						type = infrastructure
-						level = 10
-						instant_build = yes
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+						}
 					}
 				}
 				59 = {
-					add_building_construction = {
-						type = infrastructure
-						level = 10
-						instant_build = yes
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+						}
 					}
 				}
 				60 = {
-					add_building_construction = {
-						type = infrastructure
-						level = 10
-						instant_build = yes
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+						}
 					}
 				}
 				54 = {
-					add_building_construction = {
-						type = infrastructure
-						level = 10
-						instant_build = yes
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+						}
 					}
 				}
 			}		
@@ -1070,7 +74,7 @@ focus = {
 		icon = GFX_goal_generic_construct_military
 		prerequisite = { focus = GER_autobahn }
 		x = 0
-		y = 11
+		y = 1
 		cost = 10
 		ai_will_do = {
 			factor = 8
@@ -1081,65 +85,86 @@ focus = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = todt
 			50 = {
-				custom_effect_tooltip = GER_west_wall_forts
-				hidden_effect = {
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 11640
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 6712
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 6542
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 3530
-						instant_build = yes
+				if = {
+					limit = { is_controlled_by = ROOT }
+					custom_effect_tooltip = GER_west_wall_forts
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 11640
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 6712
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 6542
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 3530
+							instant_build = yes
+						}
 					}
 				}
 			}
 			if = {
 				limit = { 42 = { is_demilitarized_zone = yes } }
 				custom_effect_tooltip = GER_west_wall_tt
+				42 = {
+					custom_effect_tooltip = GER_west_wall_forts
+				}
 			}
-			42 = {
-				custom_effect_tooltip = GER_west_wall_forts
-				hidden_effect = {
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 3558
-						instant_build = yes
+			hidden_effect = {
+				42 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 3558
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 563
+							instant_build = yes
+						}
 					}
-					
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 563
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 11531
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 9575
-						instant_build = yes
+				}
+			}
+			if = {
+				limit = { 800 = { is_demilitarized_zone = yes } }
+				custom_effect_tooltip = GER_west_wall_tt
+				800 = {
+					custom_effect_tooltip = GER_west_wall_forts
+				}
+			}
+			hidden_effect = {
+				800 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 11531
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 9575
+							instant_build = yes
+						}
 					}
 				}
 			}
@@ -1147,16 +172,18 @@ focus = {
 	}
 
 	focus = {
-		id = GER_industrial_effort_10
+		id = GER_industrial_effort
 		text = industrial_effort
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = GER_west_wall }
 		x = 0
-		y = 12
+		y = 2
 		cost = 10
 		ai_will_do = {
 			factor = 9
 		}
+
+		available_if_capitulated = yes
 
 		complete_tooltip = {
 			every_state = {
@@ -1177,7 +204,7 @@ focus = {
 		}
 
 		completion_reward = {
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -1193,7 +220,7 @@ focus = {
 				}
 				set_state_flag = GER_industrial_effort_2IC
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -1209,7 +236,7 @@ focus = {
 				}
 				set_state_flag = GER_industrial_effort_2IC
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -1235,16 +262,18 @@ focus = {
 	}
 
 	focus = {
-		id = GER_industrial_effort_11
+		id = GER_industrial_effort_2
 		text = industrial_effort_2
 		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = GER_industrial_effort_10 }
+		prerequisite = { focus = GER_industrial_effort }
 		x = 0
-		y = 13
+		y = 3
 		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
+
+		available_if_capitulated = yes
 
 		complete_tooltip = {
 			every_state = {
@@ -1265,7 +294,7 @@ focus = {
 		}
 
 		completion_reward = {
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -1281,7 +310,7 @@ focus = {
 				}
 				set_state_flag = GER_industrial_effort_2_2IC
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -1297,7 +326,7 @@ focus = {
 				}
 				set_state_flag = GER_industrial_effort_2_2IC
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -1327,11 +356,13 @@ focus = {
 		text = air_innovation
 		icon = GFX_goal_generic_build_airforce
 		x = 3
-		y = 10
+		y = 0
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
+
+		available_if_capitulated = yes
 
 		complete_tooltip = {
 			air_experience = 25
@@ -1381,7 +412,7 @@ focus = {
 						}
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						free_building_slots = {
 							building = air_base
@@ -1397,7 +428,7 @@ focus = {
 				}				
 			}
 
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					air_base > 3
 					air_base < 9
@@ -1409,7 +440,7 @@ focus = {
 				}
 				set_state_flag = GER_air_innovation_2air
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					air_base > 3
 					air_base < 9
@@ -1421,7 +452,7 @@ focus = {
 				}
 				set_state_flag = GER_air_innovation_2air
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					air_base > 2
 					air_base < 9
@@ -1444,11 +475,13 @@ focus = {
 		prerequisite = { focus = GER_air_innovation }
 		mutually_exclusive = { focus = GER_strategic_air_effort }
 		x = 2
-		y = 11
+		y = 1
 		cost = 10
 		ai_will_do = {
 			factor = 0.25
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = op_dest_bonus
@@ -1473,11 +506,13 @@ focus = {
 		icon = GFX_goal_generic_air_naval_bomber
 		prerequisite = { focus = GER_tactical_air_effort }
 		x = 2
-		y = 13
+		y = 3
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = nav_bomber_bonus
@@ -1494,11 +529,13 @@ focus = {
 		prerequisite = { focus = GER_air_innovation }
 		mutually_exclusive = { focus = GER_tactical_air_effort }
 		x = 4
-		y = 11
+		y = 1
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			# Balance research bonus for 2 techs in battlefield_support_tree
 			add_tech_bonus = {
@@ -1520,11 +557,13 @@ focus = {
 		id = GER_army_innovation
 		icon = GFX_goal_generic_axis_build_infantry
 		x = 6
-		y = 10
+		y = 0
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			# Balance research bonus for 2 techs under land_doctrine
 			
@@ -1561,7 +600,7 @@ focus = {
 		}
 
 		x = 6
-		y = 11
+		y = 1
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -1596,11 +635,13 @@ focus = {
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = GER_strategic_air_effort focus = GER_tactical_air_effort focus = GER_soviet_treaty }
 		x = 4
-		y = 13
+		y = 3
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = { 
 			air_experience = 50
 
@@ -1629,11 +670,13 @@ focus = {
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = GER_soviet_treaty }
 		x = 6
-		y = 13
+		y = 3
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			# Balance research bonus to 2 techs in land_doctrine
 			army_experience = 20
@@ -1662,11 +705,13 @@ focus = {
 		prerequisite = { focus = GER_industrial_effort_2 }
 		prerequisite = { focus = GER_air_innovation_2 }
 		x = 2
-		y = 15
+		y = 5
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_ideas = GER_rocketry_idea
 		}
@@ -1677,11 +722,13 @@ focus = {
 		icon = GFX_focus_wonderweapons
 		prerequisite = { focus = GER_rocketry_focus }
 		x = 1
-		y = 16
+		y = 6
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = secret_bonus
@@ -1699,11 +746,13 @@ focus = {
 		text = extra_tech_slot
 		prerequisite = { focus = GER_rocketry_focus }
 		x = 3
-		y = 16
+		y = 6
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -1731,7 +780,7 @@ focus = {
 		}
 		cancel_if_invalid = no
 		x = 7
-		y = 14
+		y = 4
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -1770,7 +819,7 @@ focus = {
 			}
 		}
 		x = 8
-		y = 15
+		y = 5
 		cost = 10
 		ai_will_do = {
 			factor = 0.01
@@ -1820,7 +869,7 @@ focus = {
 			country_exists = TUR
 		}
 		x = 8
-		y = 17
+		y = 7
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -1834,19 +883,21 @@ focus = {
 		id = GER_rhineland
 		icon = GFX_goal_generic_military_sphere
 		x = 12
-		y = 10
+		y = 0
 		cost = 10
 		available = { is_puppet = no }
 		bypass = {
-			42 = { is_demilitarized_zone = no }
-			51 = { is_demilitarized_zone = no }
+				42 = { is_demilitarized_zone = no } # moselland
+				800= { is_demilitarized_zone = no } # saar
+				51 = { is_demilitarized_zone = no } # rhineland
 		}
 		ai_will_do = {
 			factor = 10
-		}	
+		}
 		completion_reward = {
-			42 = { set_demilitarized_zone = no }
-			51 = { set_demilitarized_zone = no }
+			42  = { set_demilitarized_zone = no } # moselland
+			800 = { set_demilitarized_zone = no } # saar
+			51  = { set_demilitarized_zone = no } # rhineland
 			custom_effect_tooltip = GER_rhineland_ultimatum
 			add_political_power = 120
 			army_experience = 5
@@ -1858,7 +909,7 @@ focus = {
 					custom_effect_tooltip = may_provoke_hostility
 				}
 			}
-		}		
+		}
 	}
 
 	focus = {
@@ -1880,10 +931,16 @@ focus = {
 			}
 		}
 		x = 13
-		y = 11
+		y = 1
 		cost = 10
+		available_if_capitulated = yes
+
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				is_in_faction_with = JAP
+				factor = 0 #GER-sempai has already noticed you!
+			}
 		}	
 		completion_reward = {
 			JAP = {
@@ -1914,11 +971,17 @@ focus = {
 			}
 		}
 		x = 11
-		y = 11
+		y = 1
 		cost = 10
 		ai_will_do = {
-			factor = 0.25
+			factor = 0.5
+			modifier = {
+				is_in_faction_with = JAP
+				factor = 0
+			}
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			CHI = {
 				add_opinion_modifier = { target = GER modifier = ger_chi_diplomacy_focus }
@@ -1934,7 +997,7 @@ focus = {
 		icon = GFX_goal_anti_comintern_pact
 		prerequisite = { focus = GER_rhineland  }
 		x = 9
-		y = 11
+		y = 1
 		cost = 10
 		available = {
 			is_puppet = no
@@ -1947,7 +1010,7 @@ focus = {
 		completion_reward = {
 			SOV = { add_opinion_modifier = { target = ROOT modifier = pact_against_us } }
 			add_named_threat = { threat = 1 name = GER_anti_comitern_pact }
-			every_country = {
+			every_other_country = {
 				limit = {
 					NOT = { tag = GER }
 					NOT = { has_war_with = GER }
@@ -1985,7 +1048,7 @@ focus = {
 			is_neighbor_of = SOV
 		}
 		x = 9
-		y = 14
+		y = 4
 		cost = 10
 		ai_will_do = {
 			factor = 2.5	
@@ -1998,7 +1061,7 @@ focus = {
 			add_ideas = anti_soviet_pact
 			custom_effect_tooltip = GER_anti_soviet_pact_tt
 			custom_effect_tooltip = GER_anti_soviet_pact_tt_2
-			every_country = {
+			every_other_country = {
 				limit = {
 					has_opinion_modifier = anti_comintern_pact_opinion
 					OR = {
@@ -2027,11 +1090,11 @@ focus = {
 			NOT = { country_exists = SOV }
 		}
 		x = 10
-		y = 15
+		y = 5
 		cost = 10
 		historical_ai = {
 			NOT = {
-				any_neighbor_country = {
+				any_home_area_neighbor_country = {
 					has_war_with = ROOT
 				}		
 			}
@@ -2045,7 +1108,7 @@ focus = {
 				factor = 0
 				OR = {
 					has_army_manpower = { size < 1199999 }
-					any_neighbor_country = {
+					any_home_area_neighbor_country = {
 						has_war_with = ROOT
 					}
 				}
@@ -2090,11 +1153,12 @@ focus = {
 		#	}
 		#}
 		x = 10
-		y = 17
+		y = 7
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
+		#available_if_capitulated = no
 		completion_reward = {
 			TUR = {
 				add_opinion_modifier = { target = GER modifier = ger_tur_diplomacy_focus }
@@ -2157,11 +1221,14 @@ focus = {
 			NOT = { has_idea = rhineland_challenge_met }
 		}
 		cancel = {
-			has_idea = rhineland_challenge_met
+			OR = {
+				is_puppet = yes
+				has_idea = rhineland_challenge_met
+			}
 		}
 		cancel_if_invalid = no
 		x = 15
-		y = 11
+		y = 1
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -2171,67 +1238,67 @@ focus = {
 			}
 		}	
 		completion_reward = {
+			set_global_flag = es_anschluss
 			army_experience = 10
 			if = {
 				limit = {
 					country_exists = AUS
 					AUS = {
+						has_civil_war = no
 						OR = {
 							owns_state = 4
 							owns_state = 152
 							owns_state = 153
+							owns_state = 39 # south tyrol
 						}
 					}
 				}
 				AUS = {
 					country_event = germany.28
 				}
-				# REVISIT Add Czech claims, possibly
 			}
 			if = {
 				limit = {
-					4 = {
-						owner = {
-							NOT = {
-								tag = AUS
-							}
-							NOT = {
-								is_in_faction_with = ROOT
-							}
+					any_other_country = {
+						original_tag = AUS
+						has_civil_war = yes
+						OR = {
+							owns_state = 4
+							owns_state = 152
+							owns_state = 153
+							owns_state = 39 # south tyrol
 						}
 					}
 				}
-				add_state_core = 4
-			}
-			if = {
-				limit = {
-					152 = {
-						owner = {
-							NOT = {
-								tag = AUS
+
+				custom_effect_tooltip = germany.126.warning
+				random_other_country = {
+					limit = {
+						original_tag = AUS
+						OR = {
+							has_government = fascism
+							AND = {
+								has_government = neutrality
+								NOT = {
+									any_other_country = {
+										original_tag = AUS
+										has_government = fascism
+									}
+								}
 							}
 							NOT = {
-								is_in_faction_with = ROOT
-							}
+								any_other_country = {
+									original_tag = AUS
+									OR = {
+										has_government = fascism
+										has_government = neutrality
+									}
+								}
+							}							
 						}
 					}
+					country_event = { id = germany.126 days = 1 }
 				}
-				add_state_core = 152
-			}
-			if = {
-				limit = {
-					153 = {
-						owner = {
-							NOT = {
-								tag = AUS
-							}
-							NOT = {
-								is_in_faction_with = ROOT
-							}
-						}
-					}
-				}
-				add_state_core = 153
 			}
 		}
 	}
@@ -2242,12 +1309,13 @@ focus = {
 		prerequisite = { focus = GER_anschluss }
 		available = { is_puppet = no }
 		x = 16
-		y = 12
+		y = 2
 		cost = 10
 		bypass = {
-			188 = { is_owned_by = GER }
-			85 = { is_owned_by = GER }
-			86 = { is_owned_by = GER }
+			188 = { is_owned_by = GER } # memel
+			85  = { is_owned_by = GER } # danzig
+			86  = { is_owned_by = GER } # poznan
+			785 = { is_owned_by = GER } # gdynia
 		}
 		ai_will_do = {
 			factor = 10	
@@ -2255,19 +1323,17 @@ focus = {
 				factor = 0
 				date < 1939.1.1
 			}
-		}	
+		}
 		completion_reward = {
-			188 = { add_claim_by = GER }
-			85 = { add_claim_by = GER }
-			86 = { add_claim_by = GER }
+			188 = { add_claim_by = GER } # memel
+			85  = { add_claim_by = GER } # danzig
+			86  = { add_claim_by = GER } # poznan
+			785 = { add_claim_by = GER } # gdynia
 			add_named_threat = { threat = 3 name = GER_demand_memel_threat }
-			if = {
-				limit = {
-					LIT = { owns_state = 188 }
-				}
-				LIT = {
-					country_event = { id = baltic.4 }
-				}
+			random_other_country = {
+				limit = { owns_state = 188 }
+				set_country_flag = es_memel_owner
+				country_event = { id = germany_es.2 }
 			}
 		}
 	}
@@ -2280,24 +1346,24 @@ focus = {
 		will_lead_to_war_with = POL
 		available = {
 			is_puppet = no
-			has_army_manpower = { size > 949999 } #100 div			
+			has_army_manpower = { size > 949999 } #100 div
 			#Make custom trigger tooltip here
-			85 = {
-				owner = {
-					original_tag = POL
-				}
-				controller = {
-					original_tag = POL
-				}
+			OR = {
+				85 = { AND = {# danzig
+					owner = { original_tag = POL }
+					controller = { original_tag = POL }
+				} }
+				785 = { AND = {# gdynia
+					owner = { original_tag = POL }
+					controller = { original_tag = POL }
+				} }
 			}
 			OR = {
-				POL = {
-					has_civil_war = no
-				}
+				POL = { has_civil_war = no }
 				#custom_trigger_tooltip = {
 					#tooltip = GER_danzig_trigger_polish_civil_war
 					AND = {
-						any_country = {
+						any_other_country = {
 							original_tag = POL
 							has_civil_war = yes
 							OR = {
@@ -2312,18 +1378,21 @@ focus = {
 				#}
 			}
 		}
-
 		bypass = {
 			OR = {
 				has_war_with = POL
 				is_in_faction_with = POL
-				NOT = {
-					85 = {
-						controller = {
-							original_tag = POL 
+				AND = {
+					NOT = {
+						85 = { # danzig
+							owner = { original_tag = POL }
+							controller = { original_tag = POL }
 						}
-						owner = {
-							original_tag = POL 
+					}
+					NOT = {
+						785 = { # gdynia
+							owner = { original_tag = POL }
+							controller = { original_tag = POL }
 						}
 					}
 				}
@@ -2331,10 +1400,10 @@ focus = {
 		}
 		cancel_if_invalid = no
 		x = 16
-		y = 15
+		y = 5
 		cost = 10
 		ai_will_do = {
-			factor = 10	
+			factor = 10
 			modifier = {
 				factor = 0
 				OR = {
@@ -2349,21 +1418,29 @@ focus = {
 					}
 				}
 			}
-		}	
+		}
 		completion_reward = {
 			add_named_threat = { threat = 5 name = GER_danzig_or_war }
 			if = {
-				limit = {
-					85 = {
+				limit = { AND = {
+					85 = {# Danzig
 						controller = {
 							tag = POL
 							has_civil_war = no
 						}
 					}
-				}
+					785 = {# Gdynia
+						controller = {
+							tag = POL
+							has_civil_war = no
+						}
+					}
+				} }
 				effect_tooltip = {
-					transfer_state = 85
-					remove_state_claim = 86
+					transfer_state = 85 # danzig
+					transfer_state = 785 # gdynia
+					remove_state_claim = 86  # poznan
+				#	remove_state_claim = 785 # gdynia
 				}
 				POL = {
 					country_event = { id = germany.86 }
@@ -2388,7 +1465,7 @@ focus = {
 				}
 			}
 			if = {
-				limit = {
+				limit = { AND = {
 					85 = {
 						owner = {
 							OR = {
@@ -2397,8 +1474,16 @@ focus = {
 							}
 						}
 					}
-				}
-				random_country = {
+					785 = {
+						owner = {
+							OR = {
+								original_tag = POL
+								tag = POL
+							}
+						}
+					}
+				} }
+				random_other_country = {
 					limit = {
 						original_tag = POL
 						has_civil_war = yes
@@ -2438,8 +1523,8 @@ focus = {
 		
 		available = {
 			POL = {
-				NOT = { controls_state = 85 }
-				NOT = { controls_state = 10 }	
+				NOT = { controls_state = 85 } # danzig
+				NOT = { controls_state = 10 } # warsaw
 			}
 			OR = { 
 				has_war_with = ENG
@@ -2447,7 +1532,7 @@ focus = {
 			}
 		}
 		x = 17
-		y = 17
+		y = 7
 		cost = 10
 		ai_will_do = {
 			factor = 10	
@@ -2461,12 +1546,13 @@ focus = {
 			if = {
 				limit = {
 					NOT = { DEN = { is_in_faction_with = GER } }
-					country_exists = DEN					
-				} 
+					country_exists = DEN
+				}
+				add_state_core = 747 # northern schleswig
 				create_wargoal = {
 					type = take_state_focus
 					target = DEN
-					generator = { 37 }
+					generator = { 747 } # northern schleswig
 				}
 			}
 
@@ -2479,7 +1565,7 @@ focus = {
 				create_wargoal = {
 					type = take_state_focus
 					target = NOR
-					generator = { 110 }
+					generator = { 110 } # oslo
 				}
 			}
 			
@@ -2501,30 +1587,51 @@ focus = {
 	focus = {
 		id = GER_around_maginot
 		icon = GFX_goal_generic_attack_allies
-		prerequisite = { focus = GER_weserubung focus = GER_war_with_france }
-		
-		bypass = {
-		}		
+		prerequisite = { focus = GER_danzig_or_war focus = GER_poland_friend}
 		
 		available = {
-			has_war_with = FRA
-			OR = {
+		OR = {
 				NOT = { HOL = { is_in_faction_with = GER } }
 				NOT = { BEL = { is_in_faction_with = GER } }
 				NOT = { LUX = { is_in_faction_with = GER } }
 			}
 		}
+		bypass = {
+			HOL = { is_in_faction_with = GER }
+			BEL = { is_in_faction_with = GER }
+			LUX = { is_in_faction_with = GER }
+		}
+
+		historical_ai = {
+			date > 1939.1.1
+			NOT = {
+				any_home_area_neighbor_country = {
+					NOT = { tag = FRA }
+					has_war_with = ROOT
+					surrender_progress < 0.5
+				}
+			}
+		}
 		will_lead_to_war_with = BEL
 		will_lead_to_war_with = HOL
 		will_lead_to_war_with = LUX
-		x = 16
-		y = 18
+		will_lead_to_war_with = FRA
+		x = 15
+		y = 7
 		cost = 4
 		ai_will_do = {
 			factor = 10	
 			modifier = {
-				factor = 0
+				factor = 0.05
 				date < 1939.1.1
+			}
+			modifier = {
+				factor = 0.2
+				any_home_area_neighbor_country = {
+					NOT = { tag = FRA }
+					has_war_with = ROOT
+					surrender_progress < 0.5
+				}
 			}
 		}	
 		completion_reward = {
@@ -2535,7 +1642,7 @@ focus = {
 				create_wargoal = {
 					type = take_state_focus
 					target = BEL
-					generator = { 6 }
+					generator = { 6 } # flanders
 				}
 			}
 			if =  {
@@ -2545,7 +1652,7 @@ focus = {
 				create_wargoal = {
 					type = take_state_focus
 					target = HOL
-					generator = { 7 }
+					generator = { 7 } # holland
 				}
 			}
 			if = {
@@ -2555,7 +1662,7 @@ focus = {
 				create_wargoal = {
 					type = take_state_focus
 					target = LUX
-					generator = { 8 }
+					generator = { 8 } # luxembourg
 				}			
 			}
 			hidden_effect = {
@@ -2590,7 +1697,7 @@ focus = {
 		}
 		cancel_if_invalid = no
 		x = 12
-		y = 12
+		y = 2
 		cost = 10
 		ai_will_do = {
 			factor = 2.5
@@ -2655,29 +1762,37 @@ focus = {
 		mutually_exclusive = { focus = GER_czech_friend }
 		available = {
 			is_puppet = no
-			has_army_manpower = { size > 749999 } #80 div			
+			has_army_manpower = { size > 749999 } #80 div
 		}
 		bypass = {
 			OR = {
 				CZE = { is_puppet_of = GER }
-				GER = { owns_state = 69 }			
+				69 = { #western sudeten
+					CONTROLLER = { has_war_with = GER }
+				}
+				AND = {
+					GER = { controls_state = 69 } # western sudetenland
+					GER = { controls_state = 74 } # eastern sudetenland
+					GER = { controls_state = 801 } # southern sudetenland
+				}
+			#	all_state = {
+			#		limit = { has_state_flag = es_cze_german } # Sudeten states
+			#		is_owned_by = GER
+			#	}
 			}
 		}
 		cancel = {
-			OR = {
-				NOT = { CZE = { owns_state = 69 } }
-				has_war_with = CZE
-			}
+			is_puppet = yes
 		}
 		cancel_if_invalid = no
 		x = 14
-		y = 12
+		y = 2
 		cost = 10
 		ai_will_do = {
 			factor = 10
 		}	
 		completion_reward = {
-			if =  {
+			if = {
 				limit = {
 					OR = {
 						has_war_with = ENG
@@ -2686,8 +1801,13 @@ focus = {
 						CZE = { has_war_with = ENG }
 						CZE = { has_war_with = FRA }
 					}
-					CZE = { owns_state = 69 }
+					CZE = { OR = {
+						controls_state = 69  # western
+						controls_state = 74  # eastern
+						controls_state = 801 # southern
+					} }
 				}
+				# No Munich conference
 				CZE = {
 					country_event = {
 						id = germany.122
@@ -2700,26 +1820,38 @@ focus = {
 					NOT = { has_war_with = FRA }
 					CZE = { is_puppet = no }
 					CZE = { NOT = { has_war_with = ENG } }
-					CZE = { owns_state = 69 }
+					CZE = { OR = {
+						controls_state = 69  # western
+						controls_state = 74  # eastern
+						controls_state = 801 # southern
+					} }
 				}
+				# Munich conference
 				ENG = {
 					country_event = germany.40
 				}
 				add_named_threat = { threat = 2 name = GER_demand_sudetenland_threat }
 			}
-			69 = {
-				add_claim_by = GER
+			if = {
+				limit = { 69 = { is_owned_by = CZE } } # west
+				add_state_claim = 69
 			}
 			if = {
-				limit = {
-					NOT = {
-						CZE = { owns_state = 69 }
-					}
-				}
-				69 = {
-					add_claim_by = GER
-				}
+				limit = { 74 = { is_owned_by = CZE } } # east
+				add_state_claim = 74
 			}
+			if = {
+				limit = { 801 = { is_owned_by = CZE } } # south
+				add_state_claim = 801
+			}
+		#	every_state {
+		#		limit = { AND = {
+		#			is_owned_by = CZE
+		#			has_state_flag = es_cze_german
+		#		} }
+		#		add_claim_by = GER
+		#	}
+		#	set_global_flag = es_sudetenland # start events to claim non-czechoslovak-owned sudeten states
 		}
 	}
 
@@ -2730,7 +1862,7 @@ focus = {
 		bypass = {
 			OR = {
 				AND = {
-					NOT = { country_exists = CZE }
+					NOT = { CZE = { controls_state = 664 } }
 					NOT = { owns_state = 664 }
 				}
 				HUN = { is_friend_or_potential_friend_of_GER = no }
@@ -2741,23 +1873,13 @@ focus = {
 			owns_state = 69
 		}
 		x = 14
-		y = 13
+		y = 3
 		cost = 10
 		ai_will_do = {
 			factor = 10
-		}	
+		}
 		completion_reward = {
-			HUN = {
-				country_event = { id = germany.51 }
-				add_opinion_modifier = { target = GER modifier = GER_first_vienna_award_GER }
-			}
-			every_country = {
-				limit = { 
-					is_faction_leader = yes
-					NOT = { tag = GER }
-				}
-				reverse_add_opinion_modifier = { target = HUN modifier = GER_second_vienna_award_other }
-			}
+			country_event = { id = germany_es.20 }
 		}
 	}
 
@@ -2775,7 +1897,7 @@ focus = {
 			OR = {
 				has_war_with = CZE
 				NOT = { country_exists = CZE }
-				any_country = {
+				any_other_country = {
 					is_in_faction_with = GER
 					CZE = {
 						is_puppet_of = PREV
@@ -2785,12 +1907,11 @@ focus = {
 		}
 
 		x = 14
-		y = 14
+		y = 4
 		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
-
 
 		completion_reward = {
 			
@@ -2812,7 +1933,7 @@ focus = {
 		icon = GFX_goal_generic_cavalry
 		prerequisite = { focus = GER_czech_friend focus = GER_end_of_czechoslovakia }
 		x = 12
-		y = 15
+		y = 5
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -2833,9 +1954,9 @@ focus = {
 						ROM = {
 							OR = {
 								AND = {
-									NOT = { controls_state = 76 }
-									NOT = { controls_state = 83 }
-									NOT = { controls_state = 84 }
+									NOT = { controls_state = 76 } # north transylvania
+									NOT = { controls_state = 83 } # crisana
+									NOT = { controls_state = 84 } # transylvania
 								}
 								has_war_with = HUN
 							}
@@ -2845,8 +1966,8 @@ focus = {
 						BUL = { is_friend_or_potential_friend_of_GER = no }
 						ROM = {
 							OR = {
-								NOT = { controls_state = 77 }
-								has_war_with = BUL					
+								NOT = { controls_state = 77 } # dobrudja
+								has_war_with = BUL
 							}
 						}					
 					}
@@ -2865,7 +1986,7 @@ focus = {
 						is_friend_or_potential_friend_of_GER = yes
 					}
 					ROM = {
-						controls_state = 76
+						controls_state = 76 # north transylvania
 						NOT = { has_war_with = HUN }
 					}
 				}
@@ -2892,14 +2013,19 @@ focus = {
 		}
 
 		x = 12
-		y = 16
+		y = 6
 		cost = 10
 		ai_will_do = {
 			factor = 10
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			ITA = {
 				add_opinion_modifier = { target = GER modifier = ger_ita_alliance_focus }
+			}
+			GER = {
+				remove_state_core = 39 # south tyrol
 			}
 		}
 	}
@@ -2910,7 +2036,7 @@ focus = {
 		prerequisite = { focus = GER_italy_ally }
 		available = {
 			SPR = { has_civil_war = no }
-			any_country = {
+			any_other_country = {
 				original_tag = SPR
 				has_government = fascism
 				NOT = { has_war_with = GER }
@@ -2925,14 +2051,14 @@ focus = {
 		}
 		
 		#bypass = {
-		#	any_country = {
+		#	any_other_country = {
 		#		original_tag = SPR
 		#		has_government = fascism
 		#		is_in_faction_with = GER
 		#	}
 		#}
 		x = 12
-		y = 17
+		y = 7
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -2947,7 +2073,7 @@ focus = {
 				}
 				custom_effect_tooltip = GER_nationalist_spain_ally_tt
 			}
-			random_country = {
+			random_other_country = {
 				limit = {
 					original_tag = SPR
 					has_government = fascism
@@ -2957,8 +2083,6 @@ focus = {
 			}
 		}
 	}
-
-
 
 	focus = {
 		id = GER_danzig_vs_slovakia
@@ -2970,26 +2094,24 @@ focus = {
 			OR = {
 				SLO = {
 					exists = yes
-					is_in_faction_with = GER
+				#	is_in_faction_with = GER
+					is_puppet_of = GER
 				}
-				owns_state = 70
+				owns_state = 70 # west slovakia
 			}
-			NOT = { owns_state = 85 }
+			NOT = { owns_state = 85 } # danzig
 			NOT = { has_war_with = POL }
-			POL = { owns_state = 72 }
+		#	POL = { owns_state = 72 } # zaolzie
 		}
-
-
 		x = 14
-		y = 15
+		y = 5
 		cost = 10
 		ai_will_do = {
 			factor = 0
-		}	
+		}
 		completion_reward = {
-			POL = {
-				country_event = { id = germany.80 days = 1 }
-			}
+		#	POL = { country_event = { id = germany.80 days = 1 } }
+			GER = { country_event = { id = germany_es.11 days = 1 } }
 		}
 	}
 
@@ -3012,7 +2134,7 @@ focus = {
 			is_alone_or_in_faction_at_peace_with_GER = no
 		}
 		x = 14
-		y = 16
+		y = 6
 		cost = 10
 		ai_will_do = {
 			factor = 0
@@ -3052,17 +2174,13 @@ focus = {
 	focus = {
 		id = GER_war_with_france
 		icon = GFX_goal_generic_major_war
-		prerequisite = { focus = GER_poland_friend focus = GER_danzig_or_war }
+		prerequisite = { focus = GER_around_maginot focus = GER_weserubung }
 		available = { 
 			is_puppet = no
-			OR = {
-				NOT = { has_war_with = POL }
-				POL = { has_capitulated = yes }
-			}
 			NOT = { is_in_faction_with = FRA }
 		}
-		x = 15
-		y = 17
+		x = 16
+		y = 8
 		cost = 10
 		bypass = {
 			OR = {
@@ -3090,7 +2208,7 @@ focus = {
  			create_wargoal = {
  				type = take_state_focus
  				target = FRA
- 				generator = { 28 }
+ 				generator = { 28 } # alsace
  			}
 		}
 	}	
@@ -3099,11 +2217,13 @@ focus = {
 		id = GER_naval_rearmament
 		icon = GFX_goal_generic_build_navy
 		x = 22
-		y = 10
+		y = 0
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
+
+		available_if_capitulated = yes
 
 		bypass = {
 			custom_trigger_tooltip =  {
@@ -3142,7 +2262,7 @@ focus = {
 		}
 
 		completion_reward = {
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					dockyard > 0
 					free_building_slots = {
@@ -3159,7 +2279,7 @@ focus = {
 				}
 				set_state_flag = GER_naval_rearmament_2dockyards
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					dockyard > 0
 					free_building_slots = {
@@ -3185,11 +2305,13 @@ focus = {
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = GER_naval_rearmament }
 		x = 22
-		y = 13
+		y = 3
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
+
+		available_if_capitulated = yes
 
 		complete_tooltip = {
 			navy_experience = 25
@@ -3222,7 +2344,7 @@ focus = {
 
 		completion_reward = {
 			navy_experience = 25
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					dockyard > 0
 					free_building_slots = {
@@ -3264,11 +2386,13 @@ focus = {
 		prerequisite = { focus = GER_naval_effort }
 		mutually_exclusive = { focus = GER_u_boat_effort }
 		x = 21
-		y = 16
+		y = 6
 		cost = 10
 		ai_will_do = {
 			factor = 0.25
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			navy_experience = 50
 			add_tech_bonus = {
@@ -3305,11 +2429,13 @@ focus = {
 		prerequisite = { focus = GER_naval_effort }
 		mutually_exclusive = { focus = GER_plan_z }
 		x = 23
-		y = 16
+		y = 6
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
+
+		available_if_capitulated = yes
 
 		complete_tooltip = {
 			navy_experience = 25
@@ -3335,7 +2461,7 @@ focus = {
 		
 		completion_reward = {
 			navy_experience = 25
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					dockyard > 0
 					free_building_slots = {
@@ -3369,11 +2495,13 @@ focus = {
 		icon = GFX_goal_generic_wolf_pack
 		prerequisite = { focus = GER_u_boat_effort }
 		x = 23
-		y = 17
+		y = 7
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = ti_bonus
@@ -3408,7 +2536,7 @@ focus = {
 			}
 		}
 		x = 19
-		y = 17
+		y = 7
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3468,7 +2596,7 @@ focus = {
 			}
 		}
 		x = 18
-		y = 18
+		y = 8
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3534,7 +2662,7 @@ focus = {
 			}
 		}
 		x = 20
-		y = 18
+		y = 8
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3594,7 +2722,7 @@ focus = {
 			}
 		}
 		x = 18
-		y = 19
+		y = 9
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3644,14 +2772,14 @@ focus = {
 				tooltip = GER_improve_national_spirit_tooltip
 				OR = {
 					GER = { controls_state = 126 }
-					any_country = {
+					any_other_country = {
 						is_in_faction_with = GER
 						controls_state = 126
 					}
 				}
 				OR = {
 					GER = { controls_state = 16 }
-					any_country = {
+					any_other_country = {
 						is_in_faction_with = GER
 						controls_state = 16
 					}
@@ -3677,7 +2805,7 @@ focus = {
 		}
 		cancel_if_invalid = no
 		x = 20
-		y = 12
+		y = 2
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -3697,26 +2825,28 @@ focus = {
 		prerequisite = { focus = GER_anschluss }
 		icon = GFX_goal_generic_political_pressure
 		available = {
+			NOT = { has_war_with = YUG }
 			NOT = { is_in_faction_with = YUG }
 			is_puppet = no
-			controls_state = 4
-			controls_state = 152
-			YUG = { owns_state = 102 }
+			controls_state = 4 # lower austria
+			controls_state = 152 # upper austria
 			has_army_manpower = { size > 749999 } #ca 80 div
+			YUG = { owns_state = 102 } # slovenia
 			NOT = { YUG = { is_puppet_of = GER } }
 		}
 		cancel = {
 			OR = {
 				is_in_faction_with = YUG
+				has_war_with = YUG
 				YUG = { is_puppet_of = GER }
-				NOT = { controls_state = 4 }
-				NOT = { controls_state = 152 }
-				NOT = { YUG = { owns_state = 102 } }
+				NOT = { controls_state = 4 } # lower austria
+				NOT = { controls_state = 152 } # upper austria
+				NOT = { YUG = { owns_state = 102 } } # slovenia
 			}
 		}
 		cancel_if_invalid = no
 		x = 18
-		y = 12
+		y = 2
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3763,15 +2893,15 @@ focus = {
 				AND = {
 					country_exists = YUG
 					NOT = { has_war_with = YUG }
-					owns_state = 102
+					owns_state = 102 # slovenia
 				}
 				AND = {
 					NOT = { country_exists = YUG }
-					owns_state = 102
-					owns_state = 45
-					owns_state = 106
-					owns_state = 103
-					owns_state = 105
+					owns_state = 102 # slovenia
+					owns_state = 45  # vojvodina; hungarian claim on yugoslavia
+					owns_state = 106 # macedonia
+					owns_state = 103 # dalmatia
+					owns_state = 105 # montenegro
 				}
 			}
 			OR = {
@@ -3783,7 +2913,6 @@ focus = {
 				}
 			}
 		}
-
 		bypass = {
 			OR = {	
 				is_in_faction_with = YUG
@@ -3791,10 +2920,10 @@ focus = {
 				NOT = {
 					OR = {
 						YUG = {
-							owns_state = 45
+							owns_state = 45 # vojvodina
 						}
 						YUG = {
-							owns_state = 106
+							owns_state = 106 # macedonia
 						}
 					}
 				}
@@ -3807,7 +2936,7 @@ focus = {
 		}
 
 		x = 18
-		y = 13
+		y = 3
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -3830,10 +2959,10 @@ focus = {
 				effect_tooltip = {
 					HUN = {
 						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
-						transfer_state = 45
+						transfer_state = 45 # vojvodina
 					}
 				}
-				every_country = {
+				every_other_country = {
 					limit = { 
 						is_faction_leader = yes
 						NOT = { tag = GER }
@@ -3857,10 +2986,10 @@ focus = {
 				effect_tooltip = {
 					BUL = {
 						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
-						transfer_state = 106
+						transfer_state = 106 # macedonia
 					}
 				}
-				every_country = {
+				every_other_country = {
 					limit = { 
 						is_faction_leader = yes
 						NOT = { tag = GER }
@@ -3873,7 +3002,7 @@ focus = {
 					ITA = {
 						OR = {
 							has_completed_focus = ITA_slovenia_dalmatia_claims
-							owns_state = 44
+							owns_state = 44 # albania
 						}
 						is_friend_or_potential_friend_of_GER = yes
 						NOT = { is_in_faction_with = YUG }
@@ -3890,15 +3019,15 @@ focus = {
 						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
 						if = {
 							limit = { has_completed_focus = ITA_slovenia_dalmatia_claims }
-							transfer_state = 103
+							transfer_state = 103 # dalmatia
 						}
 						if = {
-							limit = { owns_state = 44 }
-							transfer_state = 105
+							limit = { owns_state = 44 } # albania
+							transfer_state = 105 # montenegro
 						}	
 					}
 				}
-				every_country = {
+				every_other_country = {
 					limit = { 
 						is_faction_leader = yes
 						NOT = { tag = GER }
@@ -3924,7 +3053,7 @@ focus = {
 		bypass = {
 			OR = {
 				NOT = { country_exists = YUG }
-				any_country = {
+				any_other_country = {
 					is_in_faction_with = ROOT
 					YUG = {
 						is_puppet_of = PREV
@@ -3933,7 +3062,7 @@ focus = {
 			}
 		}
 		x = 18
-		y = 14
+		y = 4
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -3952,14 +3081,14 @@ focus = {
 			is_puppet = no
 			GRE = { 
 				has_war = no 
-				owns_state = 731
-				owns_state = 186
-				owns_state = 185
-				owns_state = 47 
+				owns_state = 731 # central macedonia
+				owns_state = 186 # peloponnese
+				owns_state = 185 # epirus
+				owns_state = 47  # thessaly
 			}
 		}
 		x = 18
-		y = 15
+		y = 5
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -4025,9 +3154,9 @@ focus = {
 				limit = {
 					GRE = {
 						OR = {
-							owns_state = 185
-							owns_state = 186
-							owns_state = 47
+							owns_state = 185 # peloponnese
+							owns_state = 186 # epirus
+							owns_state = 47  # thessaly
 						} 
 					}
 					ITA = {
@@ -4036,7 +3165,7 @@ focus = {
 						has_completed_focus = ITA_greece_war_goal
 						OR = {
 							is_in_faction_with = GER
-							is_in_faction = no							
+							is_in_faction = no
 						}
 					}
 				}
@@ -4045,13 +3174,13 @@ focus = {
 			}
 			if = {
 				limit = {
-					GRE = { owns_state = 184 }
+					GRE = { owns_state = 184 } # thrace
 					BUL = {
 						NOT = { has_war_with = GRE }
 						country_exists = BUL
 						OR = {
 							is_in_faction_with = GER
-							is_in_faction = no							
+							is_in_faction = no
 						}
 					}
 				}
@@ -4103,7 +3232,7 @@ focus = {
 			NOT = { is_in_faction_with = GRE }
 		}
 		x = 20
-		y = 15
+		y = 5
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -4128,7 +3257,7 @@ focus = {
 			}
 		}
 		x = 18
-		y = 16
+		y = 6
 		cost = 10
 		ai_will_do = {
 			factor = 10

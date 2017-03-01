@@ -14,9 +14,6 @@ state={
 			air_base = 4
 		}
 		add_core_of = LIT
-		1920.1.10 = {
-			owner = LIT
-		}
 	}
 	provinces={
 		327 3272 6281 6296 6407 9357 9404 11312 

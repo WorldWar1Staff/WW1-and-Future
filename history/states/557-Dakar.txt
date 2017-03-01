@@ -1,10 +1,13 @@
-
+# Mauritania
 state={
 	id=557
 	name="STATE_557"
 
 	history={
 		owner = FRA
+		victory_points = {
+			5034 1
+		}
 		buildings = {
 			infrastructure = 0
 

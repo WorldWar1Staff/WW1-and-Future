@@ -1,0 +1,17 @@
+# Ghardaia (central-west Algeria)
+state={
+	id=513
+	name="STATE_513"
+	history={
+		owner = FRA
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	provinces={
+		1126 1967 2049 4018 7040 9960 12020 
+	}
+	manpower=400000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}

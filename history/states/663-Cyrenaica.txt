@@ -1,10 +1,7 @@
+# Central Benghasi
 state={
 	id=663
 	name="STATE_663"
-	manpower = 8808
-	
-	state_category = wasteland
-
 	history={
 		owner = ITA
 		buildings = {
@@ -12,8 +9,10 @@ state={
 		}
 		add_core_of = LBA
 	}
-
 	provinces={
-		1062 1186 4060 4063 4133 7063 7139 7206 9977 10049 12025 12079 13078 
+		1062 4133 4200 7063 7076 7139 9977 12079 
 	}
+	manpower=4808
+	buildings_max_level_factor=1.000
+	state_category=wasteland
 }

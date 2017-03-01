@@ -1,3 +1,4 @@
+# Tanzania
 state={
 	id=546
 	name="STATE_546"
@@ -7,6 +8,9 @@ state={
 	history={
 		owner = GER
 		victory_points = {
+			12911 2
+		}
+		victory_points = {
 			2196 1
 		}
 		buildings = {
@@ -15,9 +19,7 @@ state={
 				naval_base = 2
 
 			}
-		}
-		1920.1.10 = {
-			owner = ENG
+
 		}
 
 	}

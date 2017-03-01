@@ -37,9 +37,13 @@ country_event = {
 			country_event = { days = 5 id = news.2 }
 		}
 		JAP = {
-			transfer_state = 608
-			transfer_state = 597 
-			transfer_state = 614
+			transfer_state = 608 # beijing
+			transfer_state = 597 # shandong
+			transfer_state = 614 # hebei
+			# added: expanded state mod
+			transfer_state = 789 # tientsin
+			transfer_state = 787 # weihaiwei
+			transfer_state = 788 # jiaozhou
 		}
 	}
 }
@@ -56,8 +60,11 @@ country_event = {
 	option = {
 		if = {
 			limit = { 
-			714 = { 
-				is_owned_by = JAP 
+			714 = { # heilungkiang; northern manchuria
+				OR = {
+					is_owned_by = JAP
+					is_owned_by = MAN
+				} 
 				any_neighbor_state = { is_owned_by = SOV } }
 			} 
 			714 = { add_manpower = -30000 }
@@ -66,7 +73,10 @@ country_event = {
 			limit = {
 				NOT = {
 					714 = {
-						is_owned_by = JAP 
+						OR = {
+							is_owned_by = JAP
+							is_owned_by = MAN
+						}
 						any_neighbor_state = { is_owned_by = SOV } 
 					}
 				}
@@ -103,8 +113,11 @@ country_event = {
 		name = japan.4.a
 		if = {
 			limit = { 
-			714 = { 
-				is_owned_by = JAP 
+			714 = { # heilungkiang; northern manchuria
+				OR = {
+					is_owned_by = JAP
+					is_owned_by = MAN
+				}
 				any_neighbor_state = { is_owned_by = SOV } }
 			} 
 			714 = { add_manpower = -20000 }
@@ -113,7 +126,10 @@ country_event = {
 			limit = {
 				NOT = {
 					714 = {
-						is_owned_by = JAP 
+						OR = {
+							is_owned_by = JAP
+							is_owned_by = MAN
+						}
 						any_neighbor_state = { is_owned_by = SOV } 
 					}
 				}
@@ -171,7 +187,7 @@ country_event = {
 		JAP = {
 			if = {
 				limit = {
-					286 = {
+					286 = { # vanilla: indochina; sour: cochinchina
 						is_owned_by = FRA
 						OR = {
 							is_controlled_by = FRA
@@ -183,7 +199,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					670 = {
+					670 = { # laos
 						is_owned_by = FRA
 						OR = {
 							is_controlled_by = FRA
@@ -195,7 +211,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					671 = {
+					671 = { # tonkin
 						is_owned_by = FRA
 						OR = {
 							is_controlled_by = FRA
@@ -205,7 +221,32 @@ country_event = {
 				}
 				transfer_state = 671
 			}
-			add_named_threat = { threat = 1 name = france.1.t }
+			# added: (sour map)
+			if = {
+				limit = {
+					741 = { # cambodia
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 741
+			}
+			if = {
+				limit = {
+					778 = { # annam
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 778
+			}
+			add_named_threat = { threat = 3 name = france.1.t }
 		}
 	}
 }
@@ -392,10 +433,23 @@ country_event = {
 		set_global_flag = indian_national_army_setup
 		RAJ = { 
 			add_national_unity = -0.2
-			add_ideas = RAJ_azad_hind
-		}
-		ENG = {
-			country_event = { id = britain.19 }
+			if = {
+				limit = { has_dlc = "Together for Victory" }
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.05
+				}
+				else = {
+					add_ideas = RAJ_azad_hind 
+					ENG = {
+						country_event = { id = britain.19 }
+					}
+				}
+			}
 		}
 	}
 }
@@ -409,9 +463,20 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	#Accept - become puppet
 	option = {
 		name = japan.16.a
-		ai_chance = { factor = 60 }
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0
+				strength_ratio = {
+					tag = JAP
+					ratio > 0.10
+				}
+				is_historical_focus_on = yes
+			}
+		}
 		JAP = { 
 			country_event = { id = japan.17 }
 			effect_tooltip = { puppet = CHI }
@@ -446,6 +511,7 @@ country_event = {
 	option = {
 		name = japan.17.a
 		puppet = CHI
+		add_named_threat = { threat = 20 name = chinese_puppet_focus }
 		hidden_effect = {
 			news_event = { hours = 6 id = news.210 }
 		}

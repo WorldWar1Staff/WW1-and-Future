@@ -11,9 +11,6 @@ state={
 			infrastructure = 5
 		}
 		add_core_of = LAT
-		1920.1.10 = {
-			owner = LAT
-		}
 	}
 	manpower=200000
 	buildings_max_level_factor=1.000

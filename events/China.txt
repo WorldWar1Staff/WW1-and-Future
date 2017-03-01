@@ -31,9 +31,13 @@ country_event = {
 		ai_chance = { factor = 15 }
 		JAP = {
 			effect_tooltip = {
-				transfer_state = 608
-				transfer_state = 597
-				transfer_state = 614
+				transfer_state = 608 # beijing
+				transfer_state = 597 # shandong
+				transfer_state = 614 # hebei
+				# added: (sour map)
+				transfer_state = 789 # tientsin
+				transfer_state = 787 # weihaiwei
+				transfer_state = 788 # jiaozhou
 			}
 			country_event = { id = japan.2 }
 		}
@@ -434,21 +438,21 @@ country_event = {
 		has_opinion_modifier = hostile_status
 		OR = {
 			divisions_in_state = {
-				state = 605
+				state = 605 # sichuan
 				size > 0
 			}
 			divisions_in_state = {
-				state = 620
+				state = 620 # hubei
 				size > 0
 			}
 			divisions_in_state = {
-				state = 607
+				state = 607 # henan
 				size > 0
 			}
 		}
 		PRC = {
 			divisions_in_state = {	
-				state = 622	
+				state = 622	 # shaanxi
 				size > 0	
 			}	
 		}	
@@ -469,31 +473,31 @@ country_event = {
 		if = {
 			limit = {
 				divisions_in_state = {
-					state = 605
+					state = 605 # sichuan
 					size > 0
 				}
 			}
-			605 = { set_border_war = yes }
+			605 = { set_border_war = yes } # sichuan
 		}
 		if = {
 			limit = {
 				divisions_in_state = {
-					state = 620
+					state = 620 # hubei
 					size > 0
 				}
 			}
-			620 = { set_border_war = yes }
+			620 = { set_border_war = yes } # hubei
 		}
 		if = {
 			limit = {
 				divisions_in_state = {
-					state = 607
+					state = 607 # henan
 					size > 0
 				}
 			}
-			607 = { set_border_war = yes }
+			607 = { set_border_war = yes } # henan
 		}
-		622 = { set_border_war = yes }
+		622 = { set_border_war = yes } # shaanxi
 	}
 	option = {
 		name = china.13.b
@@ -517,25 +521,25 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			605 = {
+			605 = { # sichuan
 				if = {
 					limit = { is_border_conflict = yes }
 					set_border_war = no
 				}
 			}
-			620 = {
+			620 = { # hubei
 				if = {
 					limit = { is_border_conflict = yes }
 					set_border_war = no
 				}
 			}
-			607 = {
+			607 = { # henan
 				if = {
 					limit = { is_border_conflict = yes }
 					set_border_war = no
 				}
 			}
-			622 = {
+			622 = { # shaanxi
 				if = {
 					limit = { is_border_conflict = yes }
 					set_border_war = no
@@ -583,25 +587,25 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			605 = {
+			605 = { # sichuan
 				if = {
 					limit = { is_border_conflict = yes }
 					set_border_war = no
 				}
 			}
-			620 = {
+			620 = { # hubei
 				if = {
 					limit = { is_border_conflict = yes }
 					set_border_war = no
 				}
 			}
-			607 = {
+			607 = { # henan
 				if = {
 					limit = { is_border_conflict = yes }
 					set_border_war = no
 				}
 			}
-			622 = {
+			622 = { # shaanxi
 				if = {
 					limit = { is_border_conflict = yes }
 					set_border_war = no
@@ -646,7 +650,7 @@ country_event = {
 	option = {
 		name = china.18.a
 		effect_tooltip = {
-			622 = { set_border_war = yes }
+			622 = { set_border_war = yes } # shaanxi
 			CHI = {
 				if = {
 					limit = {
@@ -655,7 +659,7 @@ country_event = {
 							size > 0
 						}
 					}
-					605 = { set_border_war = yes }
+					605 = { set_border_war = yes } # sichuan
 				}
 				if = {
 					limit = {
@@ -664,7 +668,7 @@ country_event = {
 							size > 0
 						}
 					}
-					620 = { set_border_war = yes }
+					620 = { set_border_war = yes } # hubei
 				}
 				if = {
 					limit = {
@@ -673,7 +677,7 @@ country_event = {
 							size > 0
 						}
 					}
-					607 = { set_border_war = yes }
+					607 = { set_border_war = yes } # henan
 				}
 			}
 		}
@@ -694,7 +698,7 @@ country_event = {
 		has_war_with = JAP
 		JAP = { has_offensive_war = yes }
 		has_defensive_war = yes
-		NOT = { owns_state = 622 }		
+		NOT = { owns_state = 622 } # shaanxi
 		NOT = { has_global_flag = CHI_unite }
 		NOT = { has_global_flag = CHI_no_national_front_flag }
 	}
@@ -739,11 +743,9 @@ country_event = {
 
 		is_puppet = no
 		NOT = { has_war_with = CHI }
-		NOT = {
-			AND = {
-				has_war = yes
-				is_in_faction = yes
-			}
+		AND = {
+			has_war = no
+			is_in_faction = no
 		}
 	}
 
@@ -800,11 +802,9 @@ country_event = {
 		JAP = { has_offensive_war = yes }
 		
 		is_puppet = no
-		NOT = {
-			AND = {
-				has_war = yes
-				is_in_faction = yes
-			}
+		AND = {
+			has_war = no
+			is_in_faction = no
 		}
 	}
 
@@ -934,8 +934,17 @@ country_event = {
 		}
 		hidden_effect = {
 			if = {
-				limit = { NOT = { has_war_with = SOV } }
-			load_oob = "PRC_SOV_reinforcements"
+				limit = { 
+					NOT = { has_war_with = SOV } 
+					any_country = {
+						OR = {
+							tag = ROOT
+							is_in_faction_with = ROOT
+						}
+						controls_state = 621
+					}
+				}
+				load_oob = "PRC_SOV_reinforcements"
 			}
 		}
 	}
@@ -1015,7 +1024,6 @@ country_event = {
 		tag = CHI
 		has_global_flag = CHI_unite
 		NOT = { has_war_with = JAP }
-		is_faction_leader = yes
 	}
 
 	mean_time_to_happen = {
@@ -1080,6 +1088,7 @@ country_event = {
 	trigger = {
 		tag = PRC
 		has_global_flag = PRC_restart_CHI_war
+		NOT = { has_war_together_with = CHI }
 	}
 
 	mean_time_to_happen = { days = 360 }
@@ -1139,22 +1148,17 @@ country_event = {
 		hidden_effect = {
 			every_state = {
 				limit = {
-					NOT = { is_owned_by = JAP }
-					OR = {
-						owner = {
-							is_puppet = no
-						}
-						owner = {
-							is_puppet_of = CHI
-						}
+					controller = {
+						original_tag = CHI
+						is_puppet_of = CHI
 					}
 					is_core_of = PRC
 					OR = {
 						region = 143
 						region = 155
 					}
-					NOT = { state = 525 }
-					NOT = { state = 527 }				
+					NOT = { state = 525 } # south korea
+					NOT = { state = 527 } # north korea
 				}
 				ROOT = { transfer_state = PREV }
 			}			
@@ -1211,7 +1215,7 @@ country_event = {
 					has_civil_war = yes
 				}
 			}
-			random_country = {
+			random_other_country = {
 				limit = {
 					original_tag = CHI
 					has_war_with = FROM
@@ -1312,8 +1316,10 @@ country_event = {
 		NOT = {
 			country_exists = CHI
 		}
-		owns_state = 608 #Beijing
-		owns_state = 613 #Nanjing
+		OR = {
+			owns_state = 608 #Beijing
+			owns_state = 613 #Nanjing
+		}
 	}
 
 	mean_time_to_happen = {
@@ -1330,7 +1336,10 @@ country_event = {
 				NOT = { 608 = { is_controlled_by = PRC } }
 			}
 		}
-		set_capital = 608
+		trigger = {
+			owns_state = 608
+		}
+		set_capital = 608 # beijing
 	}
 
 	#Move to Nanjing
@@ -1346,7 +1355,7 @@ country_event = {
 		trigger = {
 			owns_state = 613
 		}
-		set_capital = 613
+		set_capital = 613 # nanjing
 	}
 
 	#Stay where you are

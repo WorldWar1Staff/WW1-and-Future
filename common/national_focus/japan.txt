@@ -16,6 +16,14 @@ focus_tree = {
 		y = 0
 		cost = 10
 		icon = GFX_goal_generic_construction2
+
+		available = {
+			is_puppet = no
+			OR = {
+				NOT = { country_exists = MAN }
+				MAN = { is_puppet_of = JAP }
+			}
+		}
 		bypass = {
 			NOT = { country_exists = SOV }
 		}
@@ -39,11 +47,25 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = test_the_ussr_focus }
 		mutually_exclusive = { focus = northern_expansion_focus }
+		available = {
+		    is_puppet = no
+		    NOT = {
+		        is_in_faction_with = ENG
+		        is_in_faction_with = HOL
+		    }
+		}
 		bypass = {
-			NOT = {
-				country_exists = ENG
-				country_exists = HOL
-			}
+		    OR = {
+		        AND = {
+		            has_war_with = ENG
+		            has_war_with = HOL
+		        }
+		        NOT = {
+		            country_exists = ENG
+		            country_exists = HOL
+
+		        }
+		    }
 		}
 		will_lead_to_war_with = ENG 
 		will_lead_to_war_with = HOL
@@ -58,8 +80,12 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
+				JAP_or_friend_controls_big_part_of_CHI_or_peace = no
+			}
+			modifier = {
+				factor = 0
 				OR = {
-					any_country = {
+					any_other_country = {
 						has_war_with = ROOT
 						is_major = yes
 					}
@@ -67,16 +93,20 @@ focus_tree = {
 				}
 			}			
 		}
+		historical_ai = {
+			JAP_or_friend_controls_big_part_of_CHI_or_peace = yes
+		}
 		completion_reward = {
+			custom_effect_tooltip = southern_expansion_focus_tt
 			create_wargoal = {
 				type = take_state_focus
 				target = ENG
-				generator = { 336 333 }
+				generator = { 336 333 797 795 796 } # malaya, northern borneo, singapore, brunei, batam
 			}
 			create_wargoal = {
 				type = take_state_focus
 				target = HOL
-				generator = { 334 672} 
+				generator = { 334 672 335 667 673 668 738 669 } # dutch east indies
 			}
 			hidden_effect = {
 				news_event = { hours = 6 id = news.208 }
@@ -97,7 +127,11 @@ focus_tree = {
 		prerequisite = { focus = test_the_ussr_focus }
 		mutually_exclusive = { focus = southern_expansion_focus }
 		available = {
-			country_exists = SOV 
+		    is_puppet = no
+		    country_exists = SOV
+		    NOT = {
+		        is_in_faction_with = SOV
+		    }
 		}
 		will_lead_to_war_with = SOV
 		x = 2
@@ -112,19 +146,23 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					any_country = {
+					any_other_country = {
 						has_war_with = ROOT
 						is_major = yes
 					}
 					has_war_with_amount > 1
 				}
 			}			
+			modifier = {
+				factor = 0
+				JAP_or_friend_controls_big_part_of_CHI_or_peace = no
+			}
 		}	
 		completion_reward = {
 			create_wargoal = {
 				type = take_state_focus
 				target = SOV
-				generator = { 408 655 560 657 } 
+				generator = { 408 655 560 657 407 } # n. sakhalin and outer manchuria
 			}
 			hidden_effect = {
 				news_event = { hours = 6 id = news.209 }
@@ -153,11 +191,14 @@ focus_tree = {
 				factor = 0
 				date < 1941.10.1
 			}
-
+			modifier = {
+				factor = 0
+				JAP_or_friend_controls_big_part_of_CHI_or_peace = no
+			}
 			modifier = {
 				factor = 0
 				OR = {
-					any_country = {
+					any_other_country = {
 						has_war_with = ROOT
 						is_major = yes
 					}
@@ -169,11 +210,14 @@ focus_tree = {
 				}
 			}			
 		}	
+		historical_ai = {
+			JAP_or_friend_controls_big_part_of_CHI_or_peace = yes
+		}
 		completion_reward = {
 			create_wargoal = {
 				type = take_state_focus
 				target = USA
-				generator = { 629 } 
+				generator = { 629 631 630 632 638 727 642 726 650 } # usa pacific islands
 			}
 			
 			add_timed_idea = { idea = for_the_emperor_idea days = 100 }
@@ -253,7 +297,7 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					any_country = {
+					any_other_country = {
 						has_war_with = ROOT
 						is_major = yes
 					}
@@ -265,7 +309,7 @@ focus_tree = {
 			create_wargoal = {
 				type = take_state_focus
 				target = CHI
-				generator = { 608 } 
+				generator = { 608 789 } # beijing, tientsin
 			}
 			create_wargoal = {
 				type = annex_everything
@@ -310,7 +354,7 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					any_country = {
+					any_other_country = {
 						has_war_with = ROOT
 						is_major = yes
 					}
@@ -425,6 +469,7 @@ focus_tree = {
 		mutually_exclusive = { focus = found_own_faction_focus }
 		available = {
 			country_exists = GER
+			GER = { is_faction_leader = yes }
 		}
 		x = 6
 		y = 3
@@ -436,7 +481,10 @@ focus_tree = {
 				factor = 0
 				NOT = { has_war_with = ENG }
 			}
-
+			modifier = {
+				is_in_faction = yes
+				factor = 0
+			}
 			modifier = {
 				factor = 0.5
 				ai_irrationality > 20
@@ -472,9 +520,11 @@ focus_tree = {
 					has_war_with = FRA
 					is_in_faction_with = FRA
 					AND = {
-						NOT = { 286 = { is_owned_by = FRA } }	
-						NOT = { 670 = { is_owned_by = FRA } }
-						NOT = { 671 = { is_owned_by = FRA } }
+						NOT = { 286 = { is_owned_by = FRA } } # vanilla indochina; cochinchina
+						NOT = { 670 = { is_owned_by = FRA } } # laos
+						NOT = { 671 = { is_owned_by = FRA } } # tonkin
+						NOT = { 778 = { is_owned_by = FRA } } # annam
+						NOT = { 741 = { is_owned_by = FRA } } # cambodia
 					}
 				}
 			}
@@ -513,6 +563,7 @@ focus_tree = {
 		available = { 
 			is_puppet = no 
 			country_exists = SIA	
+			NOT = { has_non_aggression_pact_with = SIA }
 		}
 		x = 6
 		y = 5
@@ -529,10 +580,24 @@ focus_tree = {
 		id = subvert_india_focus
 		prerequisite = { focus = found_own_faction_focus focus = axis_leanings_focus }
 		available = { 
-			has_war_with = ENG
+			OR = {
+				AND = {
+					RAJ = {
+						is_subject_of = ENG
+					}
+					has_war_with = ENG
+				}
+				AND = {
+					RAJ = {
+						is_subject = no
+					}
+					has_war_with = RAJ	
+				}
+			}
+			NOT = { RAJ = { has_government = fascism } }
 			OR = {
 				controls_state = 336
-				any_country = {
+				any_other_country = {
 					is_in_faction_with = JAP
 					controls_state = 336
 				}
@@ -540,7 +605,7 @@ focus_tree = {
 
 			OR = {
 				is_neighbor_of = RAJ	
-				any_country = {
+				any_other_country = {
 					is_in_faction_with = JAP
 					is_neighbor_of = RAJ
 					}
@@ -568,6 +633,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_ideas = imperial_glory_idea
 		}
@@ -586,6 +653,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 2.5
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_opinion_modifier = { target = SIA modifier = jap_sia_love }
 			SIA = {
@@ -603,6 +672,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 2
 		}
+
+		available_if_capitulated = yes
 
 		bypass = {
 			custom_trigger_tooltip = {
@@ -645,8 +716,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 5
 
-
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_in_home_area = yes
 					free_building_slots = {
@@ -664,7 +734,7 @@ focus_tree = {
 				set_state_flag = JAP_army_primancy_focus_2AF_1
 			}
 	
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_in_home_area = yes
 					free_building_slots = {
@@ -694,6 +764,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 2
 		}
+		available_if_capitulated = yes
+
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = JAP_navy_primancy_focus_bypass_tt
@@ -734,7 +806,7 @@ focus_tree = {
 
 		completion_reward = {
 			navy_experience = 25
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_in_home_area = yes
 					free_building_slots = {
@@ -751,7 +823,7 @@ focus_tree = {
 				}
 				set_state_flag = JAP_navy_primancy_focus_2dockyards_1
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_in_home_area = yes
 					free_building_slots = {
@@ -782,6 +854,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			army_experience = 5
 			add_tech_bonus = {
@@ -803,6 +877,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			air_experience = 25
 
@@ -830,6 +906,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			army_experience = 5
 			add_tech_bonus = {
@@ -853,6 +931,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+
+		available_if_capitulated = yes
 
 		bypass = {
 			custom_trigger_tooltip = {
@@ -890,11 +970,11 @@ focus_tree = {
 
 			if = {
 				limit = {
-					282 = {
+					282 = { # tokyo
 						OR = {
-							NOT = { is_owned_by = JAP }
+							NOT = { is_owned_and_controlled_by = JAP }
 							AND = {
-								is_owned_by = JAP
+								is_owned_and_controlled_by = JAP
 								free_building_slots = {
 									building = air_base
 									size < 2
@@ -903,7 +983,7 @@ focus_tree = {
 						}
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = { 
 						free_building_slots = {
 							building = air_base
@@ -919,10 +999,10 @@ focus_tree = {
 				}
 			}
 			#Kanto
-			282 = {
+			282 = { # tokyo
 				if = {
 					limit = { 
-						is_owned_by = JAP
+						is_owned_and_controlled_by = JAP
 						free_building_slots = {
 							building = air_base
 							size > 1
@@ -938,11 +1018,11 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					633 = {
+					633 = { # marshall islands
 						OR = {
-							NOT = { is_owned_by = JAP }
+							NOT = { is_owned_and_controlled_by = JAP }
 							AND = {
-								is_owned_by = JAP
+								is_owned_and_controlled_by = JAP
 								free_building_slots = {
 									building = air_base
 									size < 1
@@ -951,7 +1031,7 @@ focus_tree = {
 						}
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = { 
 						free_building_slots = {
 							building = air_base
@@ -970,7 +1050,7 @@ focus_tree = {
 			633 = {
 				if = {
 					limit = { 
-						is_owned_by = JAP
+						is_owned_and_controlled_by = JAP
 						free_building_slots = {
 							building = air_base
 							size > 0
@@ -988,9 +1068,9 @@ focus_tree = {
 				limit = {
 					647 = {
 						OR = {
-							NOT = { is_owned_by = JAP }
+							NOT = { is_owned_and_controlled_by = JAP }
 							AND = {
-								is_owned_by = JAP
+								is_owned_and_controlled_by = JAP
 								free_building_slots = {
 									building = air_base
 									size < 2
@@ -999,7 +1079,7 @@ focus_tree = {
 						}
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = { 
 						free_building_slots = {
 							building = air_base
@@ -1018,7 +1098,7 @@ focus_tree = {
 			647 = {
 				if = {
 					limit = { 
-						is_owned_by = JAP
+						is_owned_and_controlled_by = JAP
 							free_building_slots = {
 							building = air_base
 						size > 1
@@ -1035,11 +1115,11 @@ focus_tree = {
 
 			if = {
 				limit = {
-					524 = {
+					524 = { # taiwan
 						OR = {
-							NOT = { is_owned_by = JAP }
+							NOT = { is_owned_and_controlled_by = JAP }
 							AND = {
-								is_owned_by = JAP
+								is_owned_and_controlled_by = JAP
 								free_building_slots = {
 									building = air_base
 									size < 2
@@ -1048,7 +1128,7 @@ focus_tree = {
 						}
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = { 
 						free_building_slots = {
 							building = air_base
@@ -1063,10 +1143,10 @@ focus_tree = {
 					set_state_flag = JAP_air_base_expansion_focus_2airbase
 				}
 			}
-			524 = {
+			524 = { # taiwan
 				if = {
 					limit = { 
-						is_owned_by = JAP
+						is_owned_and_controlled_by = JAP
 							free_building_slots = {
 							building = air_base
 						size > 1
@@ -1083,11 +1163,11 @@ focus_tree = {
 
 			if = {
 				limit = {
-					716 = {
+					745 = { # dalian
 						OR = {
-							NOT = { is_owned_by = JAP }
+							NOT = { is_owned_and_controlled_by = JAP }
 							AND = {
-								is_owned_by = JAP
+								is_owned_and_controlled_by = JAP
 								free_building_slots = {
 									building = air_base
 									size < 2
@@ -1096,7 +1176,7 @@ focus_tree = {
 						}
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = { 
 						free_building_slots = {
 							building = air_base
@@ -1111,10 +1191,10 @@ focus_tree = {
 					set_state_flag = JAP_air_base_expansion_focus_2airbase
 				}
 			}			
-			716 = {
+			745 = { # dalian
 				if = {
 					limit = { 
-						is_owned_by = JAP
+						is_owned_and_controlled_by = JAP
 							free_building_slots = {
 							building = air_base
 						size > 1
@@ -1142,6 +1222,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = land_doc_bonus
@@ -1168,6 +1250,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}		
+		available_if_capitulated = yes
+
 		completion_reward = {
 			navy_experience = 50
 			add_tech_bonus = {
@@ -1201,6 +1285,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			air_experience = 25
 
@@ -1236,6 +1322,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = dd_bonus
@@ -1267,6 +1355,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
+
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = JAP_navy_primancy_focus_bypass_tt
@@ -1306,7 +1396,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			navy_experience = 25
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_in_home_area = yes
 					free_building_slots = {
@@ -1323,7 +1413,7 @@ focus_tree = {
 				}
 				set_state_flag = JAP_naval_expansion_focus_2dockyards_1
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_in_home_area = yes
 					free_building_slots = {
@@ -1354,6 +1444,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 		#	add_tech_bonus = {
 		#		name = dd_bonus
@@ -1377,6 +1469,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			navy_experience = 25
 			add_tech_bonus = {
@@ -1398,41 +1492,52 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			navy_experience = 25
-			528 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					province = 9950
-					instant_build = yes
+			528 = { # kyushu
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 9950
+						instant_build = yes
+					}
 				}
 			}
-
-			633 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					province = 13041
-					instant_build = yes
+			633 = { # marshall islands
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 13041
+						instant_build = yes
+					}
 				}
 			}
-
-			684 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					province = 2489
-					instant_build = yes
+			684 = { # caroline islands
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 2489
+						instant_build = yes
+					}
 				}
 			}
-
-			648 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					province = 13026
-					instant_build = yes
+			648 = { # marcus island
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 13026
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -1449,6 +1554,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 0.25
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = cv_bonus
@@ -1470,6 +1577,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = bb_bonus
@@ -1489,6 +1598,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_ideas = spiritual_mobilization_idea
 		}
@@ -1503,6 +1614,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_national_unity = 0.05
 			add_ideas = warrior_traditions_idea
@@ -1519,6 +1632,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			hidden_effect = {
 				set_rule = {
@@ -1540,8 +1655,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
-			set_technology = { suicide_craft = 1 }
+			custom_effect_tooltip = imperial_glory_focus_effect
+			hidden_effect = { set_technology = { suicide_craft = 1 } }
 		}
 	}
 
@@ -1555,6 +1673,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_ideas = student_mobilization_idea
 		}
@@ -1571,6 +1691,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -1586,6 +1708,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = synth_bonus
@@ -1607,6 +1731,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = dd_bonus
@@ -1645,6 +1771,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
+		available_if_capitulated = yes
+
 		completion_reward = {
 			add_ideas = imperial_austerity_idea
 		}
@@ -1660,6 +1788,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
+
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = construction_effort_tt
@@ -1684,7 +1814,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -1700,7 +1830,7 @@ focus_tree = {
 				}
 				set_state_flag = JAP_industrial_effort_focus2_1IC
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -1716,7 +1846,7 @@ focus_tree = {
 				}
 				set_state_flag = JAP_industrial_effort_focus2_1IC
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -1757,43 +1887,54 @@ focus_tree = {
 			}
 		}			
 		completion_reward = {			
-			609 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
+			609 = { # east hebei
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
 				}
 			}
-
-			610 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
+			610 = { # jehoi
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
 				}
 			}
-
-			716 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
+			716 = { # liaotung
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
 				}
 			}
-			
-			527 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
+			527 = { # north korea
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
 				}
 			}
-
-			525 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
+			525 = { # taiwan
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -1810,75 +1951,92 @@ focus_tree = {
 		}	
 		completion_reward = {
 
-			282 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 3
-					province = 1182
-					instant_build = yes
+			282 = { # kanto; tokyo
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 1182
+						instant_build = yes
+					}
 				}
 			}
-
-			648 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 3
-					province = 13026
-					instant_build = yes
+			648 = { # marcus island
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 13026
+						instant_build = yes
+					}
 				}
 			}
-
-			645 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 3
-					province = 13025
-					instant_build = yes
+			645 = { # iwo jima
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 13025
+						instant_build = yes
+					}
 				}
 			}
-
-			524 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 3
-					province = 12068
-					instant_build = yes
+			524 = { # taiwan
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 12068
+						instant_build = yes
+					}
 				}
 			}
-
-			526 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 3
-					province = 11932
-					instant_build = yes
+			526 = { # okinawa
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 11932
+						instant_build = yes
+					}
 				}
 			}
-
-			529 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 3
-					province = 1092
-					instant_build = yes
+			529 = { # chugoku; hiroshima
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 1092
+						instant_build = yes
+					}
 				}
 			}
-
-			528 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 3
-					province = 9950
-					instant_build = yes
+			528 = { # kyushu
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 9950
+						instant_build = yes
+					}
 				}
 			}
-
-			531 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 3
-					province = 7072
-					instant_build = yes
+			531 = { # kansai
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 7072
+						instant_build = yes
+					}
 				}
 			}
 		}

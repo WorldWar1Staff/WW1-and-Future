@@ -12,11 +12,6 @@ state={
 		buildings = {
 			infrastructure = 8
 		}
-		add_core_of = DEN
 		add_core_of = GER
-		1920.1.10 = {
-			owner = DEN
-			add_core_of = DEN
-		}
 	}
 }

@@ -1,15 +1,13 @@
-
+# Northumberland
 state={
 	id=131
 	name="STATE_131"
-	manpower = 2128860
-	
+	manpower = 1500000
 	state_category = city
 	resources={
-		steel=60
+		steel=40
 		aluminium=8
 	}
-
 	history={
 		owner = ENG
 		victory_points = {
@@ -32,8 +30,7 @@ state={
 			}
 		}
 	}
-
 	provinces={
-		219 351 6399 9285 11270 11299 11332 
+		351 11270 11299 
 	}
 }

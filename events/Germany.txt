@@ -15,30 +15,21 @@ country_event = {
 	
 	option = {
 		name = germany.4.a
-		4 = {
-			if = {
-				limit = { is_owned_by = AUS }
-				add_core_of = GER
-			}
-		}
-		152 = {
-			if = {
-				limit = { is_owned_by = AUS }
-				add_core_of = GER
-			}
-		}
-		153 = {
-			if = {
-				limit = { is_owned_by = AUS }
-				add_core_of = GER
-			}
-		}
-
 		annex_country = { target = AUS transfer_troops = yes }
 		add_political_power = 75
 		add_named_threat = { threat = 2 name = germany.4.t }
 		set_country_flag = AUS_annexed
 		news_event = { hours = 6 id = news.36 }
+		every_other_country = {
+			limit = {
+			#	NOT = { tag = GER }
+				NOT = { tag = AUS }
+				any_owned_state = {
+					has_state_flag = es_aus_german
+				}
+			}
+			country_event = { id = germany_es.1 }
+		}
 	}
 }
 
@@ -145,25 +136,30 @@ country_event = {
 		}
 		add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
 		custom_effect_tooltip = germany.11.a.tt
-		add_state_claim = 96
-		add_state_claim = 11
-		add_state_claim = 12
-		add_state_claim = 13
-		add_state_claim = 190
-		add_state_claim = 191
-		add_state_claim = 146
-		add_state_claim = 147
-		add_state_claim = 722
-		add_state_claim = 189
-		add_state_claim = 78
-		add_state_claim = 89
-		add_state_claim = 91
-		add_state_claim = 93
-		add_state_claim = 94
-		add_state_claim = 95
-		add_state_claim = 96
-		add_state_claim = 97
-		add_state_claim = 80
+		add_state_claim = 11  # kaunas (eastern lithuania)
+		add_state_claim = 12  # vidzeme (northern latvia)
+		add_state_claim = 13  # harju (western estonia)
+		add_state_claim = 190 # kurzeme (western latvia)
+		add_state_claim = 191 # tartu (eastern estonia)
+		add_state_claim = 146 # karjala (in finland)
+		add_state_claim = 147 # salla (in finland)
+		add_state_claim = 722 # petsamo (in finland)
+		add_state_claim = 189 # siaulai (western lithuania)
+		add_state_claim = 78  # bessarabia (in romania)
+		add_state_claim = 89  # stanislavov
+		add_state_claim = 91  # lwow
+		add_state_claim = 93  # wolyn
+		add_state_claim = 94  # polesie
+		add_state_claim = 95  # nowogrodek
+		add_state_claim = 96  # east wilno
+		add_state_claim = 97  # bialystok
+		add_state_claim = 80  # bocovina (in romania)
+		# added: (sour maps)
+		add_state_claim = 751 # vilnius
+		add_state_claim = 784 # saare (islands of estonia)
+		add_state_claim = 802 # latgale (eastern latvia)
+		add_state_claim = 803 # zemgale (southern latvia)
+		add_state_claim = 804 # panevezys (northern lithuania)
 		hidden_effect =  { add_timed_idea = { idea = SOV_molotov_ribbentrop_pact days = 730 } }
 		GER = {
 			country_event = { days = 1 id = germany.12 }
@@ -191,7 +187,7 @@ country_event = {
 				is_in_faction_with = GER
 			}
 		}
-		add_political_power = -50	
+		add_political_power = -50
 		add_opinion_modifier = { target = GER modifier = refused_MR_pact }# no pact 
 		GER = {
 			country_event = { days = 1 id = germany.13 }
@@ -211,7 +207,7 @@ country_event = {
 	
 	option = {
 		name = germany.12.a	#neat
-		every_country = {
+		every_other_country = {
 			limit = {
 				NOT = { tag = GER }
 				has_government = fascism 
@@ -257,50 +253,54 @@ country_event = {
 		NOT =  { has_war_with = SOV }
 		OR = {
 			OR = {
-				owns_state = 96
+				owns_state = 96 # east wilno
 				owns_state = 95
 				owns_state = 94
 				owns_state = 93
 				owns_state = 91
 				owns_state = 97
 				owns_state = 89
+				owns_state = 751 # vilnius
 			}
 			AND = {
 				POL = { has_capitulated = yes }
 				OR = {
-					controls_state = 96
+					controls_state = 96 # east wilno
 					controls_state = 95
 					controls_state = 94
 					controls_state = 93
 					controls_state = 91
 					controls_state = 97
 					controls_state = 89
+					controls_state = 751 # vilnius
 				}
 			}
 			OR = {
-				any_country = {
+				any_other_country = {
 					is_in_faction_with = GER
 					GER = {
 						is_faction_leader = yes
 					}
 					OR = {
-						owns_state = 96
+						owns_state = 96 # east wilno
 						owns_state = 95
 						owns_state = 94
 						owns_state = 93
 						owns_state = 91
 						owns_state = 97
 						owns_state = 89
+						owns_state = 751 # vilnius
 						AND = {
 							POL = { has_capitulated = yes }
 							OR = {
-								controls_state = 96
+								controls_state = 96 # east wilno
 								controls_state = 95
 								controls_state = 94
 								controls_state = 93
 								controls_state = 91
 								controls_state = 97
 								controls_state = 89
+								controls_state = 751 # vilnius
 							}
 						}		
 					}
@@ -323,7 +323,7 @@ country_event = {
 				96 = {
 					OR = {
 						is_controlled_by = GER
-						any_country = {
+						any_other_country = {
 							controls_state = 96
 							is_in_faction_with = GER
 							GER = { is_faction_leader = yes }
@@ -331,14 +331,14 @@ country_event = {
 					}
 				}
 			}
-			SOV = { transfer_state = 96 }
+			SOV = { transfer_state = 96 } # east wilno
 		}
 		if = {
 			limit = {
 				95 = {
 					OR = {
 						is_controlled_by = GER
-						any_country = {
+						any_other_country = {
 							controls_state = 95
 							is_in_faction_with = GER
 							GER = { is_faction_leader = yes }
@@ -346,14 +346,14 @@ country_event = {
 					}
 				}
 			}
-			SOV = { transfer_state = 95 }
+			SOV = { transfer_state = 95 } # nowogrodek
 		}
 		if = {
 			limit = {
 				94 = {
 					OR = {
 						is_controlled_by = GER
-						any_country = {
+						any_other_country = {
 							controls_state = 94
 							is_in_faction_with = GER
 							GER = { is_faction_leader = yes }
@@ -361,14 +361,14 @@ country_event = {
 					}
 				}
 			}
-			SOV = { transfer_state = 94 }
+			SOV = { transfer_state = 94 } # polesie
 		}
 		if = {
 			limit = {
 				93 = {
 					OR = {
 						is_controlled_by = GER
-						any_country = {
+						any_other_country = {
 							controls_state = 93
 							is_in_faction_with = GER
 							GER = { is_faction_leader = yes }
@@ -376,14 +376,14 @@ country_event = {
 					}
 				}
 			}
-			SOV = { transfer_state = 93 }
+			SOV = { transfer_state = 93 } # wolyn
 		}
 		if = {
 			limit = {
 				91 = {
 					OR = {
 						is_controlled_by = GER
-						any_country = {
+						any_other_country = {
 							controls_state = 91
 							is_in_faction_with = GER
 							GER = { is_faction_leader = yes }
@@ -391,14 +391,14 @@ country_event = {
 					}
 				}
 			}
-			SOV = { transfer_state = 91 }
+			SOV = { transfer_state = 91 } # lwow
 		}
 		if = {
 			limit = {
 				97 = {
 					OR = {
 						is_controlled_by = GER
-						any_country = {
+						any_other_country = {
 							controls_state = 97
 							is_in_faction_with = GER
 							GER = { is_faction_leader = yes }
@@ -406,14 +406,14 @@ country_event = {
 					}
 				}
 			}
-			SOV = { transfer_state = 97 }
+			SOV = { transfer_state = 97 } # bialystok
 		}
 		if = {
 			limit = {
 				89 = {
 					OR = {
 						is_controlled_by = GER
-						any_country = {
+						any_other_country = {
 							controls_state = 89
 							is_in_faction_with = GER
 							GER = { is_faction_leader = yes }
@@ -421,7 +421,22 @@ country_event = {
 					}
 				}
 			}
-			SOV = { transfer_state = 89 }
+			SOV = { transfer_state = 89 } # stanislawow
+		}
+		if = { # USSR gets vilnius, but can choose to return to lithuania or not
+			limit = {
+				751 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 751
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 751 } # vilnius
 		}
 		SOV = { country_event = germany.15 }
 	}
@@ -449,21 +464,41 @@ country_event = {
 			add_state_claim = 91
 			add_state_claim = 97
 			add_state_claim = 89
+			add_state_claim = 751 # vilnius
 		}
 	}
 }
 
-# Germany honors MR Pact (Soviets)
+# Germany honors MR Pact (Soviets) [FROM:GER,ROOT:SOV]
 country_event = {
 	id = germany.15
 	title = germany.15.t
 	desc = germany.15.d
 	picture = GFX_report_event_soviet_german_soldier_handshake
-
 	is_triggered_only = yes
-	
-	option = {
+	option = {# Okay!
 		name = germany.12.a
+		hidden_effect = {
+			country_event = { hours = 6 id = news.33 }
+		}
+	}
+	option = {# Give vilnius to lithuania
+		name = germany.12.b
+		trigger = {# if lithuania still controls kaunas, give them vilnius
+			LIT = {
+				AND = {
+					controls_state = 11 # kaunas
+					NOT = { has_war_with = GER }
+					NOT = { has_war_with = SOV }
+				}
+			}
+			controls_state = 751 # vilnius
+		}
+		ai_chance = {
+			factor = 50
+		}
+		LIT = { transfer_state = 751 } # vilnius
+		remove_state_claim = 751
 		hidden_effect = {
 			country_event = { hours = 6 id = news.33 }
 		}
@@ -509,9 +544,9 @@ country_event = {
 	option = { # Give Hungary all of Transylvania
 		trigger = {
 			ROM = {
-				controls_state = 77
-				controls_state = 83
-				controls_state = 84
+				controls_state = 77 # dobrudja
+				controls_state = 83 # crisana
+				controls_state = 84 # transylvania
 			}
 		}
 		name = germany.20.b
@@ -571,7 +606,7 @@ country_event = {
 	}
 }
 
-# Claim Memel - Lithuania Folds
+# Claim Memel - Lithuania Folds (Now generic owner)
 country_event = {
 	id = germany.22
 	title = germany.22.t
@@ -586,12 +621,12 @@ country_event = {
 			transfer_state = 188
 		}
 		hidden_effect = {
-			country_event = { days = 1 id = news.19 }
+			country_event = { days = 1 id = news_es.1 }
 		}
 	}
 }
 
-# Claim Memel - Lithuania Rejects Demand
+# Claim Memel - Lithuania Rejects Demand (Now generic owner)
 country_event = {
 	id = germany.23
 	title = germany.23.t
@@ -604,11 +639,11 @@ country_event = {
 		name = germany.23.a
 		create_wargoal = {
 			type = take_state_focus
-			target = LIT
+			target = FROM # LIT
 			generator = { 188 }
 		}
 		hidden_effect = {
-			country_event = { days = 1 id = news.20 }
+			country_event = { days = 1 id = news_es.2 }
 		}
 	}
 }
@@ -716,7 +751,7 @@ country_event = {
 	
 	option = {
 		name = germany.27.a
-		50 = {
+		50 = {# Wurttenburg
 			add_building_construction = {
 				type = bunker
 				province = 11640
@@ -738,7 +773,7 @@ country_event = {
 				level = 5
 			}
 		}
-		42 = {	
+		42 = {# Moselland
 			add_building_construction = {
 				type = bunker
 				province = 3558
@@ -749,6 +784,8 @@ country_event = {
 				province = 563
 				level = 5
 			}
+		}
+		800 = {# Saarland
 			add_building_construction = {
 				type = bunker
 				province = 11531
@@ -769,9 +806,8 @@ country_event = {
 	title = germany.28.t
 	desc = germany.28.d
 	picture = GFX_report_event_hitler_parade
-	
 	is_triggered_only = yes
-	
+
 	option = { # Accept
 		name = germany.28.a
 		ai_chance = {
@@ -793,8 +829,7 @@ country_event = {
 	option = { # Refuse
 		name = germany.28.b
 		ai_chance = {
-			base = 10 
-
+			base = 10
 			modifier = {
 				factor = 0
 				GER = { has_army_size = { size > 39 } }
@@ -826,20 +861,23 @@ country_event = {
 	
 	option = {
 		name = germany.29.a
-		add_state_claim = 4
-		add_state_claim = 152
-		add_state_claim = 153
+		AUS = {
+			every_owned_state = {
+				limit = { has_state_flag = es_aus_german }
+				add_claim_by = GER
+			}
+		}
 		create_wargoal = {
 			type = take_state_focus
 			target = AUS
-			generator = { 4 152 153 }
+			generator = { 4 152 153 39 } # austrian-german states
 		}
 	}
 }
 
 ### Munich Conference
 
-# Britain
+# Britain [FROM:GER,ROOT:ENG]
 country_event = {
 	id = germany.40
 	title = germany.40.t
@@ -852,12 +890,16 @@ country_event = {
 		trigger = { has_war_with = GER }
 	}
 	picture = GFX_report_event_german_politician_speech
-	
 	is_triggered_only = yes
-	
 	option = { # Abandon the Czechs
 		name = germany.40.a
-		ai_chance = { factor = 90 }
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				is_in_faction_with = CZE
+			}
+		}
 		trigger = { NOT = { has_war_with = GER } }
 		FRA = { country_event = germany.41 }
 		CZE = {
@@ -865,7 +907,7 @@ country_event = {
 		}
 	}
 	option = { # Support the Czechs
-		name = germany.40.b	
+		name = germany.40.b
 		ai_chance = {
 			factor = 10
 			modifier = {
@@ -874,7 +916,10 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				is_historical_focus_on = yes
+				AND = {
+					is_historical_focus_on = yes
+					NOT = { is_in_faction_with = CZE }
+				}
 			}
 		}
 		if = {
@@ -889,7 +934,14 @@ country_event = {
 				is_in_faction_with = GER
 				is_faction_leader = no
 			}
-			GER = { remove_from_faction = ENG }
+			random_country = {
+				limit = {
+					is_in_faction_with = ENG
+					is_faction_leader = yes
+				}
+				remove_from_faction = ENG
+			}
+		#	GER = { remove_from_faction = ENG }
 		}
 		add_political_power = -200
 		add_opinion_modifier = { target = GER modifier = condemn_aggression }
@@ -898,7 +950,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 801 } # sudetenland
 				}
 			}
 		}
@@ -951,14 +1003,15 @@ country_event = {
 				is_in_faction_with = CZE
 				is_faction_leader = yes
 			}
-			dismantle_faction = yes 
+		#	dismantle_faction = yes
+			remove_from_faction = CZE
 		}
 		if = {
 			limit = {
 				is_in_faction_with = CZE
 				is_faction_leader = no
 			}
-			random_country = {
+			random_other_country = {
 				limit = {
 					is_in_faction_with = FRA
 					is_faction_leader = yes
@@ -1010,7 +1063,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 801 } # sudetenland
 				}
 			}
 		}
@@ -1018,12 +1071,26 @@ country_event = {
 			limit = { is_in_faction_with = ENG }
 			ENG = { 
 				country_event = germany.43 
+			#	remove_from_faction = FRA
+			}
+			random_country = {
+				limit = {
+					is_in_faction_with = FRA
+					is_faction_leader = yes
+				}
 				remove_from_faction = FRA
 			}
 		}
 		if = {
 			limit = { is_in_faction_with = GER }
-			GER = { 
+		#	GER = { 
+		#		remove_from_faction = FRA
+		#	}
+			random_country = {
+				limit = {
+					is_in_faction_with = FRA
+					is_faction_leader = yes
+				}
 				remove_from_faction = FRA
 			}
 		}
@@ -1049,13 +1116,13 @@ country_event = {
 				OR = {
 					is_in_faction = no
 					is_faction_leader = no
-					is_in_faction_with = ENG
-					is_in_faction_with = GER
+					is_in_faction_with = ENG # for tooltip purposes, i presume
+					is_in_faction_with = GER # for tooltip purposes, i presume
 				}
 				NOT = { is_in_faction_with = CZE }
 			}
-			create_faction = "french_alliance"
 			set_rule = { can_create_factions = yes }
+			create_faction = "french_alliance"
 			add_to_faction = CZE
 			CZE = {
 				add_ai_strategy = {
@@ -1072,17 +1139,14 @@ country_event = {
 	}
 }
 
-# France (Britain Supports the Czechs)
+# France (Britain Supports the Czechs) [FROM:ENG?,ROOT:FRA]
 country_event = {
 	id = germany.42
 	title = germany.40.t
 	desc = germany.42.d
 	picture = GFX_report_event_czech_soldiers_01
-	
 	is_triggered_only = yes
-	
-	#Support
-	option = {
+	option = {# Support
 		name = germany.42.a
 		ai_chance = {
 			factor = 90
@@ -1118,14 +1182,12 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 801 } # western sudetenland
 				}
 			}
 		}
 	}
-
-	#Abandon
-	option = {
+	option = {# Abandon
 		name = germany.42.b
 		trigger = {
 			NOT = { is_in_faction_with = ENG }
@@ -1142,14 +1204,14 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 801 } # sudetenland
 				}
 			}
 		}		
 	}
 }
 
-# France leaves the Allies
+# France leaves the Allies (to support czechs)
 country_event = {
 	id = germany.43
 	title = germany.43.t
@@ -1172,17 +1234,15 @@ country_event = {
 	title = germany.40.t
 	desc = germany.44.d
 	picture = GFX_report_event_german_inspect_troops
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = germany.44.a
 		effect_tooltip = {
-			GER = {			
+			GER = {	
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 801 } # sudetenland
 				}
 			}
 		}
@@ -1205,7 +1265,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 801 } # sudetenland
 				}
 			}
 		}
@@ -1218,18 +1278,16 @@ country_event = {
 	title = germany.46.t
 	desc = germany.46.d
 	picture = GFX_report_event_czech_soldiers_01
-	
 	is_triggered_only = yes
-	
 	option = { # Surrender the Sudetenland
 		name = germany.46.a
 		ai_chance = {
 			factor = 90
-			modifier = { # Decrease chance CZE resists if AUS isn't taken first
+			modifier = { # Decrease chance CZE resists if AUS isn't taken first; less surrounded
 				AUS = { exists = yes }
 				factor = 0.5
 			}
-			modifier = { # If they stand a chance they will fight
+			modifier = { # If they stand a chance they will fight (good ratio and no other axis neighbour)
 				factor = 0
 				strength_ratio = {
 					tag = GER
@@ -1280,14 +1338,27 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 74 }
+					generator = { 69 74 801 }
 				}
 			}
 		}
 	}
+#	option = { # Ask puppet master
+#		name = germany.46.c
+#		ai_chance = {
+#			factor = 1000
+#		}
+#		trigger = {
+#			is_puppet = true
+#		}
+#		random_country = {
+#			limit = { ROOT = { is_puppet_of = PREV } }
+#			country_event = germany_es.5
+#		}
+#	}
 }
 
-# Germany (British and (possibly) French Support for Czechoslovakia)
+# Germany (British and (possibly) French Support for Czechoslovakia) [FROM:FRA,ROOT:GER]
 country_event = {
 	id = germany.47
 	title = germany.40.t
@@ -1298,13 +1369,17 @@ country_event = {
 	
 	option = {
 		name = germany.47.a
+		CZE = {
+			every_owned_state = {
+				limit = { has_state_flag = es_cze_german }
+				add_claim_by = GER
+			}
+		}
 		create_wargoal = {
 			type = take_state_focus
 			target = CZE
-			generator = { 69 74 }
+			generator = { 69 74 801 }
 		}
-		add_state_claim = 69
-		add_state_claim = 74
 		hidden_effect = {
 			news_event = { hours = 6 id = news.57 }
 		}
@@ -1312,79 +1387,100 @@ country_event = {
 	}
 }
 
-# Germany (French Support for Czechoslovakia)
+# Germany (French Support for Czechoslovakia) [FROM:FRA,ROOT:GER]
 country_event = {
 	id = germany.48
 	title = germany.40.t
 	desc = germany.48.d
 	picture = GFX_report_event_chamberlain_announce
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = germany.48.a
+		CZE = {
+			every_owned_state = {
+				limit = { has_state_flag = es_cze_german }
+				add_claim_by = GER
+			}
+		}
 		create_wargoal = {
 			type = take_state_focus
 			target = CZE
-			generator = { 69 74 }
+			generator = { 69 74 801 }
 		}
-		add_state_claim = 69
-		add_state_claim = 74
 		hidden_effect = {
 			country_event = { hours = 6 id = news.58 }
 		}
 	}
 }
 
-# Germany (Czechoslovakia Refuses Demands)
+# Germany (Czechoslovakia Refuses Demands) [FROM:CZE,ROOT:GER]
 country_event = {
 	id = germany.49
 	title = germany.40.t
 	desc = germany.49.d
 	picture = GFX_report_event_czech_soldiers_02
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = germany.49.a
+		CZE = {
+			every_owned_state = {
+				limit = { has_state_flag = es_cze_german }
+				add_claim_by = GER
+			}
+		}
 		create_wargoal = {
 			type = take_state_focus
 			target = CZE
-			generator = { 69 74 }
+			generator = { 69 74 801 }
 		}
-		add_state_claim = 69
-		add_state_claim = 74
+		every_country = {
+			limit = {
+				NOT = { tag = GER }
+				NOT = { tag = CZE }
+				any_owned_state = { has_state_flag = es_cze_german }
+			}
+			country_event = { id = germany_es.4 }
+		}
 		hidden_effect = {
 			country_event = { hours = 6 id = news.59 }
 		}
 	}
 }
 
-# Germany (Czechoslovakia Surrenders Sudetenland)
+# Germany (Czechoslovakia Surrenders Sudetenland) [FROM:CZE,ROOT:GER]
 country_event = {
 	id = germany.50
 	title = germany.40.t
 	desc = germany.50.d
 	picture = GFX_report_event_german_politician_speech
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = germany.50.a
-		69 = { add_core_of = GER }
-		GER = { transfer_state = 69 }
-		74 = { add_core_of = GER }
-		GER = { transfer_state = 74 }
-		set_country_flag = sudetenland_acquired
-
 		if = {
-			limit = {
-				88 = { is_owned_by = POL }
-			}
-			POL = { 
-				country_event = { hours = 6 id = germany.52 }
-			}
+			limit = { CZE = { owns_state = 69 } }
+			add_state_core = 69
+			transfer_state = 69
 		}
+		if = {
+			limit = { CZE = { owns_state = 74 } }
+			add_state_core = 74
+			transfer_state = 74
+		}
+		if = {
+			limit = { CZE = { owns_state = 801 } }
+			add_state_core = 801
+			transfer_state = 801
+		}
+		set_country_flag = sudetenland_acquired
+		every_country = {
+			limit = {
+				NOT = { tag = GER }
+				NOT = { tag = CZE }
+				any_owned_state = { has_state_flag = es_cze_german }
+			}
+			country_event = { id = germany_es.4 }
+		}
+		ENG = { country_event = { id = germany_es.10 } }
 		hidden_effect = {
 			country_event = { hours = 6 id = news.56 }
 		}
@@ -1402,11 +1498,11 @@ country_event = {
 	
 	option = {
 		name = germany.51.a
-		HUN = { transfer_state = 664 }
+		HUN = { transfer_state = 664 } # southern slovakia
 	}
 }
 
-# Poland (Zaolzie)
+# Poland (Zaolzie) [FROM:ENG,ROOT:new_owner]
 country_event = {
 	id = germany.52
 	title = germany.52.t
@@ -1417,20 +1513,18 @@ country_event = {
 	
 	option = {
 		name = germany.52.a
-		72 = { add_core_of = POL }
-		POL = { transfer_state = 72 }
+		72 = { add_core_of = ROOT } # zaolzie
+		transfer_state = 72
 	}
 }
 
-# Czechoslovakia (The Fate of Czechoslovakia)
+# Czechoslovakia (The Fate of Czechoslovakia) [FROM:GER.focus,ROOT:CZE]
 country_event = {
 	id = germany.53
 	title = germany.53.t
 	desc = germany.53.d
 	picture = GFX_report_event_german_politician_speech
-	
 	is_triggered_only = yes
-	
 	option = { # Agree
 		name = germany.53.a
 		ai_chance = {
@@ -1485,7 +1579,7 @@ country_event = {
 		name = germany.53.b
 		ai_chance = {
 			factor = 100
-			modifier = {				
+			modifier = {
 				factor = 0
 				NOT = { is_in_faction_with = ENG }
 				NOT = { is_in_faction_with = FRA }
@@ -1532,32 +1626,20 @@ country_event = {
 	}
 }
 
-# The Czechs Resist
+# The Czechs Resist [FROM:CZE,ROOT:GER]
 country_event = {
 	id = germany.54
 	title = germany.54.t
 	desc = germany.54.d
 	picture = GFX_report_event_czech_soldiers_01
-	
 	is_triggered_only = yes
-	
 	option = {
 		name = germany.54.a
-		if = {
-			limit = {
-				75 = {
-					is_owned_and_controlled_by = CZE
-				}
+		CZE = {
+			every_owned_state = {
+				limit = { has_state_flag = es_czech }
+				add_claim_by = GER
 			}
-			add_state_claim = 75
-		}
-		if = {
-			limit = {
-				9 = {
-					is_owned_and_controlled_by = CZE
-				}
-			}
-			add_state_claim = 9
 		}
 		create_wargoal = {
 			type = annex_everything
@@ -1566,7 +1648,7 @@ country_event = {
 	}
 }
 
-# The Fate of Czechoslovakia
+# The Fate of Czechoslovakia [FROM:CZE,ROOT:GER]
 country_event = {
 	id = germany.55
 	title = germany.53.t
@@ -1579,108 +1661,50 @@ country_event = {
 		trigger = { NOT = { has_global_flag = end_of_czechoslovakia } }
 	}
 	picture = GFX_report_event_german_inspect_troops
-	
 	is_triggered_only = yes
-	
-	option = {
+	option = { # Puppet slovakia
 		name = germany.55.a
 		ai_chance = { factor = 80 }
 		if = {
-			limit = {
-				70 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-			}
+			limit = { OR = {
+				CZE = { owns_state = 70 }# Western slovakia
+				GER = { owns_state = 70 }
+			} }
 			SLO = { transfer_state = 70 }
 		}
 		if = {
-			limit = {
-				71 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-			}
+			limit = { OR = {
+				CZE = { owns_state = 71 }# Eastern slovakia
+				GER = { owns_state = 71 }
+			} }
 			SLO = { transfer_state = 71 }
 		}
 		if = {
-			limit = {
-				154 = { is_owned_by = HUN }
-				HUN = {
-					is_friend_or_potential_friend_of_GER = yes
-				}
-				73 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-				country_exists = HUN 
-			}
-			HUN = { transfer_state = 73 }
+			limit = { OR = {
+				CZE = { owns_state = 73 }# Carpathian ruthenia
+				GER = { owns_state = 73 }
+			} }
+			country_event = germany_es.6 # Carpathian ruthenia issue
 		}
-
-		
 		if = {
-			limit = {
-				NOT = { 154 = { is_owned_by = HUN } }
-				HUN = { is_friend_or_potential_friend_of_GER = no }				
-				73 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-			}
-			SLO = { transfer_state = 73 }
+			limit = { OR = {
+				CZE = { owns_state = 664 }# Southern slovakia
+				GER = { owns_state = 664 }
+			} }
+			country_event = germany_es.7 # Southern slovakia issue
 		}
-		
 		if = {
-			limit = {
-				664 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-			}
-			SLO = { transfer_state = 664 }
+			limit = { OR = {
+				CZE = { owns_state = 72 }# Zaolzie
+				GER = { owns_state = 72 }
+			} }
+			country_event = germany_es.8 # Zaolzie issue
 		}
 		if = {
 			limit = { country_exists = CZE }
 			annex_country = { target = CZE }
 		}
 		puppet = SLO
-		if = {
-			limit = {
-				72 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-				country_exists = POL
-			}
-			POL = { transfer_state = 72 } # Give Poland Zaolzie
-		}
-
-		if = {
-			limit = {
-				72 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-				NOT = { country_exists = POL }
-			}
-			SLO = { transfer_state = 72 } # Give Slovakia Zaolzie
-		}
-
 		hidden_effect = {
 			country_event = { hours = 6 id = news.60 }
 			every_state = {
@@ -1695,7 +1719,7 @@ country_event = {
 			}
 		}
 	}
-	option = {
+	option = {# Let Hungary decide
 		name = germany.55.b
 		add_political_power = -20
 		ai_chance = { 
@@ -1706,25 +1730,14 @@ country_event = {
 			}
 		}
 		trigger = {
-			664 = { is_owned_by = HUN }
+		#	664 = { is_owned_by = HUN }
 			HUN = {
 				is_friend_or_potential_friend_of_GER = yes
 			}
 		}
 		HUN = { country_event = germany.56 }
-		if = {
-			limit = {
-				72 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-			}
-			POL = { transfer_state = 72 } # Give Poland Zaolzie
-		}
 	}
-	option = {
+	option = {# Annex all
 		name = germany.55.c
 		add_political_power = -50
 		ai_chance = { 
@@ -1738,13 +1751,31 @@ country_event = {
 			limit = { country_exists = CZE }
 			annex_country = { target = CZE }
 		}
+		if = {
+			limit = {
+				GER = { owns_state = 73 }# Carpathian ruthenia
+			}
+			country_event = germany_es.6 # Carpathian ruthenia issue
+		}
+		if = {
+			limit = {
+				GER = { owns_state = 664 }# Southern slovakia
+			}
+			country_event = germany_es.7 # Southern slovakia issue
+		}
+		if = {
+			limit = {
+				GER = { owns_state = 72 }# Zaolzie
+			}
+			country_event = germany_es.8 # Zaolzie issue
+		}
 		hidden_effect = {
 			country_event = { hours = 6 id = news.62 }
 		}
 	}
 }
 
-# Hungary asked to partition Czechoslovakia
+# Hungary asked to partition Czechoslovakia [FROM:GER,ROOT:HUN]
 country_event = {
 	id = germany.56
 	title = germany.56.t
@@ -1757,19 +1788,44 @@ country_event = {
 		trigger = { NOT = { has_global_flag = end_of_czechoslovakia } }
 	}
 	picture = GFX_report_event_german_inspect_troops
-	
 	is_triggered_only = yes
-	
-	option = {
+	option = { # Annex slovakia
 		name = germany.56.a
 		ai_chance = { factor = 100 }
-		transfer_state = 70
-		transfer_state = 71
-		transfer_state = 73
+		if = {
+			limit = {
+				CZE = { owns_state = 70 }# Western slovakia
+			}
+			HUN = { transfer_state = 70 }
+		}
+		if = {
+			limit = {
+				CZE = { owns_state = 71 }# Eastern slovakia
+			}
+			HUN = { transfer_state = 71 }
+		}
+		if = {
+			limit = {
+				CZE = { owns_state = 73 }# Carpathian ruthenia
+			}
+			country_event = germany_es.6 # Carpathian ruthenia issue
+		}
+		if = {
+			limit = {
+				CZE = { owns_state = 664 }# Southern slovakia
+			}
+			country_event = germany_es.7 # Southern slovakia issue
+		}
+		if = {
+			limit = {
+				CZE = { owns_state = 72 }# Zaolzie
+			}
+			GER = { country_event = germany_es.8 } # Zaolzie issue
+		}
+		GER = { add_to_faction = HUN }
 		hidden_effect = {
 			GER = {
 				annex_country = { target = CZE }
-				add_to_faction = HUN				
 			}
 			HUN = {
 				add_ai_strategy = {
@@ -1783,7 +1839,70 @@ country_event = {
 			country_event = { hours = 6 id = news.61 }
 		}
 	}
-	option = {
+	option = {# Puppet slovakia
+		if = {
+			limit = {
+				CZE = { owns_state = 70 }# Western slovakia
+			}
+			SLO = { transfer_state = 70 }
+		}
+		if = {
+			limit = {
+				CZE = { owns_state = 71 }# Eastern slovakia
+			}
+			SLO = { transfer_state = 71 }
+		}
+		if = {
+			limit = {
+				CZE = { owns_state = 73 }# Carpathian ruthenia
+			}
+			HUN = { transfer_state = 73 }
+		}
+		if = {
+			limit = {
+				CZE = { owns_state = 664 }# Southern slovakia
+			}
+			HUN = { transfer_state = 664 }
+		}
+		if = {
+			limit = {
+				CZE = { owns_state = 72 }# Zaolzie
+			}
+			GER = { country_event = germany_es.8 } # Zaolzie issue
+		}
+		puppet = SLO
+		GER = {
+			add_to_faction = HUN
+			add_to_faction = SLO
+		}
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_owned_by = SLO
+				}
+				add_core_of = SLO
+			}
+			SLO = {
+				load_oob = SLO_1939
+				add_manpower = 9876
+			}
+			GER = {
+				annex_country = { target = CZE }
+			}
+			HUN = {
+				add_ai_strategy = {
+					type = alliance
+					id = "GER"
+					value = 200
+				}
+			}
+			country_event = { hours = 6 id = news.61 }
+		}
+		hidden_effect = {
+			country_event = { hours = 6 id = news.61 }
+		}
+	}
+	option = {# Refuse partition
 		name = germany.56.b
 		ai_chance = { factor = 0 }
 		trigger = {
@@ -1801,98 +1920,68 @@ country_event = {
 	title = germany.57.t
 	desc = germany.57.d
 	picture = GFX_report_event_german_inspect_troops
-	
 	is_triggered_only = yes
-	
-	option = {
+	option = {# Puppet
 		name = germany.57.a
 		add_political_power = -20
 		ai_chance = { factor = 60 }
+		name = germany.55.a
+		ai_chance = { factor = 80 }
 		if = {
-			limit = {
-				70 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-			}
+			limit = { OR = {
+				CZE = { owns_state = 70 }# Western slovakia
+				GER = { owns_state = 70 }
+			} }
 			SLO = { transfer_state = 70 }
 		}
 		if = {
-			limit = {
-				71 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-			}
+			limit = { OR = {
+				CZE = { owns_state = 71 }# Eastern slovakia
+				GER = { owns_state = 71 }
+			} }
 			SLO = { transfer_state = 71 }
 		}
 		if = {
-			limit = {
-				154 = { is_owned_by = HUN }
-				73 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-			}
-			HUN = { transfer_state = 73 }
+			limit = { OR = {
+				CZE = { owns_state = 73 }# Carpathian ruthenia
+				GER = { owns_state = 73 }
+			} }
+			country_event = germany_es.6 # Carpathian ruthenia issue
 		}
 		if = {
-			limit = {
-				NOT = { 154 = { is_owned_by = HUN } }
-				73 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-			}
-			SLO = { transfer_state = 73 }
+			limit = { OR = {
+				CZE = { owns_state = 664 }# Southern slovakia
+				GER = { owns_state = 664 }
+			} }
+			country_event = germany_es.7 # Southern slovakia issue
 		}
 		if = {
-			limit = {
-				664 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-			}
-			SLO = { transfer_state = 664 }
+			limit = { OR = {
+				CZE = { owns_state = 72 }# Zaolzie
+				GER = { owns_state = 72 }
+			} }
+			country_event = germany_es.8 # Zaolzie issue
 		}
 		if = {
 			limit = { country_exists = CZE }
 			annex_country = { target = CZE }
 		}
-		add_to_faction = SLO
-		SLO = {
-			add_ai_strategy = {
-				type = alliance
-				id = "GER"
-				value = 200
-			}
-		}
-		if = {
-			limit = {
-				72 = {
-					OR = {
-						is_owned_by = CZE
-						is_owned_by = GER
-					}
-				}
-			}
-			POL = { transfer_state = 72 } # Give Poland Zaolzie
-		}
+		puppet = SLO
 		hidden_effect = {
 			country_event = { hours = 6 id = news.60 }
+			every_state = {
+				limit = {
+					is_owned_by = SLO
+				}
+				add_core_of = SLO
+			}
+			SLO = {
+				load_oob = SLO_1939
+				add_manpower = 9876
+			}
 		}
 	}
-	option = {
+	option = {# Annex
 		name = germany.57.b
 		add_political_power = -40
 		ai_chance = { factor = 40 }
@@ -2022,7 +2111,7 @@ country_event = {
 			limit = {
 				FRA = { is_faction_leader = yes }
 			}
-			every_country = {
+			every_other_country = {
 				limit = { is_in_faction_with = FRA NOT = { has_war_with = ENG } }
 				ENG = { add_to_faction = PREV }
 				add_ai_strategy = {
@@ -2167,7 +2256,7 @@ country_event = {
 			declare_war_on = {
 				target = GER
 				type = take_state_focus
-				generator = { 42 51 } 
+				generator = { 42 51 800 } # moselland, rhineland, saarland
 			}
 			country_event = germany.92
 			if = {
@@ -2202,8 +2291,10 @@ country_event = {
 			news_event = { hours = 6 id = news.151 }
 		}
 		set_country_flag = GER_rhineland_backed_down
-		42 = { set_demilitarized_zone = yes }
-		51 = { set_demilitarized_zone = yes }
+		every_owned_state = {
+			limit = { has_state_flag = es_ger_demil }
+			set_demilitarized_zone = yes
+		}
 		add_timed_idea = {
 			idea = rhineland_challenge_met
 			days = 183
@@ -2230,7 +2321,7 @@ country_event = {
 			declare_war_on = {
 				target = GER
 				type = take_state_focus
-				generator = { 42 51 } 
+				generator = { 42 51 800 } # moselland, rhineland, saarland
 			}
 			country_event = germany.92
 			if = {
@@ -2252,8 +2343,10 @@ country_event = {
 			news_event = { hours = 6 id = news.152 }
 		}
 		set_country_flag = GER_rhineland_backed_down
-		42 = { set_demilitarized_zone = yes }
-		51 = { set_demilitarized_zone = yes }
+		every_owned_state = {
+			limit = { has_state_flag = es_ger_demil }
+			set_demilitarized_zone = yes
+		}
 		add_timed_idea = {
 			idea = rhineland_challenge_met
 			days = 183
@@ -2683,10 +2776,10 @@ country_event = {
 			factor = 70
 		}
 		GER = { puppet = TUR }
-		SOV = {
-			transfer_state = 354
-			transfer_state = 353
-			transfer_state = 352
+		SOV = { # eastern 3 states of turkey
+			transfer_state = 354 # trabzon
+			transfer_state = 353 # erzurum
+			transfer_state = 352 # van
 		}
 		hidden_effect = {
 			news_event = { hours = 6 id = news.201 }
@@ -2704,7 +2797,7 @@ country_event = {
 				has_war_with = ENG
 			}
 			NOT = {
-				any_country = {
+				any_other_country = {
 					is_in_faction_with = ENG
 					has_war_with = TUR
 				}
@@ -2741,22 +2834,18 @@ country_event = {
 	}
 }
 
-# Danzig for Slovakia (Poland)
+# Danzig for Slovakia (Poland) [FROM:GER.focus,ROOT:POL]
 country_event = {
 	id = germany.80
 	title = germany.80.t
 	desc = germany.80.d
 	picture = GFX_report_event_german_polish_border
-
 	is_triggered_only = yes
-	
-	option = {
+	option = {# Accept
 		name = germany.80.a
-		
 		ai_chance = {
-			factor = 10	
+			factor = 10
 		}
-
 		GER = { country_event = { id = germany.81 days = 1 } }
 		effect_tooltip = {
 			if = {
@@ -2764,61 +2853,63 @@ country_event = {
 				annex_country = { target = SLO }
 			}
 			if = {
-				limit = { GER = { owns_state = 70 } }
+				limit = { GER = { owns_state = 70 } } # west slovakia
 				transfer_state = 70
 			}
 			if = {
-				limit = { GER = { owns_state = 71 } }
+				limit = { GER = { owns_state = 71 } } # east slovakia
 				transfer_state = 71
 			}
 			if = {
-				limit = { GER = { owns_state = 73 } }
+				limit = { GER = { owns_state = 73 } } # carpathian ruthenia
 				transfer_state = 73
 			}
 			if = {
-				limit = { GER = { owns_state = 664 } }
+				limit = { GER = { owns_state = 664 } } # southern slovakia
 				transfer_state = 664
 			}
-			GER = { transfer_state = 85 }
+			GER = {
+				transfer_state = 85 # danzig
+				transfer_state = 785 # gdynia
+			}
 		}
 	}
-	
-	option = {	
+	option = {# Refuse
 		name = germany.80.b
 		ai_chance = { 
 			factor = 1
 			modifier = {
 				factor = 0
 				is_in_faction_with = GER
-			}			
-		}		
+			}
+		}
 		GER = {
 			country_event = { id = germany.82 days = 1 }
 			if = {
-				limit = { 
+				limit = {
 					is_in_faction_with = POL
 					is_faction_leader = yes
 				}
 				remove_from_faction = POL
 			}
 			if = {
-				limit = { 
+				limit = {
 					is_in_faction_with = POL
 					is_faction_leader = no
 				}
-				random_country = {
-					limit = { 
+				random_other_country = {
+					limit = {
 						is_in_faction_with = GER
 						is_faction_leader = yes
 					}
 					remove_from_faction = GER
 				}
-			}				
+			}
 			effect_tooltip = {
 				create_wargoal = {
 					type = take_state_focus
 					target = POL
-					generator = { 85 }
+					generator = { 85 } # danzig
 				}
 			}
 		}
@@ -2842,21 +2933,22 @@ country_event = {
 		}
 		if = {
 			limit = { owns_state = 70 }
-			POL = { transfer_state = 70 }
+			POL = { transfer_state = 70 } # west slovakia
 		}
 		if = {
 			limit = { owns_state = 71 }
-			POL = { transfer_state = 71 }
+			POL = { transfer_state = 71 } # east slovakia
 		}
 		if = {
 			limit = { owns_state = 73 }
-			POL = { transfer_state = 73 }
+			POL = { transfer_state = 73 } # carpathian ruthenia
 		}
 		if = {
 			limit = { owns_state = 664 }
-			POL = { transfer_state = 664 }
+			POL = { transfer_state = 664 } # southern slovakia
 		}
-		transfer_state = 85
+		transfer_state = 85 # danzig
+		transfer_state = 785 # gdynia
 
 		hidden_effect = {
 			news_event = { hours= 6 id = news.202 }
@@ -2878,7 +2970,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = POL
-			generator = { 85 }
+			generator = { 85 } # danzig
 		}
 	}
 }
@@ -2927,11 +3019,11 @@ country_event = {
 
 	option = {
 		name = germany.84.a
-		every_country = {
+		every_other_country = {
 			limit = {
 				has_idea = anti_soviet_pact
 				NOT = { has_war_with = SOV }
-				any_country = {
+				any_other_country = {
 					has_idea = anti_soviet_pact
 					has_war_with = SOV
 				}
@@ -3009,8 +3101,9 @@ country_event = {
 		GER = { country_event = { id = germany.87 days = 1 } }
 		effect_tooltip = {
 			GER = {
-				transfer_state = 85
-				remove_state_claim = 86
+				transfer_state = 85 # danzig
+				remove_state_claim = 86 # poznan
+				remove_state_claim = 785 # gdynia
 			}
 		}
 		country_event = { id = poland.1 days = 7 }
@@ -3032,7 +3125,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.1
-				any_country = {
+				any_other_country = {
 					is_major = yes
 					is_in_faction_with = POL
 				}
@@ -3051,7 +3144,7 @@ country_event = {
 					is_in_faction_with = POL
 					is_faction_leader = no
 				}
-				random_country = {
+				random_other_country = {
 					limit = { 
 						is_in_faction_with = GER
 						is_faction_leader = yes
@@ -3068,7 +3161,7 @@ country_event = {
 				declare_war_on = {
 					target = POL
 					type = take_state
-					generator = { 85 }
+					generator = { 85 } # danzig
 				}
 			}
 		}
@@ -3086,8 +3179,9 @@ country_event = {
 	
 	option = {
 		name = germany.87.a
-		transfer_state = 85
-		remove_state_claim = 86
+		transfer_state = 85 # danzig
+		transfer_state= 785 # gdynia
+		remove_state_claim = 86 # poznan
 	}
 }
 
@@ -3105,7 +3199,7 @@ country_event = {
 		declare_war_on = {
 			target = POL
 			type = take_state
-			generator = { 85 }
+			generator = { 85 785 86 } # danzig, gdynia and poznan
 		}
 	}
 }
@@ -3123,7 +3217,7 @@ country_event = {
 		name = germany.89.a
 		dismantle_faction = yes
 		add_national_unity = -0.1
-		every_country = {
+		every_other_country = {
 			limit = {
 				OR = {
 					AND = {
@@ -3152,14 +3246,13 @@ country_event = {
 			create_faction = "the_berlin_moscow_axis"
 			add_to_faction = SOV
 			add_named_threat = { threat = 5 name = germany.89.t }
-			every_country = {
+			every_other_country = {
 				limit = {
-					NOT = { tag = GER }
 					has_government = fascism 
 				}
 				add_opinion_modifier = { target = GER modifier = communist_collaborators }
 			}
-			every_country = {
+			every_other_country = {
 				limit = {
 					has_government = democratic 
 				}
@@ -3290,7 +3383,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = YUG
-			generator = { 102 }
+			generator = { 102 } # slovenia
 		}
 		hidden_effect = {
 			news_event = { id = news.164 hours = 6 }
@@ -3310,7 +3403,7 @@ country_event = {
 	
 	option = {
 		name = germany.94.a
-		GER = { transfer_state = 102 }
+		GER = { transfer_state = 102 } # slovenia
 		set_country_flag = slovenia_acquired
 		hidden_effect = {
 			news_event = { id = news.163 hours = 6 }
@@ -3332,7 +3425,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = YUG
-			generator = { 102 }
+			generator = { 102 } # slovenia
 		}
 		hidden_effect = {
 			news_event = { id = news.166 hours = 6 }
@@ -3354,7 +3447,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = YUG
-			generator = { 102 }
+			generator = { 102 } # slovenia
 		}		
 		hidden_effect = {
 			news_event = { id = news.167 hours = 6 }		
@@ -3376,7 +3469,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = YUG
-			generator = { 102 }
+			generator = { 102 } # slovenia
 		}
 		hidden_effect = {
 			news_event = { id = news.165 hours = 6 }
@@ -3404,8 +3497,8 @@ country_event = {
 				YUG = {
 					OR = {
 						is_in_faction = yes
-						any_country = {
-							has_guaranteed = YUG								
+						any_other_country = {
+							has_guaranteed = YUG
 						}
 					}
 				}
@@ -3425,7 +3518,7 @@ country_event = {
 				YUG = { 
 					is_in_faction = no
 					NOT = {
-						any_country = {
+						any_other_country = {
 							has_guaranteed = YUG								
 						}
 					}
@@ -3449,9 +3542,16 @@ country_event = {
 		trigger = {
 			YUG = { 
 				OR = { 
-					owns_state = 103
-					owns_state = 104
-					owns_state = 109
+					owns_state = 103 # dalmatia
+					owns_state = 104 # bosnia/sarajevo
+					owns_state = 109 # croatia/zagreb
+					# added by expanded states:
+					owns_state = 820 # rijeka (north of dalmatia)
+					owns_state = 819 # slavonia (east of zagreb)
+					owns_state = 818 # mostar (west of sarajevo)
+					owns_state = 817 # bejeljina (east of sarajevo)
+					owns_state = 816 # banja-luka (north of sarajevo)
+					owns_state = 821 # syrmia
 				} 
 			} 
 		}
@@ -3461,7 +3561,7 @@ country_event = {
 				YUG = {
 					OR = {
 						is_in_faction = yes
-						any_country = {
+						any_other_country = {
 							has_guaranteed = YUG								
 						}
 					}
@@ -3474,17 +3574,41 @@ country_event = {
 				add_named_threat = { threat = 5 name = GER_fate_of_yugoslavia }
 				CRO = {
 					if = {
-						limit = { YUG = { owns_state = 103 } }
+						limit = { YUG = { owns_state = 103 } } # dalmatia
 						transfer_state = 103
 					}
 					if = {
-						limit = { YUG = { owns_state = 104 } }
+						limit = { YUG = { owns_state = 104 } } # bosnia
 						transfer_state = 104
 					}
 					if = {
-						limit = { YUG = { owns_state = 109 } }
+						limit = { YUG = { owns_state = 109 } } # croatia
 						transfer_state = 109
-					}						
+					}
+					if = {
+						limit = { YUG = { owns_state = 820 } } # 
+						transfer_state = 820
+					}
+					if = {
+						limit = { YUG = { owns_state = 819 } } # 
+						transfer_state = 819
+					}
+					if = {
+						limit = { YUG = { owns_state = 818 } } # 
+						transfer_state = 818
+					}
+					if = {
+						limit = { YUG = { owns_state = 817 } } # 
+						transfer_state = 817
+					}
+					if = {
+						limit = { YUG = { owns_state = 816 } } # 
+						transfer_state = 816
+					}
+					if = {
+						limit = { YUG = { owns_state = 821 } } # syrmia
+						transfer_state = 821
+					}
 				}
 				puppet = CRO
 				annex_country = { target = YUG transfer_troops = no }
@@ -3497,7 +3621,7 @@ country_event = {
 				YUG = { 
 					is_in_faction = no
 					NOT = {
-						any_country = {
+						any_other_country = {
 							has_guaranteed = YUG								
 						}
 					}
@@ -3507,17 +3631,41 @@ country_event = {
 			add_named_threat = { threat = 5 name = GER_fate_of_yugoslavia }
 			CRO = {
 				if = {
-					limit = { YUG = { owns_state = 103 } }
+					limit = { YUG = { owns_state = 103 } } # dalmatia
 					transfer_state = 103
 				}
 				if = {
-					limit = { YUG = { owns_state = 104 } }
+					limit = { YUG = { owns_state = 104 } } # bosnia
 					transfer_state = 104
 				}
 				if = {
-					limit = { YUG = { owns_state = 109 } }
+					limit = { YUG = { owns_state = 109 } } # croatia
 					transfer_state = 109
-				}						
+				}
+				if = {
+					limit = { YUG = { owns_state = 820 } } # 
+					transfer_state = 820
+				}
+				if = {
+					limit = { YUG = { owns_state = 819 } } # 
+					transfer_state = 819
+				}
+				if = {
+					limit = { YUG = { owns_state = 818 } } # 
+					transfer_state = 818
+				}
+				if = {
+					limit = { YUG = { owns_state = 817 } } # 
+					transfer_state = 817
+				}
+				if = {
+					limit = { YUG = { owns_state = 816 } } # 
+					transfer_state = 816
+				}
+				if = {
+					limit = { YUG = { owns_state = 821 } } # syrmia
+					transfer_state = 821
+				}
 			}
 			puppet = CRO
 			annex_country = { target = YUG transfer_troops = no }
@@ -3539,7 +3687,7 @@ country_event = {
 				YUG = {
 					OR = {
 						is_in_faction = yes
-						any_country = {
+						any_other_country = {
 							has_guaranteed = YUG								
 						}
 					}
@@ -3552,22 +3700,44 @@ country_event = {
 				
 				CRO = {
 					if = {
-						limit = { YUG = { owns_state = 103 } }
+						limit = { YUG = { owns_state = 103 } } # dalmatia
 						transfer_state = 103
 					}
 					if = {
-						limit = { YUG = { owns_state = 104 } }
+						limit = { YUG = { owns_state = 104 } } # bosnia
 						transfer_state = 104
 					}
 					if = {
-						limit = { YUG = { owns_state = 109 } }
+						limit = { YUG = { owns_state = 109 } } # croatia
 						transfer_state = 109
-					}						
+					}
+					if = {
+						limit = { YUG = { owns_state = 820 } } # 
+						transfer_state = 820
+					}
+					if = {
+						limit = { YUG = { owns_state = 819 } } # 
+						transfer_state = 819
+					}
+					if = {
+						limit = { YUG = { owns_state = 818 } } # 
+						transfer_state = 818
+					}
+					if = {
+						limit = { YUG = { owns_state = 817 } } # 
+						transfer_state = 817
+					}
+					if = {
+						limit = { YUG = { owns_state = 816 } } # 
+						transfer_state = 816
+					}
+					if = {
+						limit = { YUG = { owns_state = 821 } } # syrmia
+						transfer_state = 821
+					}
 				}
 				puppet = CRO
 				puppet = YUG
-
-
 				hidden_effect = {
 					set_global_flag = GER_fate_of_yugoslavia_puppet_CRO_YUG
 					news_event = { hours = 6 id = news.169 }
@@ -3581,8 +3751,8 @@ country_event = {
 				YUG = { 
 					is_in_faction = no
 					NOT = {
-						any_country = {
-							has_guaranteed = YUG								
+						any_other_country = {
+							has_guaranteed = YUG
 						}
 					}
 				}
@@ -3591,22 +3761,44 @@ country_event = {
 			
 			CRO = {
 				if = {
-					limit = { YUG = { owns_state = 103 } }
+					limit = { YUG = { owns_state = 103 } } # dalmatia
 					transfer_state = 103
 				}
 				if = {
-					limit = { YUG = { owns_state = 104 } }
+					limit = { YUG = { owns_state = 104 } } # bosnia
 					transfer_state = 104
 				}
 				if = {
-					limit = { YUG = { owns_state = 109 } }
+					limit = { YUG = { owns_state = 109 } } # croatia
 					transfer_state = 109
-				}						
+				}
+				if = {
+					limit = { YUG = { owns_state = 820 } } # 
+					transfer_state = 820
+				}
+				if = {
+					limit = { YUG = { owns_state = 819 } } # 
+					transfer_state = 819
+				}
+				if = {
+					limit = { YUG = { owns_state = 818 } } # 
+					transfer_state = 818
+				}
+				if = {
+					limit = { YUG = { owns_state = 817 } } # 
+					transfer_state = 817
+				}
+				if = {
+					limit = { YUG = { owns_state = 816 } } # 
+					transfer_state = 816
+				}
+				if = {
+					limit = { YUG = { owns_state = 821 } } # syrmia
+					transfer_state = 821
+				}
 			}
 			puppet = CRO
 			puppet = YUG
-
-
 			hidden_effect = {
 				set_global_flag = GER_fate_of_yugoslavia_puppet_CRO_YUG
 				news_event = { hours = 6 id = news.169 }
@@ -3633,19 +3825,19 @@ country_event = {
 
 		if = {
 			limit = {
-				GRE = { owns_state = 185 }
+				GRE = { owns_state = 185 } # epirus
 			}
 			set_global_flag = GER_second_ljubljana_award_ITA_185
 		}
 		if = {
 			limit = {
-				GRE = { owns_state = 186 }
+				GRE = { owns_state = 186 } # peloponnese
 			}
 			set_global_flag = GER_second_ljubljana_award_ITA_186
 		}
 		if = {
 			limit = {
-				GRE = { owns_state = 47 }
+				GRE = { owns_state = 47 } # Thessaly
 			}
 			set_global_flag = GER_second_ljubljana_award_ITA_47
 		}
@@ -3723,7 +3915,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				731 = {
+				731 = { # Central Macedonia
 					any_neighbor_state = { is_owned_by = GER }
 					is_owned_by = GRE
 				}
@@ -3732,7 +3924,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				185 = {
+				185 = { # Epirus
 					any_neighbor_state = { is_owned_by = GER }
 					is_owned_by = GRE
 				}
@@ -3741,7 +3933,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				47 = {
+				47 = { # Thessaly
 					any_neighbor_state = { is_owned_by = GER }
 					is_owned_by = GRE
 				}
@@ -3759,14 +3951,14 @@ country_event = {
 				limit = { 
 					has_global_flag = GER_second_ljubljana_award_GER_731
 				}
-				GER = { transfer_state = 731 }
+				GER = { transfer_state = 731 } # Central Macedonia
 			}
 			if = {
 				limit = { 
 					has_global_flag = GER_second_ljubljana_award_GER_185
 					NOT = { has_global_flag = GER_second_ljubljana_award_GER_731 }
 				}
-				GER = { transfer_state = 185 }
+				GER = { transfer_state = 185 } # Epirus
 			}
 			if = {
 				limit = { 
@@ -3774,7 +3966,7 @@ country_event = {
 					NOT = { has_global_flag = GER_second_ljubljana_award_GER_731 }
 					NOT = { has_global_flag = GER_second_ljubljana_award_GER_185 }
 				}
-				GER = { transfer_state = 47 }
+				GER = { transfer_state = 47 } # Thessaly
 			}
 		}
 	}
@@ -3798,7 +3990,7 @@ country_event = {
 		name = germany.102.a
 		create_wargoal = {
 			type = puppet_wargoal_focus
-			target = GRE		
+			target = GRE
 		}
 		hidden_effect = {
 			news_event = { id = news.229 hours = 6 }
@@ -3820,7 +4012,7 @@ country_event = {
 		name = germany.103.a
 		create_wargoal = {
 			type = puppet_wargoal_focus
-			target = GRE		
+			target = GRE
 		}
 	}
 }
@@ -3829,8 +4021,8 @@ country_event = {
 country_event = {
 	id = germany.104
 	title = germany.104.t
-	desc = { text = germany.104.d_Savoy 					trigger = { has_global_flag = ITA_claims_on_france_735 } }
-	desc = { text = germany.104.d_Corsica 				trigger = { has_global_flag = ITA_claims_on_france_1 } }
+	desc = { text = germany.104.d_Savoy 			trigger = { has_global_flag = ITA_claims_on_france_735 } }
+	desc = { text = germany.104.d_Corsica 			trigger = { has_global_flag = ITA_claims_on_france_1 } }
 	desc = { text = germany.104.d_Savoy_Corsica 	trigger = { has_global_flag = ITA_claims_on_france_735 has_global_flag = ITA_claims_on_france_1 } }
  
  
@@ -3847,7 +4039,7 @@ country_event = {
 			has_global_flag = ITA_claims_on_france_1
 		}
 		clr_global_flag = ITA_claims_on_france_1
-		random_country = {
+		random_other_country = {
 			limit = {
 				original_tag = FRA
 				has_government = fascism
@@ -3865,7 +4057,7 @@ country_event = {
 			NOT = { has_global_flag = ITA_claims_on_france_735 }
 			has_global_flag = ITA_claims_on_france_1
 		}
-		random_country = {
+		random_other_country = {
 			limit = {
 				original_tag = FRA
 				has_government = fascism
@@ -3883,7 +4075,7 @@ country_event = {
 			has_global_flag = ITA_claims_on_france_735
 			NOT = { has_global_flag = ITA_claims_on_france_1 }
 		}
-		random_country = {
+		random_other_country = {
 			limit = {
 				original_tag = FRA
 				has_government = fascism
@@ -3901,7 +4093,7 @@ country_event = {
 			has_global_flag = ITA_claims_on_france_735
 			has_global_flag = ITA_claims_on_france_1
 		}
-		random_country = {
+		random_other_country = {
 			limit = {
 				original_tag = FRA
 				has_government = fascism
@@ -3953,7 +4145,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { # Give Bulgaria state 77
+	option = { # Give Bulgaria state 77 (dobrudja)
 		name = germany.106.a
 		ai_chance = { factor = 95 
 			modifier = {
@@ -3968,7 +4160,7 @@ country_event = {
 		BUL = {
 			add_opinion_modifier = { target = GER modifier = GER_treaty_of_craiova_GER }
 
-			every_country = {
+			every_other_country = {
 				limit = { 
 					is_faction_leader = yes 
 					NOT = { tag = GER }
@@ -4125,7 +4317,7 @@ country_event = {
 	hidden = yes
 	
 	immediate = {
-		every_country = {
+		every_other_country = {
 			limit = { has_idea = anti_soviet_pact }
 			add_opinion_modifier = { target = FROM modifier = anti_soviet_pact_call_refused }
 		}
@@ -4162,8 +4354,8 @@ country_event = {
 	trigger = {
 		has_country_flag = GER_POL_danzig_promised
 		has_civil_war = no
-		owns_state = 85
-		controls_state = 85
+		owns_state = 85 # Danzig
+		controls_state = 85 # Danzig
 	}
 
 	fire_only_once = yes
@@ -4204,7 +4396,7 @@ country_event = {
 				declare_war_on = {
 					target = POL
 					type = take_state
-					generator = { 85 }
+					generator = { 85 } # Danzig
 				}
 			}
 		}
@@ -4222,8 +4414,9 @@ country_event = {
 
 	option = {
 		name = germany.115.a
-		transfer_state = 85
-		remove_state_claim = 86
+		transfer_state = 85 # Danzig
+		remove_state_claim = 86 # Poznan
+		remove_state_claim = 785 # Gdynia
 	}
 }
 
@@ -4245,7 +4438,7 @@ country_event = {
 		declare_war_on = {
 			target = POL
 			type = take_state
-			generator = { 85 }
+			generator = { 85 } # Danzig
 		}
 	}
 
@@ -4354,36 +4547,44 @@ country_event = {
 			}
 		}
 		effect_tooltip = {
-			WGR = {
-				add_state_core = 42
-				add_state_core = 50
-				add_state_core = 51
-				add_state_core = 52
-				add_state_core = 53
-				add_state_core = 54
-				add_state_core = 55
-				add_state_core = 56
-				add_state_core = 57
-				add_state_core = 58
-				add_state_core = 59
-			}
-			DDR = {
-				add_state_core = 60
-				add_state_core = 61
-				add_state_core = 62
-				add_state_core = 63
-				add_state_core = 64
-				add_state_core = 65
-				add_state_core = 66
-				add_state_core = 67
-				add_state_core = 68
-			}
-			POL = {
-				add_state_core = 66
-				add_state_core = 67
-				add_state_core = 63
-				add_state_core = 5
-			}
+		WGR = {
+			add_state_core = 42  # moselland
+			add_state_core = 50
+			add_state_core = 51
+			add_state_core = 52
+			add_state_core = 53
+			add_state_core = 54
+			add_state_core = 55
+			add_state_core = 56
+			add_state_core = 57
+			add_state_core = 58  # schleswig-holstein
+			add_state_core = 59
+			add_state_core = 800 # saarland
+			add_state_core = 748 # southern schleswig
+		}
+		DDR = {
+			add_state_core = 60
+			add_state_core = 61
+			add_state_core = 62 # vorpommern
+			add_state_core = 63
+			add_state_core = 64
+			add_state_core = 65
+			add_state_core = 66
+			add_state_core = 67
+			add_state_core = 68 # ostmark
+			add_state_core = 813 # upper lusatia
+			add_state_core = 824 # berlin
+		}
+		POL = {
+			add_state_core = 66  # neidershlesien
+			add_state_core = 67  # obershlesien
+			add_state_core = 63  # hinterpommern
+			add_state_core = 5   # northern ostprussen
+			add_state_core = 744 # southern ostprussen
+			add_state_core = 782 # neumark
+			add_state_core = 781 # ostpommern
+			add_state_core = 814 # kladsko
+		}
 		}
 		event_target:yalta_partner = {
 			custom_effect_tooltip = needs_approval
@@ -4413,7 +4614,7 @@ country_event = {
 	option = {
 		name = germany.119.a
 		WGR = {
-			add_state_core = 42
+			add_state_core = 42  # moselland
 			add_state_core = 50
 			add_state_core = 51
 			add_state_core = 52
@@ -4422,25 +4623,33 @@ country_event = {
 			add_state_core = 55
 			add_state_core = 56
 			add_state_core = 57
-			add_state_core = 58
+			add_state_core = 58  # schleswig-holstein
 			add_state_core = 59
+			add_state_core = 800 # saarland
+			add_state_core = 748 # southern schleswig
 		}
 		DDR = {
 			add_state_core = 60
 			add_state_core = 61
-			add_state_core = 62
+			add_state_core = 62 # vorpommern
 			add_state_core = 63
 			add_state_core = 64
 			add_state_core = 65
 			add_state_core = 66
 			add_state_core = 67
-			add_state_core = 68
+			add_state_core = 68 # ostmark
+			add_state_core = 813 # upper lusatia
+			add_state_core = 824 # berlin
 		}
 		POL = {
-			add_state_core = 66
-			add_state_core = 67
-			add_state_core = 63
-			add_state_core = 5
+			add_state_core = 66  # neidershlesien
+			add_state_core = 67  # obershlesien
+			add_state_core = 63  # hinterpommern
+			add_state_core = 5   # northern ostprussen
+			add_state_core = 744 # southern ostprussen
+			add_state_core = 782 # neumark
+			add_state_core = 781 # ostpommern
+			add_state_core = 814 # kladsko
 		}
 		hidden_effect = {
 			news_event = { days = 1 id = news.236 }
@@ -4471,7 +4680,6 @@ country_event = {
 		}
 	}
 }
-
 
 country_event = {
 	id = germany.120
@@ -4815,28 +5023,29 @@ country_event = {
 	}
 }
 
-#Events in case of weirdness with German Czechoslovakia focus
+#Events in case of weirdness with German Czechoslovakia focus [FROM:GER,ROOT:CZE]
+# This is called on completion of focus but CZE is our puppet OR if either of us are at war with ENG/FRA (so no Munich conference possible)
 country_event = {
 	id = germany.122
 	title = germany.122.t
 	desc = germany.122.d
 	picture = GFX_report_event_german_speech
-
 	is_triggered_only = yes
-
-	option = {
+	option = { # Refuse
 		name = germany.122.a
 		ai_chance = {
 			factor = 100
 		}
 		effect_tooltip = {
+			every_owned_state = {
+				limit = { has_state_flag = es_cze_german }
+				add_claim_by = GER
+			}
 			GER = {
-				add_state_claim = 69
-				add_state_claim = 74
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 74 }
+					generator = { 69 74 801 } # sudeten states
 				}
 			}
 		}
@@ -4846,16 +5055,23 @@ country_event = {
 			}
 		}
 	}
-
-	option = {
+	option = { # Accept
 		name = germany.122.b
 		ai_chance = {
 			factor = 0
 		}
 		effect_tooltip = {
-			GER = {
-				transfer_state = 69
-				transfer_state = 74
+			if = {
+				limit = { owns_state = 69 }
+				GER = { transfer_state = 69 }
+			}
+			if = {
+				limit = { owns_state = 74 }
+				GER = { transfer_state = 74 }
+			}
+			if = {
+				limit = { owns_state = 801 }
+				GER = { transfer_state = 801 }
 			}
 		}
 		hidden_effect = {
@@ -4869,42 +5085,151 @@ country_event = {
 }
 
 
-#Events in case of weirdness with German Czechoslovakia focus
+#Events in case of weirdness with German Czechoslovakia focus (Refuse) [FROM:CZE,ROOT:GER]
 country_event = {
 	id = germany.123
 	title = germany.123.t
 	desc = germany.123.d
 	picture = GFX_report_event_czech_soldiers_02
-	
 	is_triggered_only = yes
-
 	option = {
 		name = germany.123.a
-		add_state_claim = 69
-		add_state_claim = 74
+		CZE = {
+			every_owned_state = {
+				limit = { has_state_flag = es_cze_german }
+				add_claim_by = GER
+			}
+		}
 		create_wargoal = {
 			type = take_state_focus
 			target = CZE
-			generator = { 69 74 }
+			generator = { 69 74 801 }
+		}
+		every_country = {
+			limit = {
+				NOT = { tag = GER }
+				NOT = { tag = CZE }
+				any_owned_state = { has_state_flag = es_cze_german }
+			}
+			country_event = { id = germany_es.4 }
 		}
 	}
 }
 
 
-#Events in case of weirdness with German Czechoslovakia focus
+#Events in case of weirdness with German Czechoslovakia focus (Accept) [FROM:CZE,ROOT:GER]
 country_event = {
 	id = germany.124
 	title = germany.124.t
 	desc = germany.124.d
 	picture = GFX_report_event_german_reichstag_gathering
+	is_triggered_only = yes
+	option = {
+		name = germany.124.a
+		if = {
+			limit = { CZE = { owns_state = 69 } }
+			add_state_core = 69
+			transfer_state = 69
+		}
+		if = {
+			limit = { CZE = { owns_state = 74 } }
+			add_state_core = 74
+			transfer_state = 74
+		}
+		if = {
+			limit = { CZE = { owns_state = 801 } }
+			add_state_core = 801
+			transfer_state = 801
+		}
+		every_country = {
+			limit = {
+				NOT = { tag = GER }
+				NOT = { tag = CZE }
+				any_owned_state = { has_state_flag = es_cze_german }
+			}
+			country_event = { id = germany_es.4 }
+		}
+	}
+}
+#Event if Austria has a civil war [FROM:GER.focus,ROOT:AUS]
+country_event = {
+	id = germany.126
+	title = germany.126.t
+	desc = germany.126.d
+	picture = GFX_report_event_german_reichstag_gathering
 
 	is_triggered_only = yes
 
 	option = {
-		name = germany.124.a
-		add_state_core = 69
-		transfer_state = 69
-		add_state_core = 74
-		transfer_state = 74
+		name = germany.126.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 1
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+				}
+			}
+		}
+		random_other_country = {
+			limit = {
+				original_tag = AUS
+				NOT = { tag = ROOT }
+			}
+			FROM = {
+				add_to_war = {
+					targeted_alliance = ROOT
+					enemy = PREV
+				}
+				annex_country = { target = ROOT transfer_troops = yes }
+				hidden_effect = { news_event = { id = news.237 } }
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { tag = GER }
+					NOT = { tag = AUS }# austria
+					NOT = { original_tag = AUS }# austria
+					any_owned_state = {
+						has_state_flag = es_aus_german
+					}
+				}
+				country_event = { id = germany_es.1 }
+			}
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = {
+		name = germany.126.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 1
+				OR = {
+					has_government = communism
+					has_government = democratic
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = AUS
+					original_tag = AUS
+				}
+			}
+			every_owned_state = {
+				limit = { has_state_flag = es_aus_german }
+				add_claim_by = GER
+			}
+			FROM = {
+				create_wargoal = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
 	}
 }

@@ -8,7 +8,7 @@ state=
 	
 	history=
 	{
-		owner = ROM
+		owner = SOV
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 2
@@ -19,8 +19,9 @@ state=
 			}
 		}
 		add_core_of = ROM
+		add_core_of = SOV
 	}
 	provinces=
 	{
-414 565 3407 3577 3704 3707 3724 6600 6743 9683 11686 11705 	}
+414 565 3407 3577 3701 3704 3707 3724 6600 6727 6743 9683 11686 11705 	}
 }

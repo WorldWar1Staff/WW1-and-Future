@@ -1,9 +1,12 @@
-
-state={#Mali
+# Mali
+state={
 	id=556
 	name="STATE_556"
 	history={
 		owner = FRA
+		victory_points = {
+			12751 1
+		}
 		buildings = {
 			infrastructure = 1
 		}

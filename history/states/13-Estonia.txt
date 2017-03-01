@@ -22,9 +22,6 @@ state={
 			}
 		}
 		add_core_of = EST
-		1920.1.10 = {
-			owner = EST
-		}
 	}
 
 	provinces={

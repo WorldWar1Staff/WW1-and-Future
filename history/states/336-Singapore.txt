@@ -8,12 +8,13 @@ state={
 		tungsten=308.000
 	}
 	history={
-		owner = ENG
+		owner = MAL
+		add_core_of = MAL
 		victory_points = {
 			7329 1 
 		}
 		victory_points = {
-			10297 1 
+			10297 2 
 		}
 		buildings = {
 			infrastructure = 3

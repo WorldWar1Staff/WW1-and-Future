@@ -15,7 +15,7 @@ LAT	= "countries/Latvia.txt"
 SPR = "countries/Spain.txt"
 ITA = "countries/Italy.txt"
 ROM = "countries/Romania.txt"
-ISI = "countries/Islamic State of Iraq and Syria.txt" #I just translated this into english, I may not have renamed all files though
+
 YUG = "countries/Yugoslavia.txt"
 SER = "countries/Serbia.txt"
 SWI = "countries/Switzerland.txt"

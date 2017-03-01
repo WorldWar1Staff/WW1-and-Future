@@ -1,4 +1,4 @@
-
+# Zambia
 state={
 	id=545
 	name="STATE_545"
@@ -9,6 +9,9 @@ state={
 
 	history={
 		owner = ENG
+		victory_points = {
+			5199 1
+		}
 		buildings = {
 			infrastructure = 3
 

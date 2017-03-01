@@ -1,0 +1,17 @@
+# Marrakech (inland southern Morocco)
+state={
+	id=462
+	name="STATE_462"
+	history={
+		owner = FRA
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	provinces={
+		1989 4022 4108 10107 
+	}
+	manpower=1000000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}

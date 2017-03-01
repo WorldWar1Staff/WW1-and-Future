@@ -16,9 +16,6 @@ state=
 		victory_points = {
 			197 1
 		}
-		1920.1.10 = {
-			owner = FIN
-		}
 	}
 
 	provinces={

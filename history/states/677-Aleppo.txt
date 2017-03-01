@@ -1,11 +1,6 @@
-
 state={
 	id=677
 	name="STATE_677"
-	manpower = 1325594
-	
-	state_category = town
-	
 	history={
 		owner = TUR
 		victory_points = {
@@ -15,11 +10,11 @@ state={
 			infrastructure = 3
 		}
 		add_core_of = SYR
-
 	}
-
-	
 	provinces={
-		1056 1072 1088 7140 7671 10087 12473 
+		7140 7671 12473 
 	}
+	manpower=700000
+	buildings_max_level_factor=1.000
+	state_category=town
 }

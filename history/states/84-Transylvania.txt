@@ -19,11 +19,8 @@ state={
 		victory_points = {
 			690 1 
 		}
-		add_core_of = HUN
 		add_core_of = ROM
-		1920.1.10 = {
-			owner = ROM
-		}
+		add_core_of = HUN
 	}
 
 	provinces={

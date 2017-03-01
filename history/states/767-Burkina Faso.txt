@@ -3,12 +3,15 @@ state={
 	name="STATE_767"
 	history={
 		owner = FRA
+		victory_points = {
+			10836 1
+		}
 		buildings = {
 			infrastructure = 3
 		}
 	}
 	provinces={
-		2001 7950 7983 8071 10836 12707 12851 
+		2001 7950 7983 8071 10836 12851 
 	}
 	manpower=3000000
 	buildings_max_level_factor=1.000

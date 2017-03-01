@@ -1,0 +1,20 @@
+# Slavonia (east of Zagreb)
+state={
+	id=819
+	name="STATE_819"
+	provinces={
+		3627 6647 9595 11577 
+	}
+	history={
+		owner = HUN
+		buildings = {
+			infrastructure = 6
+		}
+		add_core_of = YUG
+		add_core_of = CRO
+		add_core_of = HUN
+	}
+	manpower=224400
+	buildings_max_level_factor=1.000
+	state_category=town
+}

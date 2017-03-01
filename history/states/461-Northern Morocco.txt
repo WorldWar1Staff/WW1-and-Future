@@ -1,0 +1,25 @@
+# Casablanca (Morocco)
+state={
+	id=461
+	name="STATE_461"
+	history={
+		owner = FRA
+		victory_points = {
+			7069 10 
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			air_base = 4
+			7069 = {
+				naval_base = 4
+			}
+		}
+	}
+	provinces={
+		4139 7069 10023 11943 
+	}
+	manpower=1597719
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

@@ -12,21 +12,21 @@ set_politics = {
 	parties = {
 
 		monarchy = {
-			popularity = 70
+			popularity = 45
 		}
 		democratic = {
-			popularity = 10
-		}
-
-		nationalism = {
-			popularity = 5
-		}
-		fascism = {
 			popularity = 0
 		}
 
-		communism = {
+		nationalism = {
 			popularity = 15
+		}
+		fascism = {
+			popularity = 5
+		}
+
+		communism = {
+			popularity = 35
 			banned = yes #default is no
 		}
 	}

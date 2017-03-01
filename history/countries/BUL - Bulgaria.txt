@@ -1,0 +1,253 @@
+﻿capital = 48
+oob = "BUL_1913"
+
+set_research_slots = 1
+#Starting tech
+set_technology = {
+	infantry_weapons = 1
+
+}
+set_politics = {
+
+	parties = {
+
+		monarchy = {
+			popularity = 63
+		}
+		conservativ = {
+			popularity = 17
+		}
+
+		nationalism = {
+			popularity = 14
+		}
+		fascism = {
+			popularity = 0
+		}
+
+		socialdemocrat = {
+			popularity = 6
+			banned = yes #default is no  -jackik: can this be banned if it already has an value? do the popularity values have to add up to 100?
+		}
+	}
+
+	ruling_party = monarchy
+	last_election = "1888.3.5"
+	election_frequency = 48
+	elections_allowed = no
+
+}
+
+
+add_ideas = {
+	}
+
+
+
+
+
+
+
+set_convoys = 5
+set_national_unity = 0.7
+
+
+1936.1.1 = {
+oob = "BUL_1936"
+
+add_ideas = {
+	limited_conscription
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	motorised_infantry = 1
+	early_fighter = 1
+  				}
+					set_convoys = 5
+
+					set_politics = {
+
+						parties = {
+							democratic = {
+								popularity = 5
+							}
+
+							fascism = {
+								popularity = 35
+							}
+
+							communism = {
+								popularity = 0
+								banned = yes
+							}
+							neutrality = {
+								popularity = 60
+							}
+						}
+
+						ruling_party = neutrality
+						last_election = "1987.6.21"
+						election_frequency = 48
+						elections_allowed = no
+					}
+					set_convoys = 5
+					set_national_unity = 0.5
+}
+
+
+1939.1.1 = {
+
+	add_political_power = 1198
+
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
+	oob = "BUL_1939"
+	set_technology = {
+		fighter1 = 1
+		early_bomber = 1
+		tactical_bomber1 = 1
+		gwtank = 1
+		basic_light_tank = 1
+		gw_artillery = 1
+		interwar_artillery = 1
+		tech_recon = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+
+		#doctrines
+		#Air
+		force_rotation = 1
+		fighter_baiting = 1
+
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		oil_plant = 1
+		improved_oil_plant = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+
+	set_politics = {
+
+	parties = {
+		democratic = {
+			popularity = 5
+		}
+
+		fascism = {
+			popularity = 35
+		}
+
+		communism = {
+			popularity = 0
+			banned = yes
+		}
+		neutrality = {
+			popularity = 60
+		}
+	}
+
+	ruling_party = neutrality
+	last_election = "1938.3.27"
+	election_frequency = 48
+	elections_allowed = no
+}
+}
+create_country_leader = {
+	name = "Ferdinand I"
+	desc = "POLITICS_ADOLF_HITLER_DESC"
+	picture = "Portrait_Bulgaria_Ferdinand.dds"
+	expire = "1918.1.1"
+	ideology = kaiserreich
+	traits = {
+		kaiser
+	}
+}
+
+create_country_leader = {
+	name = "Boris III"
+	desc = "POLITICS_BORIS_III_DESC"
+	picture = "Portrait_Bulgaria_Boris_III.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Georgi Dimitrov"
+	desc = "POLITICS_GEORGI_DIMITROV_DESC"
+	picture = "Portrait_Bulgaria_Georgi_Dimitrov.dds"
+	expire = "1965.1.1"
+	ideology = leninism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Zivko Topalovic"
+	desc = "POLITICS_ZIVCO_TOPALOVIC_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+	expire = "1965.1.1"
+	ideology = socialism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Hristo Lukov"
+	desc = "POLITICS_HRISTO_LUKOV_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+
+create_corps_commander = {
+	name = "Vasil Tenev Boydev"
+	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
+	traits = { panzer_leader }
+	skill = 3
+}
+
+create_field_marshal = {
+	name = "Georgi Nikolov Popov"
+	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+	traits = { defensive_doctrine }
+	skill = 4
+}

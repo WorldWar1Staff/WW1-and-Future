@@ -34,15 +34,31 @@ set_politics = {
 	last_election = "1967.3.5"
 	election_frequency = 48
 	elections_allowed = no
-
- }
+}
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = HUN
+		autonomous_state = autonomy_integrated_puppet
+	}
+	
+	else = {
+		set_autonomy = {
+			target = HUN
+			autonomous_state = autonomy_puppet
+		}
+		
+	}
+}
 add_ideas = {
 	}
 
 set_national_unity = 0.50
 set_convoys = 50
 
-puppet = HUN
+
 
 1936.1.1 = {
 oob = "AUS_1936"

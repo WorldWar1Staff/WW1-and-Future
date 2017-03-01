@@ -14,9 +14,6 @@ state={
 
 		}
 		add_core_of = LAT
-		1920.1.10 = {
-			owner = LAT
-		}
 
 	}
 

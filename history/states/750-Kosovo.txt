@@ -8,10 +8,6 @@ state={
 			air_base = 1
 		}
 		add_core_of = YUG
-		add_core_of = SER
-		1920.1.10 = {
-			owner = YUG
-		}
 
 	}
 	provinces={

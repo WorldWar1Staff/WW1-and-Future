@@ -1,11 +1,7 @@
-
+# Al Khums (Libya)
 state={
 	id=449
-	name="STATE_449" # El Agheila
-	manpower = 40431
-	
-	state_category = enclave
-
+	name="STATE_449"
 	history={
 		owner = ITA
 		buildings = {
@@ -13,8 +9,10 @@ state={
 		}
 		add_core_of = LBA
 	}
-
 	provinces={
-		1041 1198 4047 4057 10046 10117 12088 
+		4176 4194 7066 7209 12009 
 	}
+	manpower=20431
+	buildings_max_level_factor=1.000
+	state_category=enclave
 }

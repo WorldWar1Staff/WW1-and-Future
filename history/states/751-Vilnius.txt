@@ -16,9 +16,6 @@ state={
 		}
 		add_core_of = POL
 		add_core_of = LIT
-		1920.1.10 = {
-			owner = POL
-		}
 
 	}
 

@@ -11,10 +11,7 @@ state={
 
 		}
 		add_core_of = POL
-		1920.1.10 = {
-			owner = POL
-		}
-
+		add_core_of = BLR
 	}
 
 	provinces={
