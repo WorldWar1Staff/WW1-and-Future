@@ -1,0 +1,4142 @@
+focus_tree = {
+	id = islamic_focus
+	                   #jackik: i admit that i just copied that germany
+                     #all tags "GER" and "germany" have been replaced
+                     #there may be some impossibilities due to german settings
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = ISI
+		}
+	}
+
+	default = no
+ 	#1913
+################################################################INDUSRY#########################################
+focus = {
+		id = ISI_industrial_effort_1
+		icon = GFX_goal_generic_production
+		x = 9
+		y = 0
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 3
+
+		}
+	}
+
+	focus = {
+		id = ISI_construction_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ISI_industrial_effort_1 }
+		x = 8
+		y = 1
+		cost = 5
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigISI_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+focus = {
+		id = ISI_construction_effort_1
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ISI_construction_effort }
+		x = 8
+		y = 2
+		cost = 5
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigISI_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+focus = {
+		id = ISI_construction_effort_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ISI_construction_effort_1 }
+		x = 8
+		y = 3
+		cost = 5
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigISI_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+focus = {
+		id = ISI_production_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ISI_industrial_effort_1 }
+		x = 10
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigISI_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+focus = {
+		id = ISI_production_effort_1
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ISI_production_effort }
+		x = 10
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigISI_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+focus = {
+		id = ISI_production_effort_2
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ISI_production_effort_1 }
+		x = 10
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigISI_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+focus = {
+		id = ISI_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = ISI_production_effort }
+		x = 12
+		y = 2
+		cost = 5
+		bypass = {
+			custom_trigISI_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+focus = {
+		id = ISI_infrastructure_effort_2
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = ISI_infrastructure_effort }
+		x = 12
+		y = 3
+		cost = 5
+		bypass = {
+			custom_trigISI_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+focus = {
+		id = ISI_production_effort_3
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ISI_construction_effort_2}
+		prerequisite = { focus = ISI_infrastructure_effort_2 }
+		prerequisite = { focus = ISI_production_effort_2 }
+
+		x = 10
+		y = 4
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigISI_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 10
+			add_building_construction = {
+				type = arms_factory
+				level = 10
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 10
+				add_building_construction = {
+					type = arms_factory
+					level = 10
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+focus = {
+		id = ISI_political_effort
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = ISI_friend_austria
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = ISI_political_effort }
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+		AUS = {
+			add_opinion_modifier = { target = ISI modifier = ISI_aus_diplomacy_focus }
+				if = {
+					limit = {
+						ISI = {
+							has_government = fascism
+						}
+					}
+					add_ideas = fascist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = communism
+						}
+					}
+					add_ideas = communist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = democratic
+						}
+					}
+					add_ideas = democratic_influence
+				}
+		}
+	}
+}
+focus = {
+		id = ISI_conract_italia
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = ISI_political_effort }
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+		ITA = {
+			add_opinion_modifier = { target = ISI modifier = ISI_ita_diplomacy_focus }
+
+				if = {
+					limit = {
+						ISI = {
+							has_government = fascism
+						}
+					}
+					add_ideas = fascist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = communism
+						}
+					}
+					add_ideas = communist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = democratic
+						}
+					}
+					add_ideas = democratic_influence
+				}
+		}
+	}
+}
+   focus = {
+		id = ISI_generalstab_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = ISI_political_effort }
+		x = 4
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+			add_ideas = general_staff
+		}
+	}
+ focus = {
+		id = ISI_ludendorf
+		icon = GFX_goal_erich_ludendorf
+		prerequisite = { focus = ISI_generalstab_effort }
+		mutually_exclusive = { focus = ISI_hindenburg}
+		x = 3.5
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+			add_ideas = ludendorf
+			add_ideas = ludendorf_stab
+
+		}
+	}
+ focus = {
+		id = ISI_hindenburg
+		icon = GFX_goal_hindenburg
+		prerequisite = { focus = ISI_generalstab_effort }
+		mutually_exclusive = { focus = ISI_ludendorf}
+		x = 5
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+			add_ideas = hindenburg
+			add_ideas = hindenburg_stab
+		}
+	}
+focus = {
+		id = ISI_ludendorf2
+		icon = GFX_goal_erich_ludendorf2
+		prerequisite = {focus = ISI_hindenburg}
+		x = 5
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+			add_ideas = ludendorf2
+			add_ideas = ludendorf_stab2
+		}
+	}
+focus = {
+		id = ISI_work_schliefenplan
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = ISI_hindenburg}
+		prerequisite = { focus = ISI_ludendorf2}
+		x = 6.5
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+		}
+	}
+focus = {
+		id = ISI_Lenin
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = ISI_hindenburg focus = ISI_ludendorf}
+
+		x = 4
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+		}
+	}
+focus = {
+		id = ISI_red_peace3
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = ISI_Lenin}
+
+		x = 4
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+focus = {
+		id = ISI_found_own_faction_focus
+		available = {
+			is_in_faction = no
+			is_puppet = no
+		}
+		prerequisite = { focus = ISI_conract_italia }
+		prerequisite = { focus = ISI_friend_austria }
+
+		x = 1.5
+		y = 2.5
+		cost = 10
+		icon = GFX_goal_generic_national_unity
+		ai_will_do = {
+			factor = 2.5
+
+		}
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			create_faction = "Dreibund"
+			add_political_power = 15
+			add_national_unity = 0.05
+			hidden_effect = {
+				news_event = { hours = 6 id = news.211}
+			}
+		}
+	}
+	focus = {
+		id = ISI_tur_ally
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ISI_found_own_faction_focus }
+		available = {
+			NOT = { has_war_with = TUR }
+		}
+
+		bypass = {
+
+			OR = {
+				is_in_faction_with = TUR
+				has_war_with = TUR
+				NOT = { country_exists = TUR }
+			}
+		}
+
+		x = 1.5
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			TUR = {
+				add_opinion_modifier = { target = ISI modifier = ISI_tur_alliance_focus }
+			}
+		}
+	}
+focus = {
+		id = ISI_schliefenplan
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = ISI_work_schliefenplan }
+
+		bypass = {
+		}
+
+		available = {
+			has_war_with = FRA SOV
+			OR = {
+
+				NOT = { BEL = { is_in_faction_with = ISI } }
+				NOT = { LUX = { is_in_faction_with = ISI } }
+			}
+		}
+		will_lead_to_war_with = BEL
+		will_lead_to_war_with = LUX
+		x = 6.5
+		y = 5
+		cost = 4
+		ai_will_do = {
+			factor = 10
+			}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { BEL = { is_in_faction_with = ISI } }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = BEL
+					generator = { 6 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = { LUX = { is_in_faction_with = ISI } }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = LUX
+					generator = { 8 }
+				}
+			}
+
+		}
+	}
+
+
+
+	#1936
+	focus = {
+		id = ISI_autobahn
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ISI_autobahn_tt
+			hidden_effect = {
+				64 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 10
+						instant_build = yes
+					}
+				}
+				59 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 10
+						instant_build = yes
+					}
+				}
+				60 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 10
+						instant_build = yes
+					}
+				}
+				54 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 10
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_west_wall
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = ISI_autobahn }
+		x = 0
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+
+		completion_reward = {
+			#add_ideas = todt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = todt
+			50 = {
+				custom_effect_tooltip = ISI_west_wall_forts
+				hidden_effect = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11640
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6712
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6542
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3530
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { 42 = { is_demilitarized_zone = yes } }
+				custom_effect_tooltip = ISI_west_wall_tt
+			}
+			42 = {
+				custom_effect_tooltip = ISI_west_wall_forts
+				hidden_effect = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3558
+						instant_build = yes
+					}
+
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 563
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11531
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9575
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_industrial_effort_10
+		text = industrial_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ISI_west_wall }
+		x = 0
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 9
+		}
+
+		complete_tooltip = {
+			every_state = {
+				limit = { has_state_flag = ISI_industrial_effort_2IC }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = construction_tech_bonus
+				bonus = 0.5
+				uses = 1
+				category = construction_tech
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_industrial_effort_2IC
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_industrial_effort_2IC
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_industrial_effort_2IC
+			}
+			add_tech_bonus = {
+				name = construction_tech_bonus
+				bonus = 0.5
+				uses = 1
+				category = construction_tech
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_industrial_effort_11
+		text = industrial_effort_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ISI_industrial_effort_10 }
+		x = 0
+		y = 13
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		complete_tooltip = {
+			every_state = {
+				limit = { has_state_flag = ISI_industrial_effort_2_2IC }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = construction_tech_bonus
+				bonus = 0.5
+				uses = 1
+				category = construction_tech
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_industrial_effort_2_2IC
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_industrial_effort_2_2IC
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_industrial_effort_2_2IC
+			}
+			add_tech_bonus = {
+				name = construction_tech_bonus
+				bonus = 0.5
+				uses = 1
+				category = construction_tech
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_air_innovation
+		text = air_innovation
+		icon = GFX_goal_generic_build_airforce
+		x = 3
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_tooltip = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 2
+				category = battlefield_support_tree
+			}
+			every_state = {
+				limit = { has_state_flag = ISI_air_innovation_2air }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_state = {
+				limit = { has_state_flag = ISI_air_innovation_6air }
+				add_building_construction = {
+					type = air_base
+					level = 6
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = available_chief_of_airforce
+			show_ideas_tooltip = ritter_von_greim
+		}
+
+		completion_reward = {
+
+			air_experience = 25
+
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 2
+				category = battlefield_support_tree
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							air_base > 3
+							air_base < 9
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 5
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 6
+						instant_build = yes
+					}
+					set_state_flag = ISI_air_innovation_6air
+				}
+			}
+
+			random_owned_state = {
+				limit = {
+					air_base > 3
+					air_base < 9
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_air_innovation_2air
+			}
+			random_owned_state = {
+				limit = {
+					air_base > 3
+					air_base < 9
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_air_innovation_2air
+			}
+			random_owned_state = {
+				limit = {
+					air_base > 2
+					air_base < 9
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_air_innovation_2air
+			}
+			custom_effect_tooltip = available_chief_of_airforce
+			show_ideas_tooltip = ritter_von_greim
+		}
+	}
+
+	focus = {
+		id = ISI_tactical_air_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = ISI_air_innovation }
+		mutually_exclusive = { focus = ISI_strategic_air_effort }
+		x = 2
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = op_dest_bonus
+				bonus = 0.5
+				uses = 2
+				category = battlefield_support_tree
+			}
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				technology = tactical_bomber2
+				technology = CAS2
+			}
+		}
+	}
+
+
+	focus = {
+		id = ISI_naval_air_effort
+		text = naval_air_effort
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = ISI_tactical_air_effort }
+		x = 2
+		y = 13
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				uses = 1
+				technology = naval_bomber2
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_strategic_air_effort
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = ISI_air_innovation }
+		mutually_exclusive = { focus = ISI_tactical_air_effort }
+		x = 4
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			# Balance research bonus for 2 techs in battlefield_support_tree
+			add_tech_bonus = {
+				name = strat_dest_bonus
+				bonus = 0.5
+				uses = 2
+				category = battlefield_support_tree
+			}
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				technology = strategic_bomber2
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_army_innovation
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 6
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			# Balance research bonus for 2 techs under land_doctrine
+
+			army_experience = 10
+
+
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			custom_effect_tooltip = available_chief_of_army
+			show_ideas_tooltip = walther_von_brauchitsch
+		}
+	}
+
+	focus = {
+		id = ISI_soviet_treaty
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = ISI_army_innovation }
+		mutually_exclusive = { focus = ISI_anti_soviet_pact }
+		#cancel = {
+		#	OR = {
+		#		has_war_with = SOV
+		#		NOT = { country_exists = SOV }
+		#	}
+		#}
+		bypass = {
+			OR = {
+				has_war_with = SOV
+				NOT = { country_exists = SOV }
+			}
+		}
+
+		x = 6
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			SOV = {
+				country_event = { id = Islamic State of Iraq and Syria.75 days = 1 }
+				custom_effect_tooltip = needs_approval
+			}
+			# Actual reward effects added in event if Soviets approve
+			effect_tooltip = {
+				# Trade influence with the USSR? Or simply let the opinion mod do the work
+				add_tech_bonus = {
+					name = med_armor_bonus
+					bonus = 0.5
+					ahead_reduction = 1
+					technology = basic_medium_tank
+				}
+				# Balance research bonus to 2 techs in armor, also in event
+				add_tech_bonus = {
+					name = armor_bonus
+					bonus = 0.5
+					uses = 2
+					category = armor
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_air_innovation_2
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = ISI_strategic_air_effort focus = ISI_tactical_air_effort focus = ISI_soviet_treaty }
+		x = 4
+		y = 13
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			air_experience = 50
+
+			add_ideas = ISI_air_innovations_2_idea
+			# Balance research bonus to next tech among radio, radio_detection, decimetric_radar, improved_decimetric_radar, centimetric_radar, improved_centimetric_radar, advanced_centimetric_radar
+			add_tech_bonus = {
+				name = radar_tech_bonus
+				bonus = 0.5
+				uses = 1
+				category = radar_tech
+			}
+			if = {
+				limit = {
+					has_opinion_modifier = sov_ISI_treaty
+					NOT = { has_war_with = SOV }
+				}
+				SOV = {
+					country_event = { id = Islamic State of Iraq and Syriay.78 days = 1 }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_army_innovation_2
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = ISI_soviet_treaty }
+		x = 6
+		y = 13
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			# Balance research bonus to 2 techs in land_doctrine
+			army_experience = 20
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				name = mech_army_bonus
+				technology = basic_medium_tank
+				technology = improved_medium_tank
+				technology = advanced_medium_tank
+				technology = mechanised_infantry
+			}
+			# REVISIT Might want to add bonuses to Soviet through event, since focus branches from treaty
+		}
+	}
+
+	focus = {
+		id = ISI_rocketry_focus
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = ISI_industrial_effort_2 }
+		prerequisite = { focus = ISI_air_innovation_2 }
+		x = 2
+		y = 15
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ISI_rocketry_idea
+		}
+	}
+
+	focus = {
+		id = ISI_wunderwaffe
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = ISI_rocketry_focus }
+		x = 1
+		y = 16
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 1
+				category = nuclear
+				category = rocketry
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_extra_tech_slot
+		icon = GFX_focus_research
+		text = extra_tech_slot
+		prerequisite = { focus = ISI_rocketry_focus }
+		x = 3
+		y = 16
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = { #should already be signed in 39
+		id = ISI_mol_rib_pact
+		icon = GFX_goal_molotov_ribbentrop_pact
+		prerequisite = { focus = ISI_soviet_treaty }
+		mutually_exclusive = { focus = ISI_anti_soviet_pact }
+		available =
+		{
+			is_puppet = no
+			has_army_manpower = { size > 849999 } #ca 90 div
+			SOV = {
+				NOT = { has_war_with = ISI }
+				country_exists = SOV
+			}
+		}
+		cancel = {
+			OR = {
+				has_war_with = SOV
+				NOT = { country_exists = SOV }
+			}
+		}
+		cancel_if_invalid = no
+		x = 7
+		y = 14
+		cost = 10
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = ISI_anti_comitern_pact }
+			}
+		}
+		completion_reward = {
+			# REVISIT Rework event series to fit new design or retain old design
+			SOV = {
+				country_event = { id = Islamic State of Iraq and Syria.11 days = 1 }
+				custom_effect_tooltip = ISI_mol_rib_pact_tt
+				custom_effect_tooltip = needs_approval
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_soviet_ally
+		icon = GFX_goal_generic_danISIous_deal
+		prerequisite = { focus = ISI_mol_rib_pact }
+		mutually_exclusive = { focus = ISI_ussr_war_goal }
+		available = {
+			is_puppet = no
+			has_war = no
+			SOV = {
+				has_war = no
+				NOT = { has_war_with = ISI }
+				is_puppet = no
+			}
+		}
+		bypass = {
+			SOV = {
+				is_in_faction_with = ISI
+			}
+		}
+		x = 8
+		y = 15
+		cost = 10
+		ai_will_do = {
+			factor = 0.01
+			modifier = {
+				factor = 0
+				NOT = { is_in_faction_with = POL }
+				country_exists = POL
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_war_with = POL
+					has_war_with = FRA
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { is_faction_leader = yes }
+				custom_effect_tooltip = ISI_sov_buddies_tooltip_2
+			}
+			custom_effect_tooltip = ISI_sov_buddies_tooltip
+			add_ideas = soviet_ISIman_friendship
+			SOV = {
+				add_opinion_modifier = { target = ISI modifier = ISI_sov_alliance_focus }
+				add_ideas = soviet_ISIman_friendship
+				country_event = Islamic State of Iraq and Syria.89
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_turkey_puppet
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = ISI_soviet_ally }
+		available = {
+			is_puppet = no
+			OR = {
+				GRE = {
+					is_in_faction_with = ISI
+					all_owned_state = {
+						controller = { is_in_faction_with = ISI }
+					}
+				}
+			}
+			NOT = { has_war_with = SOV }
+			country_exists = TUR
+		}
+		x = 8
+		y = 17
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			TUR = { country_event = { id = Islamic State of Iraq and Syria.79 days = 1 } }
+		}
+	}
+
+	focus = {
+		id = ISI_rhineland
+		icon = GFX_goal_generic_military_sphere
+		x = 12
+		y = 10
+		cost = 10
+		available = { is_puppet = no }
+		bypass = {
+			42 = { is_demilitarized_zone = no }
+			51 = { is_demilitarized_zone = no }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			42 = { set_demilitarized_zone = no }
+			51 = { set_demilitarized_zone = no }
+			custom_effect_tooltip = ISI_rhineland_ultimatum
+			add_political_power = 120
+			army_experience = 5
+			add_named_threat = { threat = 2 name = ISI_rhineland }
+			if = {
+				limit = { FRA = { is_puppet = no } }
+				FRA = {
+					country_event = { id = Islamic State of Iraq and Syria.60 }
+					custom_effect_tooltip = may_provoke_hostility
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_japan_friend
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = ISI_rhineland }
+		mutually_exclusive = { focus = ISI_china_friend }
+		available = {
+			OR = {
+				country_exists = JAP
+				JAP = { is_puppet = no }
+				NOT = { has_war_with = JAP }
+				JAP = {
+					custom_trigISI_tooltip = {
+						tooltip = ISI_alone_or_peace_faction_tt
+						is_alone_or_in_faction_at_peace_with_ISI = yes
+					}
+				}
+			}
+		}
+		x = 13
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			JAP = {
+				add_opinion_modifier = { target = ISI modifier = ISI_jap_diplomacy_focus }
+			}
+			CHI = {
+				add_opinion_modifier = { target = ISI modifier = withdrew_advisors }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_china_friend
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = ISI_rhineland }
+		mutually_exclusive = { focus = ISI_japan_friend }
+		available = {
+			OR = {
+				country_exists = CHI
+				CHI = { is_puppet = no }
+				NOT = { has_war_with = CHI }
+				CHI = {
+					custom_trigISI_tooltip = {
+						tooltip = ISI_alone_or_peace_faction_tt
+						is_alone_or_in_faction_at_peace_with_ISI = yes
+					}
+				}
+			}
+		}
+		x = 11
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+			CHI = {
+				add_opinion_modifier = { target = ISI modifier = ISI_chi_diplomacy_focus }
+			}
+			JAP = {
+				add_opinion_modifier = { target = ISI modifier = supported_the_chinese }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_anti_comitern_pact
+		icon = GFX_goal_anti_comintern_pact
+		prerequisite = { focus = ISI_rhineland  }
+		x = 9
+		y = 11
+		cost = 10
+		available = {
+			is_puppet = no
+			NOT = { has_government = communism }
+			NOT = { is_in_faction_with = SOV }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			SOV = { add_opinion_modifier = { target = ROOT modifier = pact_against_us } }
+			add_named_threat = { threat = 1 name = ISI_anti_comitern_pact }
+			every_country = {
+				limit = {
+					NOT = { tag = ISI }
+					NOT = { has_war_with = ISI }
+					NOT = { is_in_faction_with = SOV }
+					OR = {
+						capital_scope = {
+								is_on_continent = europe
+						}
+						capital_scope = {
+								is_on_continent = asia
+						}
+						num_of_factories > 30
+					}
+					OR = {
+						has_government = fascism
+						AND = {
+							is_neighbor_of = SOV
+							NOT = { has_government = communism }
+						}
+					}
+				}
+				country_event = Islamic State of Iraq and Syria.5
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_anti_soviet_pact
+		icon = GFX_goal_anti_comintern_pact
+		prerequisite = { focus = ISI_anti_comitern_pact }
+		mutually_exclusive = { focus = ISI_mol_rib_pact }
+		available = {
+			is_puppet = no
+			has_army_manpower = { size > 849999 } #ca 90 div
+			is_neighbor_of = SOV
+		}
+		x = 9
+		y = 14
+		cost = 10
+		ai_will_do = {
+			factor = 2.5
+		}
+		completion_reward = {
+			hidden_effect = {
+				SOV = { remove_opinion_modifier = { target = ROOT modifier = pact_against_us } }
+			}
+			SOV = { add_opinion_modifier = { target = ROOT modifier = worse_pact_against_us } }
+			add_ideas = anti_soviet_pact
+			custom_effect_tooltip = ISI_anti_soviet_pact_tt
+			custom_effect_tooltip = ISI_anti_soviet_pact_tt_2
+			every_country = {
+				limit = {
+					has_opinion_modifier = anti_comintern_pact_opinion
+					OR = {
+						NOT = { is_in_faction = yes }
+						is_in_faction_with = ISI
+					}
+					NOT = { tag = ISI }
+					NOT = { has_war_with = ISI }
+				}
+				country_event = Islamic State of Iraq and Syria.83
+			}
+			hidden_effect = {
+				news_event = { hours = 12 id = news.215 }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_ussr_war_goal
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = ISI_anti_comitern_pact }
+		mutually_exclusive = { focus = ISI_soviet_ally }
+		will_lead_to_war_with = SOV
+
+		cancel = {
+			NOT = { country_exists = SOV }
+		}
+		x = 10
+		y = 15
+		cost = 10
+		historical_ai = {
+			NOT = {
+				any_neighbor_country = {
+					has_war_with = ROOT
+				}
+			}
+		}
+		bypass = {
+			has_war_with = SOV
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_army_manpower = { size < 1199999 }
+					any_neighbor_country = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1939.1.1
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SOV
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_turkey_friend
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = ISI_ussr_war_goal }
+		prerequisite = { focus = ISI_italy_ally }
+		available = {
+			is_puppet = no
+			NOT = { has_war_with = TUR }
+			TUR = {
+				exists = yes
+				is_puppet = no
+			}
+			TUR = {
+				custom_trigISI_tooltip = {
+					tooltip = ISI_alone_or_peace_faction_tt
+					is_alone_or_in_faction_at_peace_with_ISI = yes
+				}
+			}
+		}
+		#bypass = {
+		#	OR = {
+		#		TUR = { is_in_faction_with = ISI }
+		#		NOT = { country_exists = TUR }
+		#	}
+		#}
+		x = 10
+		y = 17
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			TUR = {
+				add_opinion_modifier = { target = ISI modifier = ISI_tur_diplomacy_focus }
+				if = {
+					limit = {
+						TUR = {
+							is_ai = yes
+							NOT = {
+								is_in_faction = yes
+							}
+							NOT = {
+								is_puppet = yes
+							}
+						}
+						ISI = { is_faction_leader = yes }
+					}
+					ISI = { add_to_faction = TUR } # REVISIT Might be a better way to handle this
+					add_ai_strategy = {
+						type = alliance
+						id = "ISI"
+						value = 200
+					}
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = fascism
+						}
+					}
+					add_ideas = fascist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = communism
+						}
+					}
+					add_ideas = communist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = democratic
+						}
+					}
+					add_ideas = democratic_influence
+				}
+				country_event = { id = generic.1 }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_anschluss
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = ISI_rhineland }
+		available = {
+			is_puppet = no
+			has_army_manpower = { size > 549999 }
+			NOT = { has_idea = rhineland_challenge_met }
+		}
+		cancel = {
+			has_idea = rhineland_challenge_met
+		}
+		cancel_if_invalid = no
+		x = 15
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				date < 1938.1.1
+			}
+		}
+		completion_reward = {
+			army_experience = 10
+			if = {
+				limit = {
+					country_exists = AUS
+					AUS = {
+						OR = {
+							owns_state = 4
+							owns_state = 152
+							owns_state = 153
+						}
+					}
+				}
+				AUS = {
+					country_event = Islamic State of Iraq and Syria.28
+				}
+				# REVISIT Add Czech claims, possibly
+			}
+			if = {
+				limit = {
+					4 = {
+						owner = {
+							NOT = {
+								tag = AUS
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 4
+			}
+			if = {
+				limit = {
+					152 = {
+						owner = {
+							NOT = {
+								tag = AUS
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 152
+			}
+			if = {
+				limit = {
+					153 = {
+						owner = {
+							NOT = {
+								tag = AUS
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 153
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_demand_memel
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = ISI_anschluss }
+		available = { is_puppet = no }
+		x = 16
+		y = 12
+		cost = 10
+		bypass = {
+			188 = { is_owned_by = ISI }
+			85 = { is_owned_by = ISI }
+			86 = { is_owned_by = ISI }
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				date < 1939.1.1
+			}
+		}
+		completion_reward = {
+			188 = { add_claim_by = ISI }
+			85 = { add_claim_by = ISI }
+			86 = { add_claim_by = ISI }
+			add_named_threat = { threat = 3 name = ISI_demand_memel_threat }
+			if = {
+				limit = {
+					LIT = { owns_state = 188 }
+				}
+				LIT = {
+					country_event = { id = baltic.4 }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_danzig_or_war
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = ISI_demand_memel }
+		mutually_exclusive = { focus = ISI_danzig_vs_slovakia }
+		will_lead_to_war_with = POL
+		available = {
+			is_puppet = no
+			has_army_manpower = { size > 949999 } #100 div
+			#Make custom trigISI tooltip here
+			85 = {
+				owner = {
+					original_tag = POL
+				}
+				controller = {
+					original_tag = POL
+				}
+			}
+			OR = {
+				POL = {
+					has_civil_war = no
+				}
+				#custom_trigISI_tooltip = {
+					#tooltip = ISI_danzig_trigISI_polish_civil_war
+					AND = {
+						any_country = {
+							original_tag = POL
+							has_civil_war = yes
+							OR = {
+								is_in_faction_with = ROOT
+								has_volunteers_amount_from = {
+									tag = ISI
+									count > 0
+								}
+							}
+						}
+					}
+				#}
+			}
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = POL
+				is_in_faction_with = POL
+				NOT = {
+					85 = {
+						controller = {
+							original_tag = POL
+						}
+						owner = {
+							original_tag = POL
+						}
+					}
+				}
+			}
+		}
+		cancel_if_invalid = no
+		x = 16
+		y = 15
+		cost = 10
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					date < 1939.1.1
+					any_neighbor_country = {
+						has_war_with = ISI
+						NOT = { has_capitulated = yes }
+						strength_ratio = {
+							tag = ISI
+							ratio > 0.6
+						}
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_named_threat = { threat = 5 name = ISI_danzig_or_war }
+			if = {
+				limit = {
+					85 = {
+						controller = {
+							tag = POL
+							has_civil_war = no
+						}
+					}
+				}
+				effect_tooltip = {
+					transfer_state = 85
+					remove_state_claim = 86
+				}
+				POL = {
+					country_event = { id = Islamic State of Iraq and Syria.86 }
+					if = {
+						limit = { NOT = { is_in_faction_with = ROOT } }
+						custom_effect_tooltip = needs_approval
+					}
+					if = {
+						limit = {
+							is_in_faction_with = ROOT
+							ROOT = { is_faction_leader = yes }
+						}
+						custom_effect_tooltip = ISI_danzig_or_war_POL_faction_ISI_leader
+					}
+					if = {
+						limit = {
+							is_in_faction_with = ROOT
+							NOT = { ROOT = { is_faction_leader = yes } }
+						}
+						custom_effect_tooltip = ISI_danzig_or_war_POL_faction_ISI_noleader
+					}
+				}
+			}
+			if = {
+				limit = {
+					85 = {
+						owner = {
+							OR = {
+								original_tag = POL
+								tag = POL
+							}
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						original_tag = POL
+						has_civil_war = yes
+						OR = {
+							is_in_faction_with = ISI
+							has_volunteers_amount_from = {
+								tag = ISI
+								count > 0
+							}
+						}
+					}
+					country_event = { id = Islamic State of Iraq and Syria.113 days = 1 }
+				}
+				custom_effect_tooltip = ISI_danzig_or_war_POL_civil_war
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_weserubung
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = ISI_danzig_or_war }
+		mutually_exclusive = { focus = ISI_denmark_friend }
+		will_lead_to_war_with = DEN
+		will_lead_to_war_with = NOR
+		bypass = {
+			AND = {
+				OR = {
+					DEN = {
+						is_in_faction_with = ISI
+						NOT = { country_exists = DEN }
+					}
+				}
+			}
+		}
+
+
+		available = {
+			POL = {
+				NOT = { controls_state = 85 }
+				NOT = { controls_state = 10 }
+			}
+			OR = {
+				has_war_with = ENG
+				NOT = {country_exists = ENG}
+			}
+		}
+		x = 17
+		y = 17
+		cost = 10
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				date < 1939.1.1
+			}
+		}
+		completion_reward = {
+
+			if = {
+				limit = {
+					NOT = { DEN = { is_in_faction_with = ISI } }
+					country_exists = DEN
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = DEN
+					generator = { 37 }
+				}
+			}
+
+
+			if = {
+				limit = {
+					NOT = { NOR = { is_in_faction_with = ISI } }
+					country_exists = NOR
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = NOR
+					generator = { 110 }
+				}
+			}
+
+			add_tech_bonus = {
+				name = tp_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = transport
+				technology = landing_craft
+				technology = tank_landing_craft
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.233 }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_around_maginot
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = ISI_weserubung focus = ISI_war_with_france }
+
+		bypass = {
+		}
+
+		available = {
+			has_war_with = FRA
+			OR = {
+				NOT = { HOL = { is_in_faction_with = ISI } }
+				NOT = { BEL = { is_in_faction_with = ISI } }
+				NOT = { LUX = { is_in_faction_with = ISI } }
+			}
+		}
+		will_lead_to_war_with = BEL
+		will_lead_to_war_with = HOL
+		will_lead_to_war_with = LUX
+		x = 16
+		y = 18
+		cost = 4
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				date < 1939.1.1
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { BEL = { is_in_faction_with = ISI } }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = BEL
+					generator = { 6 }
+				}
+			}
+			if =  {
+				limit = {
+					NOT = { HOL = { is_in_faction_with = ISI } }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = HOL
+					generator = { 7 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = { LUX = { is_in_faction_with = ISI } }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = LUX
+					generator = { 8 }
+				}
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.233 }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_czech_friend
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = ISI_anschluss }
+		mutually_exclusive = { focus = ISI_demand_sudetenland }
+		available = {
+			has_army_manpower = { size > 749999 }
+			NOT = { has_war_with = CZE }
+			CZE = {
+				custom_trigISI_tooltip = {
+					tooltip = ISI_alone_or_peace_faction_tt
+					is_alone_or_in_faction_at_peace_with_ISI = yes
+				}
+			}
+		}
+		bypass = {
+			CZE = { is_in_faction_with = ISI }
+		}
+		cancel = {
+			OR = {
+				NOT = { country_exists = CZE }
+				has_war_with = CZE
+			}
+		}
+		cancel_if_invalid = no
+		x = 12
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 2.5
+			modifier = {
+				factor = 0
+				CZE = {
+					has_opinion = {
+						target = ISI
+						value < 0
+					}
+				}
+			}
+			modifier = {
+				factor = 5
+				CZE = {
+					has_opinion = {
+						target = ISI
+						value > 20
+					}
+				}
+			}
+		}
+		completion_reward = {
+			CZE = {
+				add_opinion_modifier = { target = ISI modifier = ISI_cze_diplomatic_focus }
+				if = {
+					limit = {
+						ISI = {
+							has_government = fascism
+						}
+					}
+					add_ideas = fascist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = communism
+						}
+					}
+					add_ideas = communist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = democratic
+						}
+					}
+					add_ideas = democratic_influence
+				}
+				country_event = { id = generic.1 }
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.200 }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_demand_sudetenland
+		icon = GFX_goal_demand_sudetenland
+		prerequisite = { focus = ISI_anschluss }
+		mutually_exclusive = { focus = ISI_czech_friend }
+		available = {
+			is_puppet = no
+			has_army_manpower = { size > 749999 } #80 div
+		}
+		bypass = {
+			OR = {
+				CZE = { is_puppet_of = ISI }
+				ISI = { owns_state = 69 }
+			}
+		}
+		cancel = {
+			OR = {
+				NOT = { CZE = { owns_state = 69 } }
+				has_war_with = CZE
+			}
+		}
+		cancel_if_invalid = no
+		x = 14
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			if =  {
+				limit = {
+					OR = {
+						has_war_with = ENG
+						has_war_with = FRA
+						CZE = { is_puppet = yes }
+						CZE = { has_war_with = ENG }
+						CZE = { has_war_with = FRA }
+					}
+					CZE = { owns_state = 69 }
+				}
+				CZE = {
+					country_event = {
+						id = Islamic State of Iraq and Syria.122
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_war_with = ENG }
+					NOT = { has_war_with = FRA }
+					CZE = { is_puppet = no }
+					CZE = { NOT = { has_war_with = ENG } }
+					CZE = { owns_state = 69 }
+				}
+				ENG = {
+					country_event = Islamic State of Iraq and Syria.40
+				}
+				add_named_threat = { threat = 2 name = ISI_demand_sudetenland_threat }
+			}
+			69 = {
+				add_claim_by = ISI
+			}
+			if = {
+				limit = {
+					NOT = {
+						CZE = { owns_state = 69 }
+					}
+				}
+				69 = {
+					add_claim_by = ISI
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_first_vienna_award
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = ISI_demand_sudetenland }
+		bypass = {
+			OR = {
+				AND = {
+					NOT = { country_exists = CZE }
+					NOT = { owns_state = 664 }
+				}
+				HUN = { is_friend_or_potential_friend_of_ISI = no }
+			}
+		}
+		available = {
+			is_puppet = no
+			owns_state = 69
+		}
+		x = 14
+		y = 13
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			HUN = {
+				country_event = { id = Islamic State of Iraq and Syria.51 }
+				add_opinion_modifier = { target = ISI modifier = ISI_first_vienna_award_ISI }
+			}
+			every_country = {
+				limit = {
+					is_faction_leader = yes
+					NOT = { tag = ISI }
+				}
+				reverse_add_opinion_modifier = { target = HUN modifier = ISI_second_vienna_award_other }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_end_of_czechoslovakia
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = ISI_first_vienna_award }
+		available = {
+			is_puppet = no
+			has_army_manpower = { size > 749999 }
+			NOT = { has_war_with = CZE }
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = CZE
+				NOT = { country_exists = CZE }
+				any_country = {
+					is_in_faction_with = ISI
+					CZE = {
+						is_puppet_of = PREV
+					}
+				}
+			}
+		}
+
+		x = 14
+		y = 14
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+
+
+		completion_reward = {
+
+			if = {
+				limit = { country_exists = CZE }
+				set_global_flag = end_of_czechoslovakia
+				CZE = { country_event = Islamic State of Iraq and Syria.53 }
+			}
+			if = {
+				limit = { NOT = { country_exists = CZE } }
+				country_event = { id = Islamic State of Iraq and Syria.55 hours = 6 }
+			}
+			add_named_threat = { threat = 3 name = ISI_end_of_czechoslovakia }
+		}
+	}
+
+	focus = {
+		id = ISI_second_vienna_award
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = ISI_czech_friend focus = ISI_end_of_czechoslovakia }
+		x = 12
+		y = 15
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			is_puppet = no
+			has_army_manpower = { size > 749999 }
+			has_capitulated = no
+		}
+		bypass = {
+			OR = {
+				AND = {
+					OR = {
+						HUN = {
+							NOT = { has_government = fascism }
+							is_friend_or_potential_friend_of_ISI = no
+						}
+						ROM = {
+							OR = {
+								AND = {
+									NOT = { controls_state = 76 }
+									NOT = { controls_state = 83 }
+									NOT = { controls_state = 84 }
+								}
+								has_war_with = HUN
+							}
+						}
+					}
+					OR = {
+						BUL = { is_friend_or_potential_friend_of_ISI = no }
+						ROM = {
+							OR = {
+								NOT = { controls_state = 77 }
+								has_war_with = BUL
+							}
+						}
+					}
+				}
+				HUN = { exists = no }
+				ROM = { exists = no	}
+				HUN = { has_capitulated = yes }
+				ROM = { has_capitulated = yes }
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					HUN = {
+						has_government = fascism
+						is_friend_or_potential_friend_of_ISI = yes
+					}
+					ROM = {
+						controls_state = 76
+						NOT = { has_war_with = HUN }
+					}
+				}
+				country_event = { id = Islamic State of Iraq and Syria.20 }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_italy_ally
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ISI_second_vienna_award }
+		available = {
+			NOT = { has_war_with = ITA }
+		}
+
+		bypass = {
+
+			OR = {
+				is_in_faction_with = ITA
+				has_war_with = ITA
+				NOT = { country_exists = ITA }
+			}
+		}
+
+		x = 12
+		y = 16
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			ITA = {
+				add_opinion_modifier = { target = ISI modifier = ISI_ita_alliance_focus }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_nationalist_spain_ally
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ISI_italy_ally }
+		available = {
+			SPR = { has_civil_war = no }
+			any_country = {
+				original_tag = SPR
+				has_government = fascism
+				NOT = { has_war_with = ISI }
+			}
+			FRA = {
+				OR = {
+					NOT = { country_exists = THIS }
+					has_capitulated = yes
+					has_government = fascism
+				}
+			}
+		}
+
+		#bypass = {
+		#	any_country = {
+		#		original_tag = SPR
+		#		has_government = fascism
+		#		is_in_faction_with = ISI
+		#	}
+		#}
+		x = 12
+		y = 17
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					OR = {
+						SPR = { NOT = { has_government = fascism } }
+						NOT = { country_exists = SPR }
+					}
+				}
+				custom_effect_tooltip = ISI_nationalist_spain_ally_tt
+			}
+			random_country = {
+				limit = {
+					original_tag = SPR
+					has_government = fascism
+				}
+				remove_ideas = SPA_recovering_from_civil_war
+				add_opinion_modifier = { target = ISI modifier = ISI_spa_alliance_focus }
+			}
+		}
+	}
+
+
+
+	focus = {
+		id = ISI_danzig_vs_slovakia
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = ISI_end_of_czechoslovakia }
+		mutually_exclusive = { focus = ISI_danzig_or_war }
+		available = {
+			is_puppet = no
+			OR = {
+				SLO = {
+					exists = yes
+					is_in_faction_with = ISI
+				}
+				owns_state = 70
+			}
+			NOT = { owns_state = 85 }
+			NOT = { has_war_with = POL }
+			POL = { owns_state = 72 }
+		}
+
+
+		x = 14
+		y = 15
+		cost = 10
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			POL = {
+				country_event = { id = Islamic State of Iraq and Syria.80 days = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_poland_friend
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = ISI_danzig_vs_slovakia }
+		available = {
+			NOT = { has_global_flag = sov_yes_pact }
+			NOT = { has_war_with = POL }
+			POL = {
+				custom_trigISI_tooltip = {
+					tooltip = ISI_alone_or_peace_faction_tt
+					is_alone_or_in_faction_at_peace_with_ISI = yes
+				}
+			}
+		}
+		bypass = {
+			is_in_faction_with = POL
+			is_alone_or_in_faction_at_peace_with_ISI = no
+		}
+		x = 14
+		y = 16
+		cost = 10
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			POL = {
+				add_opinion_modifier = { target = ISI modifier = ISI_pol_diplomacy_focus }
+				if = {
+					limit = {
+						ISI = {
+							has_government = fascism
+						}
+					}
+					add_ideas = fascist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = communism
+						}
+					}
+					add_ideas = communist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = democratic
+						}
+					}
+					add_ideas = democratic_influence
+				}
+				country_event = { id = generic.1 }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_war_with_france
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = ISI_poland_friend focus = ISI_danzig_or_war }
+		available = {
+			is_puppet = no
+			OR = {
+				NOT = { has_war_with = POL }
+				POL = { has_capitulated = yes }
+			}
+			NOT = { is_in_faction_with = FRA }
+		}
+		x = 15
+		y = 17
+		cost = 10
+		bypass = {
+			OR = {
+				NOT = { country_exists = FRA }
+				has_war_with = FRA
+			}
+		}
+		historical_ai = {
+			date > 1939.1.1
+			NOT = {
+				any_neighbor_country = {
+					has_war_with = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0.05
+				date < 1939.1.1
+			}
+		}
+		completion_reward = {
+			add_named_threat = { threat = 3 name = ISI_war_with_france_threat }
+ 			create_wargoal = {
+ 				type = take_state_focus
+ 				target = FRA
+ 				generator = { 28 }
+ 			}
+		}
+	}
+
+	focus = {
+		id = ISI_naval_rearmament
+		icon = GFX_goal_generic_build_navy
+		x = 22
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		bypass = {
+			custom_trigISI_tooltip =  {
+				tooltip = naval_effort_tt
+				NOT = {
+					any_owned_state = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			every_state = {
+				limit = {	has_state_flag = ISI_naval_rearmament_2dockyards }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_state = {
+				limit = {	has_state_flag = ISI_naval_rearmament_1dockyard }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_naval_rearmament_2dockyards
+			}
+			random_owned_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = ISI_naval_rearmament_1dockyard
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_naval_effort
+		text = naval_effort
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = ISI_naval_rearmament }
+		x = 22
+		y = 13
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_tooltip = {
+			navy_experience = 25
+			every_state = {
+				limit = { has_state_flag = ISI_naval_effort_2dockyards }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				uses = 1
+				technology = improved_destroyer
+				technology = advanced_destroyer
+			}
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				uses = 1
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_naval_effort_2dockyards
+			}
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				uses = 1
+				technology = improved_destroyer
+				technology = advanced_destroyer
+			}
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				uses = 1
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_plan_z
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = ISI_naval_effort }
+		mutually_exclusive = { focus = ISI_u_boat_effort }
+		x = 21
+		y = 16
+		cost = 10
+		ai_will_do = {
+			factor = 0.25
+		}
+		completion_reward = {
+			navy_experience = 50
+			add_tech_bonus = {
+				name = bc_bonus
+				bonus = 0.5
+				uses = 1
+				technology = basic_battlecruiser
+			}
+			add_tech_bonus = {
+				name = bb_bonus
+				bonus = 0.5
+				uses = 1
+				technology = basic_battleship
+				technology = improved_battleship
+				technology = advanced_battleship
+				technology = heavy_battleship
+				technology = heavy_battleship2
+			}
+			add_tech_bonus = {
+				name = cv_bonus
+				bonus = 0.5
+				uses = 1
+				technology = early_carrier
+				technology = basic_carrier
+				technology = improved_carrier
+				technology = advanced_carrier
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_u_boat_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = ISI_naval_effort }
+		mutually_exclusive = { focus = ISI_plan_z }
+		x = 23
+		y = 16
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_tooltip = {
+			navy_experience = 25
+			every_state = {
+				limit = { has_state_flag = ISI_u_boat_effort_2dockyards }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = ISI_u_boat_effort
+				bonus = 0.5
+				uses = 1
+				technology = early_submarine
+				technology = basic_submarine
+				technology = improved_submarine
+				technology = advanced_submarine
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ISI_u_boat_effort_2dockyards
+			}
+			add_tech_bonus = {
+				name = ISI_u_boat_effort
+				bonus = 0.5
+				uses = 1
+				technology = early_submarine
+				technology = basic_submarine
+				technology = improved_submarine
+				technology = advanced_submarine
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_trade_interdiction
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = ISI_u_boat_effort }
+		x = 23
+		y = 17
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = ti_bonus
+				name = ISI_trade_interdiction
+				bonus = 0.5
+				category = trade_interdiction_tree
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_denmark_friend
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = ISI_plan_z }
+		mutually_exclusive = { focus = ISI_weserubung }
+
+		available = {
+			country_exists = DEN
+			NOT = {
+				has_war_with = DEN
+			}
+			DEN = {
+				custom_trigISI_tooltip = {
+					tooltip = ISI_alone_or_peace_faction_tt
+					is_alone_or_in_faction_at_peace_with_ISI = yes
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				is_in_faction_with = DEN
+			}
+		}
+		x = 19
+		y = 17
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			DEN = {
+				add_opinion_modifier = { target = ISI modifier = ISI_naval_intimidation_focus }
+				if = {
+					limit = {
+						ISI = {
+							has_government = fascism
+						}
+					}
+					add_ideas = fascist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = communism
+						}
+					}
+					add_ideas = communist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = democratic
+						}
+					}
+					add_ideas = democratic_influence
+				}
+				country_event = { id = generic.1 }
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.232 }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_norway_friend
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = ISI_denmark_friend }
+		available = {
+			NOT = { has_war_with = NOR }
+			NOR = {
+				custom_trigISI_tooltip = {
+					tooltip = ISI_alone_or_peace_faction_tt
+					is_alone_or_in_faction_at_peace_with_ISI = yes
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				is_in_faction_with = NOR
+				NOT = { country_exists = NOR }
+			}
+		}
+		x = 18
+		y = 18
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			NOR = {
+				add_opinion_modifier = { target = ISI modifier = ISI_naval_intimidation_focus }
+				if = {
+					limit = {
+						ISI = {
+							has_government = fascism
+						}
+					}
+					add_ideas = fascist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = communism
+						}
+					}
+					add_ideas = communist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = democratic
+						}
+					}
+					add_ideas = democratic_influence
+				}
+				country_event = { id = generic.1 }
+			}
+
+			add_tech_bonus = {
+				name = tp_bonus
+				bonus = 0.5
+				uses = 2
+				technology = transport
+				technology = landing_craft
+				technology = tank_landing_craft
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_dutch_friend
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ISI_denmark_friend }
+		available = {
+			NOT = { has_war_with = HOL }
+			HOL = {
+				custom_trigISI_tooltip = {
+					tooltip = ISI_alone_or_peace_faction_tt
+					is_alone_or_in_faction_at_peace_with_ISI = yes
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				HOL = { is_in_faction_with = ISI }
+				NOT = { country_exists = HOL }
+			}
+		}
+		x = 20
+		y = 18
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			HOL = {
+				add_opinion_modifier = { target = ISI modifier = ISI_naval_intimidation_focus }
+				if = {
+					limit = {
+						ISI = {
+							has_government = fascism
+						}
+					}
+					add_ideas = fascist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = communism
+						}
+					}
+					add_ideas = communist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = democratic
+						}
+					}
+					add_ideas = democratic_influence
+				}
+				country_event = { id = generic.1 }
+			}
+			JAP = {
+				add_opinion_modifier = { target = ISI modifier = befriended_the_dutch }
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_sweden_friend
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = ISI_norway_friend }
+		available = {
+			NOT = { has_war_with = SWE }
+			SWE = {
+				custom_trigISI_tooltip = {
+					tooltip = ISI_alone_or_peace_faction_tt
+					is_alone_or_in_faction_at_peace_with_ISI = yes
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				SWE = { is_in_faction_with = ISI }
+				NOT = { country_exists = SWE }
+			}
+		}
+		x = 18
+		y = 19
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			SWE = {
+				add_opinion_modifier = { target = ISI modifier = ISI_naval_intimidation_focus }
+				if = {
+					limit = {
+						ISI = {
+							has_government = fascism
+						}
+					}
+					add_ideas = fascist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = communism
+						}
+					}
+					add_ideas = communist_influence
+				}
+				if = {
+					limit = {
+						ISI = {
+							has_government = democratic
+						}
+					}
+					add_ideas = democratic_influence
+				}
+				country_event = { id = generic.1 }
+				if = {
+					limit = { has_idea = neutrality_idea }
+					remove_ideas = neutrality_idea
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_improve_national_spirit
+		prerequisite = { focus = ISI_anschluss }
+		icon = GFX_goal_support_fascism
+		available = {
+			custom_trigISI_tooltip = {
+				tooltip = ISI_improve_national_spirit_tooltip
+				OR = {
+					ISI = { controls_state = 126 }
+					any_country = {
+						is_in_faction_with = ISI
+						controls_state = 126
+					}
+				}
+				OR = {
+					ISI = { controls_state = 16 }
+					any_country = {
+						is_in_faction_with = ISI
+						controls_state = 16
+					}
+				}
+			}
+		}
+		cancel = {
+			AND = {
+				has_war = no
+				126 = {
+					owner = {
+						NOT = { tag = ISI }
+						NOT = { is_in_faction_with = ISI }
+					}
+				}
+				16 = {
+					owner = {
+						NOT = { tag = ISI }
+						NOT = { is_in_faction_with = ISI }
+					}
+				}
+			}
+		}
+		cancel_if_invalid = no
+		x = 20
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			remove_ideas = sour_loser
+			add_ideas = triumphant_will
+		}
+	}
+
+	############################################
+	############## BALKAN BRANCH ###############
+	############################################
+
+	focus = {
+		id = ISI_demand_slovenia
+		prerequisite = { focus = ISI_anschluss }
+		icon = GFX_goal_generic_political_pressure
+		available = {
+			NOT = { is_in_faction_with = YUG }
+			is_puppet = no
+			controls_state = 4
+			controls_state = 152
+			YUG = { owns_state = 102 }
+			has_army_manpower = { size > 749999 } #ca 80 div
+			NOT = { YUG = { is_puppet_of = ISI } }
+		}
+		cancel = {
+			OR = {
+				is_in_faction_with = YUG
+				YUG = { is_puppet_of = ISI }
+				NOT = { controls_state = 4 }
+				NOT = { controls_state = 152 }
+				NOT = { YUG = { owns_state = 102 } }
+			}
+		}
+		cancel_if_invalid = no
+		x = 18
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_named_threat = { threat = 2 name = ISI_demand_slovenia_threat }
+			YUG = { add_opinion_modifier = { target = ISI modifier = ISI_demand_slovenia_YUG } }
+			if = {
+				limit = {
+					NOT = { has_war_with = ENG }
+					YUG = {
+						is_puppet = no
+						NOT = { has_war_with = ENG }
+					}
+				}
+				ENG = {
+					country_event = { id = britain.14 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						YUG = { is_puppet = yes }
+						YUG = { has_war_with = ENG }
+						has_war_with = ENG
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = YUG
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_first_ljubljana_award
+		prerequisite = { focus = ISI_demand_slovenia }
+		icon = GFX_goal_generic_military_deal
+		available = {
+			is_puppet = no
+			NOT = { is_in_faction_with = YUG }
+			OR = {
+				AND = {
+					country_exists = YUG
+					NOT = { has_war_with = YUG }
+					owns_state = 102
+				}
+				AND = {
+					NOT = { country_exists = YUG }
+					owns_state = 102
+					owns_state = 45
+					owns_state = 106
+					owns_state = 103
+					owns_state = 105
+				}
+			}
+			OR = {
+				YUG = {
+					is_puppet = no
+				}
+				YUG = {
+					is_puppet_of = ISI
+				}
+			}
+		}
+
+		bypass = {
+			OR = {
+				is_in_faction_with = YUG
+				NOT = { country_exists = YUG }
+				NOT = {
+					OR = {
+						YUG = {
+							owns_state = 45
+						}
+						YUG = {
+							owns_state = 106
+						}
+					}
+				}
+				AND = {
+					HUN = { is_friend_or_potential_friend_of_ISI = no }
+					BUL = { is_friend_or_potential_friend_of_ISI = no }
+					ITA = { is_friend_or_potential_friend_of_ISI = no }
+				}
+			}
+		}
+
+		x = 18
+		y = 13
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					HUN = {
+						is_friend_or_potential_friend_of_ISI = yes
+						NOT = { is_in_faction_with = YUG }
+					}
+				}
+				hidden_effect = {
+					HUN = {
+						country_event = { id = hungary.6 days = 1 }
+						add_opinion_modifier = { target = ISI modifier = ISI_first_ljubljana_award_ISI }
+						set_country_flag = ISI_first_ljubljana_award
+					}
+				}
+				effect_tooltip = {
+					HUN = {
+						add_opinion_modifier = { target = ISI modifier = ISI_first_ljubljana_award_ISI }
+						transfer_state = 45
+					}
+				}
+				every_country = {
+					limit = {
+						is_faction_leader = yes
+						NOT = { tag = ISI }
+					}
+					reverse_add_opinion_modifier = { target = HUN modifier = ISI_second_vienna_award_other }
+				}
+			}
+			if = {
+				limit = {
+					BUL = {
+						is_friend_or_potential_friend_of_ISI = yes
+						NOT = { is_in_faction_with = YUG }
+					}
+				}
+				hidden_effect = {
+					BUL = { country_event = { id = bulgaria.3 days = 1 }
+						add_opinion_modifier = { target = ISI modifier = ISI_first_ljubljana_award_ISI }
+						set_country_flag = ISI_first_ljubljana_award
+					}
+				}
+				effect_tooltip = {
+					BUL = {
+						add_opinion_modifier = { target = ISI modifier = ISI_first_ljubljana_award_ISI }
+						transfer_state = 106
+					}
+				}
+				every_country = {
+					limit = {
+						is_faction_leader = yes
+						NOT = { tag = ISI }
+					}
+					reverse_add_opinion_modifier = { target = BUL modifier = ISI_second_vienna_award_other }
+				}
+			}
+			if = {
+				limit = {
+					ITA = {
+						OR = {
+							has_completed_focus = ITA_slovenia_dalmatia_claims
+							owns_state = 44
+						}
+						is_friend_or_potential_friend_of_ISI = yes
+						NOT = { is_in_faction_with = YUG }
+					}
+				}
+				hidden_effect = {
+					ITA = { country_event = { id = italy.13 days = 1 }
+						add_opinion_modifier = { target = ISI modifier = ISI_first_ljubljana_award_ISI }
+					}
+					set_country_flag = ISI_first_ljubljana_award
+				}
+				effect_tooltip = {
+					ITA = {
+						add_opinion_modifier = { target = ISI modifier = ISI_first_ljubljana_award_ISI }
+						if = {
+							limit = { has_completed_focus = ITA_slovenia_dalmatia_claims }
+							transfer_state = 103
+						}
+						if = {
+							limit = { owns_state = 44 }
+							transfer_state = 105
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						is_faction_leader = yes
+						NOT = { tag = ISI }
+					}
+					reverse_add_opinion_modifier = { target = ITA modifier = ISI_second_vienna_award_other }
+				}
+			}
+			#hidden_effect = {
+			#	news_event = { hours = 6 id = news.208 }
+			#}
+		}
+	}
+
+	focus = {
+		id = ISI_fate_of_yugoslavia
+		prerequisite = { focus = ISI_first_ljubljana_award }
+		icon = GFX_goal_generic_territory_or_war
+		available = {
+			is_puppet = no
+			NOT = { has_war_with = YUG }
+			NOT = { is_in_faction_with = YUG }
+		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = YUG }
+				any_country = {
+					is_in_faction_with = ROOT
+					YUG = {
+						is_puppet_of = PREV
+					}
+				}
+			}
+		}
+		x = 18
+		y = 14
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = { id = Islamic State of Iraq and Syria.98 }
+		}
+	}
+
+	focus = {
+		id = ISI_second_ljubljana_award
+		mutually_exclusive = { focus = ISI_war_with_greece }
+		prerequisite = { focus = ISI_fate_of_yugoslavia }
+		icon = GFX_goal_generic_forceful_treaty
+		available = {
+			is_puppet = no
+			GRE = {
+				has_war = no
+				owns_state = 731
+				owns_state = 186
+				owns_state = 185
+				owns_state = 47
+			}
+		}
+		x = 18
+		y = 15
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+
+		#bypass = {
+		#	OR = {
+		#		GRE = {
+		#			NOT = { owns_state = 731 }
+		#			NOT = { owns_state = 186 }
+		#			NOT = { owns_state = 185 }
+		#			NOT = { owns_state = 47 }
+		#		}
+		#		AND = {
+		#			OR = {
+		#				NOT = { country_exists = ITA }
+		#				ITA = { has_war_with = GRE }
+		#				NOT = { has_completed_focus = ITA_greece_war_goal }
+		#				AND = {
+		#					ITA = {
+		#						NOT = { is_in_faction_with = ISI }
+		#						is_in_faction = yes
+		#					}
+		#				}
+		#			}
+		#			OR = {
+		#				NOT = { country_exists = BUL }
+		#				BUL = { has_war_with = GRE }
+		#				AND = {
+		#					BUL = {
+		#						NOT = { is_in_faction_with = ISI }
+		#						is_in_faction = yes
+		#					}
+		#				}
+		#			}
+		#			AND = {
+		#				731 = {
+		#					OR = {
+		#						NOT = { any_neighbor_state = { is_owned_by = ISI } }
+		#						NOT = { is_owned_by = GRE }
+		#					}
+		#				}
+		#				47 = {
+		#					OR = {
+		#						NOT = { any_neighbor_state = { is_owned_by = ISI } }
+		#						NOT = { is_owned_by = GRE }
+		#					}
+		#				}
+		#				185 = {
+		#					OR = {
+		#						NOT = { any_neighbor_state = { is_owned_by = ISI } }
+		#						NOT = { is_owned_by = GRE }
+		#					}
+		#				}
+		#			}
+		#		}
+		#	}
+		#}
+
+		completion_reward = {
+			add_named_threat = { threat = 2 name = ISI_second_ljubljana_award }
+			if = {
+				limit = {
+					GRE = {
+						OR = {
+							owns_state = 185
+							owns_state = 186
+							owns_state = 47
+						}
+					}
+					ITA = {
+						NOT = { has_war_with = GRE }
+						country_exists = ITA
+						has_completed_focus = ITA_greece_war_goal
+						OR = {
+							is_in_faction_with = ISI
+							is_in_faction = no
+						}
+					}
+				}
+				set_global_flag = ISI_second_ljubljana_award_ITA_event
+				country_event = { id = Islamic State of Iraq and Syria.99 }
+			}
+			if = {
+				limit = {
+					GRE = { owns_state = 184 }
+					BUL = {
+						NOT = { has_war_with = GRE }
+						country_exists = BUL
+						OR = {
+							is_in_faction_with = ISI
+							is_in_faction = no
+						}
+					}
+				}
+				set_global_flag = ISI_second_ljubljana_award_BUL_event
+				country_event = { id = Islamic State of Iraq and Syria.100 }
+			}
+			if = {
+				limit = {
+					any_neighbor_country = {
+						tag = GRE
+					}
+					OR = {
+						NOT = { country_exists = ITA }
+						AND = {
+							ITA = {
+								NOT = { is_in_faction_with = ISI }
+								is_in_faction = yes
+							}
+						}
+					}
+					OR = {
+						NOT = { country_exists = BUL }
+						AND = {
+							BUL = {
+								NOT = { is_in_faction_with = ISI }
+								is_in_faction = yes
+							}
+						}
+					}
+				}
+				set_global_flag = ISI_second_ljubljana_award_ISI_event
+				country_event = { id = Islamic State of Iraq and Syria.101 }
+			}
+			custom_effect_tooltip = ISI_second_ljubljana_award_tt
+		}
+	}
+
+	focus = {
+		id = ISI_war_with_greece
+		prerequisite = { focus = ISI_fate_of_yugoslavia }
+		mutually_exclusive = { focus = ISI_second_ljubljana_award }
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		will_lead_to_war_with = GRE
+		available = {
+			GRE = {
+				exists = yes
+				has_war = yes
+			}
+			NOT = { is_in_faction_with = GRE }
+		}
+		x = 20
+		y = 15
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = GRE
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = ISI_fate_of_greece
+		prerequisite = { focus = ISI_second_ljubljana_award }
+		icon = GFX_goal_demand_sudetenland
+		available = {
+			country_exists = GRE
+			NOT = { has_war_with = GRE }
+			GRE = {
+				is_puppet = no
+			}
+		}
+		x = 18
+		y = 16
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			GRE = { country_event = { id = greece.3 hours = 6 } }
+		}
+	}
+}

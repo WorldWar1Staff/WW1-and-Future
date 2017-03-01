@@ -1,0 +1,23 @@
+state={
+	id=750
+	name="STATE_750"
+	history={
+		owner = SER
+		buildings = {
+			infrastructure = 4
+			air_base = 1
+		}
+		add_core_of = YUG
+		add_core_of = SER
+		1920.1.10 = {
+			owner = YUG
+		}
+
+	}
+	provinces={
+		6940 6953 9849 9874 9890 
+	}
+	manpower=300000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

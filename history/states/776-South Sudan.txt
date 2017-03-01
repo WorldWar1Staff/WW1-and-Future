@@ -1,0 +1,16 @@
+state={
+	id=776
+	name="STATE_776"
+	history={
+		owner = ENG
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	provinces={
+		1953 2096 4033 7996 10764 10857 10859 10877 10908 12800 
+	}
+	manpower=2000000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}
