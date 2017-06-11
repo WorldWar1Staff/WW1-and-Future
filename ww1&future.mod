@@ -3,4 +3,4 @@ path="mod/wwwwww"
 tags={
 	"Balance"
 }
-supported_version="1.0.0.19987"
+supported_version="1.3.3"
