@@ -1,5 +1,5 @@
 name="World War 1 and Future"
-path="mod/wwwwww"
+path="mod/WW1-and-Future"
 tags={
 	"Balance"
 }
