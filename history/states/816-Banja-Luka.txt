@@ -6,11 +6,11 @@ state={
 		6619 9588 9591 11572 11574 
 	}
 	history={
-		owner = HUN
+		owner = AUS
 		buildings = {
 			infrastructure = 5
 		}
-		add_core_of = SER
+		add_core_of = AUS
 	}
 	manpower=300000
 	buildings_max_level_factor=1.000

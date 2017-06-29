@@ -6,14 +6,13 @@ state={
 		591 984 3601 6611 11564 11901 
 	}
 	history={
-		owner = HUN
+		owner = AUS
 		buildings = {
 			infrastructure = 5
 			industrial_complex = 1
 		}
-		add_core_of = YUG
+		add_core_of = AUS
 		add_core_of = CRO
-		add_core_of = HUN
 	}
 	manpower=431700
 	buildings_max_level_factor=1.000

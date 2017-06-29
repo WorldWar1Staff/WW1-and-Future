@@ -6,7 +6,7 @@ state={
 		10000 
 	}
 	history={
-		owner = GER
+		owner = CHI
 		add_core_of = CHI
 		add_core_of = PRC
 		victory_points = {

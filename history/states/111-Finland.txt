@@ -17,7 +17,7 @@ state={
 				coastal_bunker = 2
 			}
 		}
-		add_core_of = FIN
+		add_core_of = SOV
 	}
 	provinces={
 		52 67 204 3061 3161 6009 6082 6108 6144 6186 9073 9129 9183 11056 11105 11138 11211 13103 13105 

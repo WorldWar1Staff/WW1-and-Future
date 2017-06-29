@@ -10,7 +10,7 @@ state={
 		buildings = {
 			infrastructure = 3
 		}
-		add_core_of = SYR
+		add_core_of = TUR
 	}
 	manpower=325594
 	buildings_max_level_factor=1.000

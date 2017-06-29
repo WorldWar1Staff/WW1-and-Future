@@ -9,7 +9,7 @@ state={
 		buildings = {
 			infrastructure = 3
 		}
-		add_core_of = SYR
+		add_core_of = TUR
 	}
 	provinces={
 		7140 7671 12473 
