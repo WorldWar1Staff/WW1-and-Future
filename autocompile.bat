@@ -17,7 +17,7 @@ timeout 3
 cls
 )
 
-%SevenZip% a %archive% %Folder% -x!*.md -x!*.mod -x!.gitattributes -x!*.bat
+%SevenZip% a %archive% %Folder% -x!*.md -x!*.mod -x!.gitattributes -x!*.bat -x!LICENSE
 
 
 cls
